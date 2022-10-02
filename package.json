@@ -1,0 +1,27 @@
+{
+  "name": "example-studies-and-surveys",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:influenzanet/example-studies-and-surveys.git",
+  "author": "coneno",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "rollup -c",
+    "prestart": "npm run-script build",
+    "start": "node build/index.js"
+  },
+  "dependencies": {
+    "@types/node": "^18.7.23",
+    "case-editor-tools": "^1.2.1",
+    "survey-engine": "^1.1.7"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "rollup": "^2.79.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-multi-input": "^1.3.1",
+    "rollup-plugin-typescript2": "^0.34.0",
+    "typescript": "^4.8.4"
+  }
+}
