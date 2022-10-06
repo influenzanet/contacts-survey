@@ -138,10 +138,10 @@ builtin-modules@^3.3.0:
   resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-3.3.0.tgz#cae62812b89801e9656336e46223e030386be7b6"
   integrity sha512-zhaCDicdLuWN5UbN5IMnFqNMhNfo919sH85y2/ea+5Yg9TsTkeZxpL+JLbp6cgYFS4sRLp3YV4S6yDuqVWHYOw==
 
-case-editor-tools@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/case-editor-tools/-/case-editor-tools-1.2.1.tgz#49c09f6888fa03972db49c845c7551daec8206bc"
-  integrity sha512-b30U8Gc5zMUCfGRqPkZm2o0VOVki1Gq9vjvJXTf998RxB1FsG+CP5dFsqowbWV4gDumVTykxKSHSQoWVkCLtFA==
+case-editor-tools@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/case-editor-tools/-/case-editor-tools-1.2.2.tgz#a6072741283caff53a2fb9b7ffb076b1986c38cf"
+  integrity sha512-ihxtQpCK/KDozO0Z0Rp+RbTLCOI6LUEwo9zf5PritdQYQn8RT6husod5JDwsngluXmdtUilZMykb5BJ9X2EhJQ==
   dependencies:
     survey-engine "^1.1.7"
 
