@@ -1,5 +1,6 @@
 import { DateDisplayComponentProp, Item, StyledTextComponentProp, SurveyDefinition } from "case-editor-tools/surveys/types";
 import { SurveyEngine, SurveyItems } from "case-editor-tools/surveys";
+import { StudyEngine } from "case-editor-tools/expression-utils/studyEngineExpressions";
 import { surveyKeys } from "../constants";
 import { Expression } from "survey-engine/data_types";
 import { ComponentGenerators } from 'case-editor-tools/surveys/utils/componentGenerators';
@@ -11,8 +12,9 @@ class ContactsDef extends SurveyDefinition {
   Q2: Q2;
   ContactMatrixForHome: ContaxtMatricWithoutGender;
   ContactMatrixForWork: ContaxtMatricWithoutGender;
-  ContactMatrixForLeisure: ContaxtMatricWithoutGender;
-  ProtectionUsage: ProtectionUsage;
+  ProtectionUsageForWork: ProtectionUsage;
+  ContactMatrixForLeisure: ProtectionUsage;
+  ProtectionUsageForLeisure: ProtectionUsage;
 
   constructor() {
     super({
@@ -43,23 +45,74 @@ class ContactsDef extends SurveyDefinition {
       SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.home),
       isRequired
     );
+
+    /// WORK
+    const conditionForWork = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.work, this.Q2.optionKeys.school);
     this.ContactMatrixForWork = new ContaxtMatricWithoutGender(
       this.key,
       'ContactsWork',
       new Map([['en', 'Contacts at work']]),
-      SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.work, this.Q2.optionKeys.school),
+      conditionForWork,
       isRequired
     );
+    this.ProtectionUsageForWork = new ProtectionUsage(
+      this.key,
+      'ProtectionWork',
+      new Map([['en', 'With how many of the reported contacts did you use a sort of protection during these work or school activites (e.g. face mask or face shield)?']]),
+      conditionForWork,
+      isRequired
+    );
+
+    /// LEISURE
+    const conditionForLeisure = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.leisure, this.Q2.optionKeys.other);
     this.ContactMatrixForLeisure = new ContaxtMatricWithoutGender(
       this.key,
       'ContactsOther',
       new Map([['en', 'Contacts during leisure and other']]),
-      SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.leisure, this.Q2.optionKeys.other),
+      conditionForLeisure,
+      isRequired
+    );
+    this.ProtectionUsageForLeisure = new ProtectionUsage(
+      this.key,
+      'ProtectionLeisure',
+      new Map([['en', 'With how many of the reported contacts did you use a sort of protection during these leisure and other activites (e.g. face mask or face shield)?']]),
+      conditionForLeisure,
       isRequired
     );
 
 
-    this.ProtectionUsage = new ProtectionUsage(this.key, SurveyEngine.hasResponse(this.Q2.key, 'rg'), isRequired);
+    /// Prefill rules:
+
+    this.editor.setPrefillRules([
+      /// HOME:
+      // for indoor:
+      ...['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12'].map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForHome.key, `rg.rm.${key}-i`, '0')
+      ),
+      // for outdoor:
+      ...['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12'].map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForHome.key, `rg.rm.${key}-o`, '0')
+      ),
+      /// WORK:
+      // for indoor:
+      ...['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12'].map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForWork.key, `rg.rm.${key}-i`, '0')
+      ),
+      // for outdoor:
+      ...['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12'].map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForWork.key, `rg.rm.${key}-o`, '0')
+      ),
+      /// OTHER:
+      // for indoor:
+      ...['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12'].map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForLeisure.key, `rg.rm.${key}-i`, '0')
+      ),
+      // for outdoor:
+      ...['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12'].map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForLeisure.key, `rg.rm.${key}-o`, '0')
+      ),
+
+    ]);
   }
 
   buildSurvey() {
@@ -69,8 +122,9 @@ class ContactsDef extends SurveyDefinition {
     this.addItem(this.Q2.get());
     this.addItem(this.ContactMatrixForHome.get());
     this.addItem(this.ContactMatrixForWork.get());
+    this.addItem(this.ProtectionUsageForWork.get());
     this.addItem(this.ContactMatrixForLeisure.get());
-    this.addItem(this.ProtectionUsage.get());
+    this.addItem(this.ProtectionUsageForLeisure.get());
   }
 }
 
@@ -376,11 +430,17 @@ class ContaxtMatricWithoutGender extends Item {
 
 
 class ProtectionUsage extends Item {
+  qText: Map<string, string> | (StyledTextComponentProp | DateDisplayComponentProp)[];
 
-  constructor(parentKey: string, condition: Expression, isRequired?: boolean) {
-    super(parentKey, 'ProtectionUsage');
+  constructor(parentKey: string,
+    itemKey: string,
+    qText: Map<string, string> | (StyledTextComponentProp | DateDisplayComponentProp)[],
+    condition: Expression,
+    isRequired?: boolean) {
+    super(parentKey, itemKey);
     this.isRequired = isRequired;
     this.condition = condition;
+    this.qText = qText;
   }
 
   buildItem() {
@@ -389,9 +449,7 @@ class ProtectionUsage extends Item {
       itemKey: this.itemKey,
       isRequired: this.isRequired,
       condition: this.condition,
-      questionText: new Map([
-        ["en", "With how many of the reported contacts did you use a sort of protection (e.g. face mask or face shield)?"],
-      ]),
+      questionText: this.qText,
       responseOptions: [
         {
           key: '0', role: 'option',
