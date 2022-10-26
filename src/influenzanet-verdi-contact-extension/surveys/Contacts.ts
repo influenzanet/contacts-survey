@@ -11,8 +11,11 @@ class ContactsDef extends SurveyDefinition {
   Q1: Q1;
   Q2: Q2;
   ContactMatrixForHome: ContaxtMatricWithoutGender;
+  ProtectionUsageForHome: ProtectionUsage;
+
   ContactMatrixForWork: ContaxtMatricWithoutGender;
   ProtectionUsageForWork: ProtectionUsage;
+
   ContactMatrixForLeisure: ProtectionUsage;
   ProtectionUsageForLeisure: ProtectionUsage;
 
@@ -38,11 +41,19 @@ class ContactsDef extends SurveyDefinition {
     this.Q1 = new Q1(this.key, isRequired);
     this.Q2 = new Q2(this.key, SurveyEngine.singleChoice.any(this.Q1.key, this.Q1.optionKeys.yes), isRequired);
 
+    const conditionForHome = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.home);
     this.ContactMatrixForHome = new ContaxtMatricWithoutGender(
       this.key,
       'ContactsHome',
       new Map([['en', 'Contacts at home']]),
-      SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.home),
+      conditionForHome,
+      isRequired
+    );
+    this.ProtectionUsageForHome = new ProtectionUsage(
+      this.key,
+      'ProtectionHome',
+      new Map([['en', 'Did you use a sort of protection at home at any time (e.g. face mask or face shield)?']]),
+      conditionForHome,
       isRequired
     );
 
@@ -58,7 +69,7 @@ class ContactsDef extends SurveyDefinition {
     this.ProtectionUsageForWork = new ProtectionUsage(
       this.key,
       'ProtectionWork',
-      new Map([['en', 'With how many of the reported contacts did you use a sort of protection during these work or school activites (e.g. face mask or face shield)?']]),
+      new Map([['en', 'Did you use a sort of protection during these work or school activites at any time (e.g. face mask or face shield)?']]),
       conditionForWork,
       isRequired
     );
@@ -75,7 +86,7 @@ class ContactsDef extends SurveyDefinition {
     this.ProtectionUsageForLeisure = new ProtectionUsage(
       this.key,
       'ProtectionLeisure',
-      new Map([['en', 'With how many of the reported contacts did you use a sort of protection during these leisure and other activites (e.g. face mask or face shield)?']]),
+      new Map([['en', 'Did you use a sort of protection during these leisure and other activites at any time (e.g. face mask or face shield)?']]),
       conditionForLeisure,
       isRequired
     );
@@ -120,9 +131,13 @@ class ContactsDef extends SurveyDefinition {
     this.addItem(this.Infos.get());
     this.addItem(this.Q1.get());
     this.addItem(this.Q2.get());
+    this.addPageBreak();
     this.addItem(this.ContactMatrixForHome.get());
+    this.addItem(this.ProtectionUsageForHome.get());
+    this.addPageBreak();
     this.addItem(this.ContactMatrixForWork.get());
     this.addItem(this.ProtectionUsageForWork.get());
+    this.addPageBreak();
     this.addItem(this.ContactMatrixForLeisure.get());
     this.addItem(this.ProtectionUsageForLeisure.get());
   }
@@ -156,6 +171,11 @@ that you have had a physical contact with someone: if you have touched someone (
 ##### **Definition of household**
 
 Members of your household are people you live with on a daily basis. (for example, also co-residents)
+
+##### **Definition of indoor/outdoor**
+
+Indoor area includes an area in a building or other structure, whether or not temporary, which has a roof, ceiling or other top covering, but does not include an area with at least 2 sides open to the weather.
+If a contact has significant both indoor and outdoor parts, it should be considered as "indoor".
 
 ##### **Other instructions**
 
@@ -454,31 +474,19 @@ class ProtectionUsage extends Item {
         {
           key: '0', role: 'option',
           content: new Map([
-            ["en", "None of them"],
+            ["en", "No"],
           ])
         },
         {
           key: '1', role: 'option',
           content: new Map([
-            ["en", "Less than half"],
+            ["en", "Yes"],
           ])
         },
         {
           key: '2', role: 'option',
           content: new Map([
-            ["en", "Half of them"],
-          ])
-        },
-        {
-          key: '3', role: 'option',
-          content: new Map([
-            ["en", "More than half"],
-          ])
-        },
-        {
-          key: '4', role: 'option',
-          content: new Map([
-            ["en", "All of them"],
+            ["en", "I don't remember"],
           ])
         },
       ]
