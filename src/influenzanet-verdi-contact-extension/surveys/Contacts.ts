@@ -33,6 +33,9 @@ class ContactsDef extends SurveyDefinition {
       ])
     });
 
+    this.editor.setAvailableFor('public');
+    this.editor.setRequireLoginBeforeSubmission(false);
+
     const isRequired = true;
 
     // Initialize/Configure questions here:
