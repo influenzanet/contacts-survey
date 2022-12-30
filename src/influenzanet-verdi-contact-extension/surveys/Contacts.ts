@@ -18,6 +18,7 @@ class ContactsDef extends SurveyDefinition {
 
   ContactMatrixForLeisure: ProtectionUsage;
   ProtectionUsageForLeisure: ProtectionUsage;
+  QFragile: QFragile;
 
   constructor() {
     super({
@@ -48,7 +49,7 @@ class ContactsDef extends SurveyDefinition {
     this.ContactMatrixForHome = new ContaxtMatricWithoutGender(
       this.key,
       'ContactsHome',
-      new Map([['en', 'Contacts at home']]),
+      new Map([['en', 'Indicate the number of contacts at home (per age category and indoor/outdoor)']]),
       conditionForHome,
       isRequired
     );
@@ -65,7 +66,7 @@ class ContactsDef extends SurveyDefinition {
     this.ContactMatrixForWork = new ContaxtMatricWithoutGender(
       this.key,
       'ContactsWork',
-      new Map([['en', 'Contacts at work']]),
+      new Map([['en', 'Indicate the number of contacts at work (per age category and indoor/outdoor)']]),
       conditionForWork,
       isRequired
     );
@@ -82,7 +83,7 @@ class ContactsDef extends SurveyDefinition {
     this.ContactMatrixForLeisure = new ContaxtMatricWithoutGender(
       this.key,
       'ContactsOther',
-      new Map([['en', 'Contacts during leisure and other']]),
+      new Map([['en', 'Indicate the number of contacts during leisure and other (per age category and indoor/outdoor)']]),
       conditionForLeisure,
       isRequired
     );
@@ -93,6 +94,8 @@ class ContactsDef extends SurveyDefinition {
       conditionForLeisure,
       isRequired
     );
+
+    this.QFragile = new QFragile(this.key, isRequired)
 
 
     /// Prefill rules:
@@ -143,6 +146,8 @@ class ContactsDef extends SurveyDefinition {
     this.addPageBreak();
     this.addItem(this.ContactMatrixForLeisure.get());
     this.addItem(this.ProtectionUsageForLeisure.get());
+    this.addPageBreak();
+    this.addItem(this.QFragile.get());
   }
 }
 
@@ -163,26 +168,35 @@ class Infos extends Item {
         ComponentGenerators.markdown({
           content: new Map([
             ["en", `
-##### **Definition of a contact:**
+### Introduction
 
-that you have spoken to someone in his / her presence less than three meters away (telephone contact or contact via the internet does not count)
+The onward transmission of respiratory infections depend on with whom you talked, could have talked or whom you touched (presence less than three meter; contact by phone or internet doesn't count; physical contact = kiss, hug, shaking hand etc.)
 
-OR
+Because a lot of transmission happen when the symptoms are very mild, the contact you have every day (thus also when you are healthy) are very informative in predicting whom you might infect when you have an infection.
 
-that you have had a physical contact with someone: if you have touched someone (even if this was without having a conversation), this is also a contact (e.g. shaking someone's hand, giving a kiss, hugging, accidental contact during sports,…).
+Therefore, we study how people contact others.
 
-##### **Definition of household**
+Could you answer some questions about whom you contacted between 5 am yesterday morning and 5 am this morning?
 
-Members of your household are people you live with on a daily basis. (for example, also co-residents)
+In this we are not interested in your private life: we don't need to know if your contacts were conversational or physical, and we don't need to know the gender of the contacts.
 
-##### **Definition of indoor/outdoor**
+However, we do ask about the (possible) age-range of your contacts, the setting (household, work, school etc.) and whether they were indoor or outdoor.
 
-Indoor area includes an area in a building or other structure, whether or not temporary, which has a roof, ceiling or other top covering, but does not include an area with at least 2 sides open to the weather.
+In the questions we speak about two things which can be unclear:
+
+**Household**: all people you live with on a daily basis, and sleep under the same roof (for example also co-residents).
+
+**Indoor/outdoor**:  Indoor refers to areas in a building or other structure, whether or not temporary, which has a roof, ceiling or other top covering and has 3 or more sides protecting it from the weather. Thus, it does not include an area with at least 2 sides open to the weather.
+
 If a contact has significant both indoor and outdoor parts, it should be considered as "indoor".
 
-##### **Other instructions**
+To help the analysis we also categorised contacts. The possible categories/ locations and non-exhaustive list of example contacts is:
+- Home: your house (example of contact: people visiting **your** house,...).
+- Work: your working location (example of contact: customer, co-workers, ….). If you have multiple jobs, please include them all.
+- School: your school or university or higher education location (example of contacts: teacher, …)
+- Social activity: Every activity you planned to do with other people (example of contacts: person met at a bar or at the gym or in a house **different from yours**).
+- Other: everything not listed before (example of contacts: person met during commuting,...).
 
-A 'day' starts at 5 AM and ends the next day at 5 AM
 `
             ],
           ]),
@@ -568,7 +582,7 @@ class Q2 extends Item {
       isRequired: this.isRequired,
       condition: this.condition,
       questionText: new Map([
-        ["en", "Select location in which you had contacts"],
+        ["en", "Select the location(s) in which you had these contacts"],
       ]),
       responseOptions: [
         {
@@ -592,7 +606,7 @@ class Q2 extends Item {
         {
           key: this.optionKeys.leisure, role: 'option',
           content: new Map([
-            ["en", "Leisure"],
+            ["en", "Social activities"],
           ])
         },
         {
@@ -605,6 +619,62 @@ class Q2 extends Item {
     })
   }
 }
+
+
+class QFragile extends Item {
+  optionKeys = {
+    no: '0',
+  };
+
+  constructor(parentKey: string, isRequired?: boolean) {
+    super(parentKey, 'QFragile');
+    this.isRequired = isRequired;
+    // this.condition = condition;
+  }
+
+  buildItem() {
+    return SurveyItems.multipleChoice({
+      parentKey: this.parentKey,
+      itemKey: this.itemKey,
+      isRequired: this.isRequired,
+      condition: this.condition,
+      questionText: new Map([
+        ["en", "Did you visit an institute with (many) fragile people between yesterday 5am and 5 am today?"],
+      ]),
+      responseOptions: [
+        {
+          key: this.optionKeys.no, role: 'option',
+          content: new Map([
+            ["en", "No"],
+          ]),
+          disabled: SurveyEngine.multipleChoice.any(this.key, '1', '2', 'other')
+        },
+        {
+          key: '1', role: 'option',
+          content: new Map([
+            ["en", "Yes, a care home"],
+          ]),
+          disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
+        },
+        {
+          key: '2', role: 'option',
+          content: new Map([
+            ["en", "Yes, a hospital"],
+          ]),
+          disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
+        },
+        {
+          key: 'other', role: 'input',
+          content: new Map([
+            ["en", "Other: "],
+          ]),
+          disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
+        },
+      ]
+    })
+  }
+}
+
 
 
 export const Contacts = new ContactsDef();

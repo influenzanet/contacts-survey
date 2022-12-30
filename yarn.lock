@@ -138,12 +138,12 @@ builtin-modules@^3.3.0:
   resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-3.3.0.tgz#cae62812b89801e9656336e46223e030386be7b6"
   integrity sha512-zhaCDicdLuWN5UbN5IMnFqNMhNfo919sH85y2/ea+5Yg9TsTkeZxpL+JLbp6cgYFS4sRLp3YV4S6yDuqVWHYOw==
 
-case-editor-tools@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/case-editor-tools/-/case-editor-tools-1.2.2.tgz#a6072741283caff53a2fb9b7ffb076b1986c38cf"
-  integrity sha512-ihxtQpCK/KDozO0Z0Rp+RbTLCOI6LUEwo9zf5PritdQYQn8RT6husod5JDwsngluXmdtUilZMykb5BJ9X2EhJQ==
+case-editor-tools@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/case-editor-tools/-/case-editor-tools-1.3.0.tgz#f1e2c0e195148a8c41448e6fc06a6382bc7ac34c"
+  integrity sha512-Z1FmceH5iOWmOVj0828nI2TXvHCyMN8e+vQZnDKlI2t82o6nGtrq6yoKVpWryNgl/iwA81ZyMg8Uv27F3KZLAQ==
   dependencies:
-    survey-engine "^1.1.7"
+    survey-engine "^1.2.0"
 
 clean-stack@^2.0.0:
   version "2.2.0"
@@ -164,6 +164,11 @@ core-js@^3.1.3:
   version "3.25.3"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.25.3.tgz#cbc2be50b5ddfa7981837bd8c41639f27b166593"
   integrity sha512-y1hvKXmPHvm5B7w4ln1S4uc9eV/O5+iFExSRUimnvIph11uaizFR8LFMdONN8hG3P2pipUfX4Y/fR8rAEtcHcQ==
+
+date-fns@^2.29.3:
+  version "2.29.3"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
+  integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
 
 deepmerge@^4.2.2:
   version "4.2.2"
@@ -443,11 +448,6 @@ minimatch@^3.1.1:
   dependencies:
     brace-expansion "^1.1.7"
 
-moment@2.29.2:
-  version "2.29.2"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.2.tgz#00910c60b20843bcba52d37d58c628b47b1f20e4"
-  integrity sha512-UgzG4rvxYpN15jgCmVJwac49h9ly9NurikMWGPdVxm8GZD6XjkKPxDTjQQ43gtGgnV3X0cAyWDdP2Wexoquifg==
-
 once@^1.3.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
@@ -599,12 +599,12 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-survey-engine@^1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/survey-engine/-/survey-engine-1.1.7.tgz#4603a125f1c80eb1ca54f12b384f6ffd6011dbdf"
-  integrity sha512-tttSe2dX/ghpo7p1tQe20ROi3E2nOcg0YtwFXf5eQTAxdTyEntXciqcOoZJ26FVgYW19nfNv1O+rwi0rQAAOCw==
+survey-engine@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/survey-engine/-/survey-engine-1.2.0.tgz#01cc04929f4ccb139aa25614e61e042ae46009d2"
+  integrity sha512-vUgFRaWfr6FPOduMJN0AHICm6cPFuWcfN10TYakX+/A5dZ3SOPyRtPt2T9P/VDNR/bTbY74u+xlNjDnO4fpopQ==
   dependencies:
-    moment "2.29.2"
+    date-fns "^2.29.3"
 
 to-regex-range@^5.0.1:
   version "5.0.1"
