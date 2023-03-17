@@ -2,8 +2,23 @@ import { DateDisplayComponentProp, Item, StyledTextComponentProp, SurveyDefiniti
 import { SurveyEngine, SurveyItems } from "case-editor-tools/surveys";
 import { StudyEngine } from "case-editor-tools/expression-utils/studyEngineExpressions";
 import { surveyKeys } from "../constants";
-import { Expression } from "survey-engine/data_types";
+import { Expression, SurveySingleItem } from "survey-engine/data_types";
 import { ComponentGenerators } from 'case-editor-tools/surveys/utils/componentGenerators';
+
+const dropdownOptions = [
+  { key: '0', label: new Map([["en", "0"],]), },
+  { key: '1', label: new Map([["en", "1"],]), },
+  { key: '2', label: new Map([["en", "2"],]), },
+  { key: '3', label: new Map([["en", "3"],]), },
+  { key: '4', label: new Map([["en", "4"],]), },
+  { key: '5', label: new Map([["en", "5"],]), },
+  { key: '6', label: new Map([["en", "6"],]), },
+  { key: '7', label: new Map([["en", "7"],]), },
+  { key: '8', label: new Map([["en", "8"],]), },
+  { key: '9', label: new Map([["en", "9"],]), },
+  { key: '10', label: new Map([["en", "10"],]), },
+  { key: '10+', label: new Map([["en", "10+"],]), },
+];
 
 
 class ContactsDef extends SurveyDefinition {
@@ -24,10 +39,10 @@ class ContactsDef extends SurveyDefinition {
     super({
       surveyKey: surveyKeys.Contacts,
       name: new Map([
-        ["en", "Contacts survey"],
+        ["en", "Survey about your everyday social contacts"],
       ]),
       description: new Map([
-        ["en", "Survey about contacts."],
+        ["en", ""],
       ]),
       durationText: new Map([
         ["en", "1 minute"],
@@ -37,10 +52,11 @@ class ContactsDef extends SurveyDefinition {
     this.editor.setAvailableFor('public');
     this.editor.setRequireLoginBeforeSubmission(false);
 
-    const isRequired = true;
+    const isRequired = false;
 
     // Initialize/Configure questions here:
-    this.Infos = new Infos(this.key);
+    const helpURL = '<HELP_URL>';
+    this.Infos = new Infos(this.key, helpURL);
 
     this.Q1 = new Q1(this.key, isRequired);
     this.Q2 = new Q2(this.key, SurveyEngine.singleChoice.any(this.Q1.key, this.Q1.optionKeys.yes), isRequired);
@@ -49,7 +65,7 @@ class ContactsDef extends SurveyDefinition {
     this.ContactMatrixForHome = new ContaxtMatricWithoutGender(
       this.key,
       'ContactsHome',
-      new Map([['en', 'Indicate the number of contacts at home (per age category and indoor/outdoor)']]),
+      new Map([['en', 'Indicate the number of contacts at home (per age category and gender)']]),
       conditionForHome,
       isRequired
     );
@@ -66,7 +82,7 @@ class ContactsDef extends SurveyDefinition {
     this.ContactMatrixForWork = new ContaxtMatricWithoutGender(
       this.key,
       'ContactsWork',
-      new Map([['en', 'Indicate the number of contacts at work (per age category and indoor/outdoor)']]),
+      new Map([['en', 'Indicate the number of contacts at work (per age category and gender)']]),
       conditionForWork,
       isRequired
     );
@@ -83,7 +99,7 @@ class ContactsDef extends SurveyDefinition {
     this.ContactMatrixForLeisure = new ContaxtMatricWithoutGender(
       this.key,
       'ContactsOther',
-      new Map([['en', 'Indicate the number of contacts during leisure and other (per age category and indoor/outdoor)']]),
+      new Map([['en', 'Indicate the number of contacts during leisure and other (per age category and gender)']]),
       conditionForLeisure,
       isRequired
     );
@@ -139,13 +155,13 @@ class ContactsDef extends SurveyDefinition {
     this.addItem(this.Q2.get());
     this.addPageBreak();
     this.addItem(this.ContactMatrixForHome.get());
-    this.addItem(this.ProtectionUsageForHome.get());
+    // this.addItem(this.ProtectionUsageForHome.get());
     this.addPageBreak();
     this.addItem(this.ContactMatrixForWork.get());
-    this.addItem(this.ProtectionUsageForWork.get());
+    //this.addItem(this.ProtectionUsageForWork.get());
     this.addPageBreak();
     this.addItem(this.ContactMatrixForLeisure.get());
-    this.addItem(this.ProtectionUsageForLeisure.get());
+    //this.addItem(this.ProtectionUsageForLeisure.get());
     this.addPageBreak();
     this.addItem(this.QFragile.get());
   }
@@ -153,13 +169,15 @@ class ContactsDef extends SurveyDefinition {
 
 
 class Infos extends Item {
-  constructor(parentKey: string, condition?: Expression) {
-    super(parentKey, 'Info');
+  helpLink: string;
 
+  constructor(parentKey: string, linkToHelpPage: string, condition?: Expression) {
+    super(parentKey, 'Info');
+    this.helpLink = linkToHelpPage;
     this.condition = condition;
   }
 
-  buildItem() {
+  buildItem(): SurveySingleItem {
     return SurveyItems.display({
       parentKey: this.parentKey,
       itemKey: this.itemKey,
@@ -168,35 +186,11 @@ class Infos extends Item {
         ComponentGenerators.markdown({
           content: new Map([
             ["en", `
-### Introduction
+#### Survey about your everyday social contacts
 
-The onward transmission of respiratory infections depend on with whom you talked, could have talked or whom you touched (presence less than three meter; contact by phone or internet doesn't count; physical contact = kiss, hug, shaking hand etc.)
+Respiratory viruses can be transmitted through social contacts happening in our everyday life. We ask you to compile this survey to help us understand the patterns of social contacts among out participants.
 
-Because a lot of transmission happen when the symptoms are very mild, the contact you have every day (thus also when you are healthy) are very informative in predicting whom you might infect when you have an infection.
-
-Therefore, we study how people contact others.
-
-Could you answer some questions about whom you contacted between 5 am yesterday morning and 5 am this morning?
-
-In this we are not interested in your private life: we don't need to know if your contacts were conversational or physical, and we don't need to know the gender of the contacts.
-
-However, we do ask about the (possible) age-range of your contacts, the setting (household, work, school etc.) and whether they were indoor or outdoor.
-
-In the questions we speak about two things which can be unclear:
-
-**Household**: all people you live with on a daily basis, and sleep under the same roof (for example also co-residents).
-
-**Indoor/outdoor**:  Indoor refers to areas in a building or other structure, whether or not temporary, which has a roof, ceiling or other top covering and has 3 or more sides protecting it from the weather. Thus, it does not include an area with at least 2 sides open to the weather.
-
-If a contact has significant both indoor and outdoor parts, it should be considered as "indoor".
-
-To help the analysis we also categorised contacts. The possible categories/ locations and non-exhaustive list of example contacts is:
-- Home: your house (example of contact: people visiting **your** house,...).
-- Work: your working location (example of contact: customer, co-workers, ….). If you have multiple jobs, please include them all.
-- School: your school or university or higher education location (example of contacts: teacher, …)
-- Social activity: Every activity you planned to do with other people (example of contacts: person met at a bar or at the gym or in a house **different from yours**).
-- Other: everything not listed before (example of contacts: person met during commuting,...).
-
+Click [here](${this.helpLink}) to know more about what a social contact is.
 `
             ],
           ]),
@@ -326,14 +320,7 @@ class ContactMatrixWithGender extends Item {
         unselectedLabeL: new Map([
           ["en", "Select an option"],
         ]),
-        options: [
-          { key: '0', label: new Map([["en", "0"],]), },
-          { key: '1', label: new Map([["en", "1"],]), },
-          { key: '2', label: new Map([["en", "2"],]), },
-          { key: '3', label: new Map([["en", "3 - 4"],]), },
-          { key: '4', label: new Map([["en", "5 - 9"],]), },
-          { key: '5', label: new Map([["en", "9+"],]), },
-        ]
+        options: dropdownOptions,
       }
     })
   }
@@ -426,7 +413,7 @@ class ContaxtMatricWithoutGender extends Item {
     return rows;
   }
 
-  buildItem() {
+  buildItem(): SurveySingleItem {
     return SurveyItems.responsiveMatrix({
       parentKey: this.parentKey,
       itemKey: this.itemKey,
@@ -437,13 +424,13 @@ class ContaxtMatricWithoutGender extends Item {
       breakpoint: 'sm',
       columns: [
         {
-          key: 'i', label: new Map([
-            ["en", "Indoor"],
+          key: 'f', label: new Map([
+            ["en", "Female"],
           ]),
         },
         {
-          key: 'o', label: new Map([
-            ["en", "Outdoor"],
+          key: 'm', label: new Map([
+            ["en", "Male"],
           ]),
         }
       ],
@@ -452,14 +439,7 @@ class ContaxtMatricWithoutGender extends Item {
         unselectedLabeL: new Map([
           ["en", "Select an option"],
         ]),
-        options: [
-          { key: '0', label: new Map([["en", "0"],]), },
-          { key: '1', label: new Map([["en", "1"],]), },
-          { key: '2', label: new Map([["en", "2"],]), },
-          { key: '3', label: new Map([["en", "3 - 4"],]), },
-          { key: '4', label: new Map([["en", "5 - 9"],]), },
-          { key: '5', label: new Map([["en", "9+"],]), },
-        ]
+        options: dropdownOptions
       }
     })
   }
@@ -480,7 +460,7 @@ class ProtectionUsage extends Item {
     this.qText = qText;
   }
 
-  buildItem() {
+  buildItem(): SurveySingleItem {
     return SurveyItems.singleChoice({
       parentKey: this.parentKey,
       itemKey: this.itemKey,
@@ -524,17 +504,14 @@ class Q1 extends Item {
     this.isRequired = isRequired;
   }
 
-  buildItem() {
+  buildItem(): SurveySingleItem {
     return SurveyItems.singleChoice({
       parentKey: this.parentKey,
       itemKey: this.itemKey,
       isRequired: this.isRequired,
       condition: this.condition,
       questionText: new Map([
-        ["en", "Did you had any contacts yesterday?"],
-      ]),
-      questionSubText: new Map([
-        ["en", "Household member not included"],
+        ["en", "Did you have any social contact yesterday?"],
       ]),
       responseOptions: [
         {
@@ -575,14 +552,14 @@ class Q2 extends Item {
     this.condition = condition;
   }
 
-  buildItem() {
+  buildItem(): SurveySingleItem {
     return SurveyItems.multipleChoice({
       parentKey: this.parentKey,
       itemKey: this.itemKey,
       isRequired: this.isRequired,
       condition: this.condition,
       questionText: new Map([
-        ["en", "Select the location(s) in which you had these contacts"],
+        ["en", "Please select all the settings that apply"],
       ]),
       responseOptions: [
         {
@@ -632,7 +609,7 @@ class QFragile extends Item {
     // this.condition = condition;
   }
 
-  buildItem() {
+  buildItem(): SurveySingleItem {
     return SurveyItems.multipleChoice({
       parentKey: this.parentKey,
       itemKey: this.itemKey,
