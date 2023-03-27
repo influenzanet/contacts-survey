@@ -2,7 +2,7 @@ import { DateDisplayComponentProp, Item, StyledTextComponentProp, SurveyDefiniti
 import { SurveyEngine, SurveyItems } from "case-editor-tools/surveys";
 import { StudyEngine } from "case-editor-tools/expression-utils/studyEngineExpressions";
 import { surveyKeys } from "../constants";
-import { Expression, SurveySingleItem } from "survey-engine/data_types";
+import { Expression, SurveySingleItem, Validation } from "survey-engine/data_types";
 import { ComponentGenerators } from 'case-editor-tools/surveys/utils/componentGenerators';
 
 const dropdownOptions = [
@@ -25,13 +25,13 @@ class ContactsDef extends SurveyDefinition {
   Infos: Infos;
   Q1: Q1;
   Q2: Q2;
-  ContactMatrixForHome: ContaxtMatricWithoutGender;
+  ContactMatrixForHome: ContaxtMatrix;
   ProtectionUsageForHome: ProtectionUsage;
 
-  ContactMatrixForWork: ContaxtMatricWithoutGender;
+  ContactMatrixForWork: ContaxtMatrix;
   ProtectionUsageForWork: ProtectionUsage;
 
-  ContactMatrixForLeisure: ProtectionUsage;
+  ContactMatrixForLeisure: ContaxtMatrix;
   ProtectionUsageForLeisure: ProtectionUsage;
   QFragile: QFragile;
 
@@ -52,17 +52,16 @@ class ContactsDef extends SurveyDefinition {
     this.editor.setAvailableFor('public');
     this.editor.setRequireLoginBeforeSubmission(false);
 
-    const isRequired = false;
+    const isRequired = true;
 
     // Initialize/Configure questions here:
-    const helpURL = '<HELP_URL>';
-    this.Infos = new Infos(this.key, helpURL);
+    this.Infos = new Infos(this.key);
 
     this.Q1 = new Q1(this.key, isRequired);
     this.Q2 = new Q2(this.key, SurveyEngine.singleChoice.any(this.Q1.key, this.Q1.optionKeys.yes), isRequired);
 
     const conditionForHome = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.home);
-    this.ContactMatrixForHome = new ContaxtMatricWithoutGender(
+    this.ContactMatrixForHome = new ContaxtMatrix(
       this.key,
       'ContactsHome',
       new Map([['en', 'Indicate the number of contacts at home (per age category and gender)']]),
@@ -79,7 +78,7 @@ class ContactsDef extends SurveyDefinition {
 
     /// WORK
     const conditionForWork = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.work, this.Q2.optionKeys.school);
-    this.ContactMatrixForWork = new ContaxtMatricWithoutGender(
+    this.ContactMatrixForWork = new ContaxtMatrix(
       this.key,
       'ContactsWork',
       new Map([['en', 'Indicate the number of contacts at work (per age category and gender)']]),
@@ -96,7 +95,7 @@ class ContactsDef extends SurveyDefinition {
 
     /// LEISURE
     const conditionForLeisure = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.leisure, this.Q2.optionKeys.other);
-    this.ContactMatrixForLeisure = new ContaxtMatricWithoutGender(
+    this.ContactMatrixForLeisure = new ContaxtMatrix(
       this.key,
       'ContactsOther',
       new Map([['en', 'Indicate the number of contacts during leisure and other (per age category and gender)']]),
@@ -118,33 +117,26 @@ class ContactsDef extends SurveyDefinition {
 
     this.editor.setPrefillRules([
       /// HOME:
-      // for indoor:
-      ...['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12'].map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForHome.key, `rg.rm.${key}-i`, '0')
+      ...this.ContactMatrixForHome.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForHome.key, `rg.rm.${key}-${this.ContactMatrixForHome.columnInfos[0].key}`, '0')
       ),
-      // for outdoor:
-      ...['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12'].map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForHome.key, `rg.rm.${key}-o`, '0')
+      ...this.ContactMatrixForHome.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForHome.key, `rg.rm.${key}-${this.ContactMatrixForHome.columnInfos[1].key}`, '0')
       ),
       /// WORK:
-      // for indoor:
-      ...['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12'].map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForWork.key, `rg.rm.${key}-i`, '0')
+      ...this.ContactMatrixForWork.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForWork.key, `rg.rm.${key}-${this.ContactMatrixForWork.columnInfos[0].key}`, '0')
       ),
-      // for outdoor:
-      ...['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12'].map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForWork.key, `rg.rm.${key}-o`, '0')
+      ...this.ContactMatrixForHome.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForHome.key, `rg.rm.${key}-${this.ContactMatrixForWork.columnInfos[1].key}`, '0')
       ),
       /// OTHER:
-      // for indoor:
-      ...['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12'].map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForLeisure.key, `rg.rm.${key}-i`, '0')
+      ...this.ContactMatrixForLeisure.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForLeisure.key, `rg.rm.${key}-${this.ContactMatrixForLeisure.columnInfos[0].key}`, '0')
       ),
-      // for outdoor:
-      ...['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12'].map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForLeisure.key, `rg.rm.${key}-o`, '0')
+      ...this.ContactMatrixForLeisure.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForLeisure.key, `rg.rm.${key}-${this.ContactMatrixForLeisure.columnInfos[1].key}`, '0')
       ),
-
     ]);
   }
 
@@ -169,11 +161,10 @@ class ContactsDef extends SurveyDefinition {
 
 
 class Infos extends Item {
-  helpLink: string;
 
-  constructor(parentKey: string, linkToHelpPage: string, condition?: Expression) {
+
+  constructor(parentKey: string, condition?: Expression) {
     super(parentKey, 'Info');
-    this.helpLink = linkToHelpPage;
     this.condition = condition;
   }
 
@@ -190,7 +181,22 @@ class Infos extends Item {
 
 Respiratory viruses can be transmitted through social contacts happening in our everyday life. We ask you to compile this survey to help us understand the patterns of social contacts among out participants.
 
-Click [here](${this.helpLink}) to know more about what a social contact is.
+The onward transmission of respiratory infections depend on with whom you talked, could have talked or whom you touched. A contact is defined as the co-presence and interaction (even a physical one) with another individual at a distance of less than three meter. We are not interested in contacts by phone or in the internet doesn't count but we are interested in physical contact, that is kiss, hug, shaking hands etc.)
+
+**Why is this important?**
+
+Because a lot of transmission happens when the symptoms are very mild, the contact you have every day (thus also when you are healthy) are very informative in predicting whom you might infect when you have influenza-like illness. For this reason, we ask you to answer a few questions about whom you contacted between yesterday early morning (for example since when you woke up) and early this morning.
+
+We also ask about the (possible) age-range of your contacts, the setting (household, work, school etc.) and the gender of the people you were in contact with.
+
+Household is defined as all people you live with on a daily basis, and sleep under the same roof (for example also co-residents).
+
+To help the analysis we also categorised contacts according categories/ locations:
+
+- Home: your house (example of contact: your household members, people visiting your house,...).
+- Work: your working location (example of contact: customer, co-workers, ...). If you have multiple jobs, please include them all.
+- School: your school or university or higher education location (example of contacts: teacher, …)
+
 `
             ],
           ]),
@@ -201,134 +207,86 @@ Click [here](${this.helpLink}) to know more about what a social contact is.
   }
 }
 
-class ContactMatrixWithGender extends Item {
-  constructor(parentKey: string, itemKey: string, isRequired?: boolean) {
-    super(parentKey, itemKey);
-    this.isRequired = isRequired;
-  }
 
-  generateRows() {
-    const rowCategories = [
-      {
-        key: 'r1', role: 'category', label: new Map([
-          ["en", "0 - 3"],
-        ]),
-      },
-      {
-        key: 'r2', role: 'category', label: new Map([
-          ["en", "3 - 6"],
-        ]),
-      },
-      {
-        key: 'r3', role: 'category', label: new Map([
-          ["en", "7 - 12"],
-        ]),
-      },
-      {
-        key: 'r4', role: 'category', label: new Map([
-          ["en", "13 - 18"],
-        ]),
-      },
-      {
-        key: 'r5', role: 'category', label: new Map([
-          ["en", "19 - 29"],
-        ]),
-      },
-      {
-        key: 'r6', role: 'category', label: new Map([
-          ["en", "30 - 39"],
-        ]),
-      },
-      {
-        key: 'r7', role: 'category', label: new Map([
-          ["en", "40 - 49"],
-        ]),
-      },
-      {
-        key: 'r8', role: 'category', label: new Map([
-          ["en", "50 - 59"],
-        ]),
-      },
-      {
-        key: 'r9', role: 'category', label: new Map([
-          ["en", "60 - 69"],
-        ]),
-      },
-      {
-        key: 'r10', role: 'category', label: new Map([
-          ["en", "70 - 79"],
-        ]),
-      },
-      {
-        key: 'r11', role: 'category', label: new Map([
-          ["en", "80 - 89"],
-        ]),
-      },
-      {
-        key: 'r12', role: 'category', label: new Map([
-          ["en", "90+"],
-        ]),
-      },
-    ];
-
-    const rows: any[] = [];
-    rowCategories.forEach(row => {
-      rows.push(row);
-      rows.push({
-        key: `${row.key}m`, role: 'row', label: new Map([
-          ["en", "Male"],
-        ]),
-      });
-      rows.push({
-        key: `${row.key}f`, role: 'row', label: new Map([
-          ["en", "Female"],
-        ]),
-      });
-    })
-
-    return rows;
-  }
-
-  buildItem() {
-    return SurveyItems.responsiveMatrix({
-      parentKey: this.parentKey,
-      itemKey: this.itemKey,
-      isRequired: this.isRequired,
-      condition: this.condition,
-      questionText: new Map([
-        ["en", "TODO: question text"],
-      ]),
-      questionSubText: new Map([
-        ["en", "TODO: explanation"],
-      ]),
-      responseType: 'dropdown',
-      breakpoint: 'sm',
-      columns: [
-        {
-          key: 'i', label: new Map([
-            ["en", "Indoor"],
-          ]),
-        },
-        {
-          key: 'o', label: new Map([
-            ["en", "Outdoor"],
-          ]),
-        }
-      ],
-      rows: this.generateRows(),
-      dropdownConfig: {
-        unselectedLabeL: new Map([
-          ["en", "Select an option"],
-        ]),
-        options: dropdownOptions,
-      }
-    })
-  }
-}
-
-
-class ContaxtMatricWithoutGender extends Item {
+class ContaxtMatrix extends Item {
   qText: Map<string, string> | (StyledTextComponentProp | DateDisplayComponentProp)[];
+
+  rowInfos: Array<{ key: string, label: Map<string, string> }> = [
+    {
+      key: 'r1', label: new Map([
+        ["en", "0 - 3"],
+      ]),
+    },
+    {
+      key: 'r2', label: new Map([
+        ["en", "3 - 6"],
+      ]),
+    },
+    {
+      key: 'r3', label: new Map([
+        ["en", "7 - 12"],
+      ]),
+    },
+    {
+      key: 'r4', label: new Map([
+        ["en", "13 - 18"],
+      ]),
+    },
+    {
+      key: 'r5', label: new Map([
+        ["en", "19 - 29"],
+      ]),
+    },
+    {
+      key: 'r6', label: new Map([
+        ["en", "30 - 39"],
+      ]),
+    },
+    {
+      key: 'r7', label: new Map([
+        ["en", "40 - 49"],
+      ]),
+    },
+    {
+      key: 'r8', label: new Map([
+        ["en", "50 - 59"],
+
+      ]),
+    },
+    {
+      key: 'r9', label: new Map([
+        ["en", "60 - 69"],
+      ]),
+    },
+    {
+      key: 'r10', label: new Map([
+        ["en", "70 - 79"],
+      ]),
+    },
+    {
+      key: 'r11', label: new Map([
+        ["en", "80 - 89"],
+      ]),
+    },
+    {
+      key: 'r12', label: new Map([
+        ["en", "90+"],
+      ]),
+    },
+  ];
+
+  columnInfos: Array<{ key: string, label: Map<string, string> }> = [
+    {
+      key: 'f', label: new Map([
+        ["en", "Female"],
+      ]),
+    },
+    {
+      key: 'm', label: new Map([
+        ["en", "Male"],
+      ]),
+    }
+  ];
 
   constructor(parentKey: string,
     itemKey: string,
@@ -342,68 +300,11 @@ class ContaxtMatricWithoutGender extends Item {
   }
 
   generateRows() {
-    const rowCategories = [
-      {
-        key: 'r1', role: 'row', label: new Map([
-          ["en", "0 - 3"],
-        ]),
-      },
-      {
-        key: 'r2', role: 'row', label: new Map([
-          ["en", "3 - 6"],
-        ]),
-      },
-      {
-        key: 'r3', role: 'row', label: new Map([
-          ["en", "7 - 12"],
-        ]),
-      },
-      {
-        key: 'r4', role: 'row', label: new Map([
-          ["en", "13 - 18"],
-        ]),
-      },
-      {
-        key: 'r5', role: 'row', label: new Map([
-          ["en", "19 - 29"],
-        ]),
-      },
-      {
-        key: 'r6', role: 'row', label: new Map([
-          ["en", "30 - 39"],
-        ]),
-      },
-      {
-        key: 'r7', role: 'row', label: new Map([
-          ["en", "40 - 49"],
-        ]),
-      },
-      {
-        key: 'r8', role: 'row', label: new Map([
-          ["en", "50 - 59"],
-        ]),
-      },
-      {
-        key: 'r9', role: 'row', label: new Map([
-          ["en", "60 - 69"],
-        ]),
-      },
-      {
-        key: 'r10', role: 'row', label: new Map([
-          ["en", "70 - 79"],
-        ]),
-      },
-      {
-        key: 'r11', role: 'row', label: new Map([
-          ["en", "80 - 89"],
-        ]),
-      },
-      {
-        key: 'r12', role: 'row', label: new Map([
-          ["en", "90+"],
-        ]),
-      },
-    ];
+    const rowCategories = this.rowInfos.map(row => {
+      return {
+        key: row.key, role: 'row', label: row.label,
+      }
+    });
 
     const rows: any[] = [];
     rowCategories.forEach(row => {
@@ -411,6 +312,34 @@ class ContaxtMatricWithoutGender extends Item {
     })
 
     return rows;
+  }
+
+  validationRules(): Validation[] {
+    return [
+      {
+        key: 'v1',
+        type: 'hard',
+        // at least one value is not 0
+        rule: SurveyEngine.logic.or(
+          ...this.rowInfos.map(row => {
+            return SurveyEngine.logic.not(
+              SurveyEngine.compare.eq(
+                SurveyEngine.getResponseValueAsStr(this.key, `rg.rm.${row.key}-${this.columnInfos[0].key}`),
+                '0'
+              )
+            )
+          }),
+          ...this.rowInfos.map(row => {
+            return SurveyEngine.logic.not(
+              SurveyEngine.compare.eq(
+                SurveyEngine.getResponseValueAsStr(this.key, `rg.rm.${row.key}-${this.columnInfos[1].key}`),
+                '0'
+              )
+            )
+          })
+        )
+      }
+    ];
   }
 
   buildItem(): SurveySingleItem {
@@ -422,25 +351,15 @@ class ContaxtMatricWithoutGender extends Item {
       questionText: this.qText,
       responseType: 'dropdown',
       breakpoint: 'sm',
-      columns: [
-        {
-          key: 'f', label: new Map([
-            ["en", "Female"],
-          ]),
-        },
-        {
-          key: 'm', label: new Map([
-            ["en", "Male"],
-          ]),
-        }
-      ],
+      columns: this.columnInfos,
       rows: this.generateRows(),
       dropdownConfig: {
         unselectedLabeL: new Map([
           ["en", "Select an option"],
         ]),
         options: dropdownOptions
-      }
+      },
+      customValidations: this.validationRules(),
     })
   }
 }
