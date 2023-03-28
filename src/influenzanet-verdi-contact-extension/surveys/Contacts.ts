@@ -177,27 +177,43 @@ class Infos extends Item {
         ComponentGenerators.markdown({
           content: new Map([
             ["en", `
-#### Survey about your everyday social contacts
+### What is a contact
 
-Respiratory viruses can be transmitted through social contacts happening in our everyday life. We ask you to compile this survey to help us understand the patterns of social contacts among out participants.
+The onward transmission of respiratory infections depend on with whom you
+talked, could have talked or whom you touched. A contact is defined as the
+co-presence and interaction (even a physical one) with another individual at a
+distance of less than three meter. We are not interested in contacts by phone or
+in the internet doesn't count but we are interested in physical contact, that is
+kiss, hug, shaking hands etc.)
 
-The onward transmission of respiratory infections depend on with whom you talked, could have talked or whom you touched. A contact is defined as the co-presence and interaction (even a physical one) with another individual at a distance of less than three meter. We are not interested in contacts by phone or in the internet doesn't count but we are interested in physical contact, that is kiss, hug, shaking hands etc.)
+Why is this important? Because a lot of transmission happens when the symptoms
+are very mild, the contact you have every day (thus also when you are healthy)
+are very informative in predicting whom you might infect when you have
+influenza-like illness. For this reason, we ask you to answer a few questions
+about whom you contacted between yesterday early morning (for example since when
+you woke up) and early this morning.
 
-**Why is this important?**
+We also ask about the (possible) age-range of your contacts, the setting
+(household, work, school etc.) and the gender of the people you were in contact
+with.
 
-Because a lot of transmission happens when the symptoms are very mild, the contact you have every day (thus also when you are healthy) are very informative in predicting whom you might infect when you have influenza-like illness. For this reason, we ask you to answer a few questions about whom you contacted between yesterday early morning (for example since when you woke up) and early this morning.
+**Household is defined as** all people you live with on a daily basis, and sleep
+under the same roof (for example also co-residents).
 
-We also ask about the (possible) age-range of your contacts, the setting (household, work, school etc.) and the gender of the people you were in contact with.
+To help the analysis we also categorised contacts according categories/
+locations:
 
-Household is defined as all people you live with on a daily basis, and sleep under the same roof (for example also co-residents).
-
-To help the analysis we also categorised contacts according categories/ locations:
-
-- Home: your house (example of contact: your household members, people visiting your house,...).
-- Work: your working location (example of contact: customer, co-workers, ...). If you have multiple jobs, please include them all.
-- School: your school or university or higher education location (example of contacts: teacher, …)
-
-`
+- Home: your house (example of contact: your household members, people visiting
+  **your** house,...).
+- Work: your working location (example of contact:
+  customer, co-workers, ….). If you have multiple jobs, please include them all.
+- School: your school or university or higher education location (example of
+  contacts: teacher, …)
+- Social activity: Every activity you planned to do with
+  other people (example of contacts: person met at a bar or at the gym or in a
+  house **different from yours**).
+- Other: everything not listed before (example
+  of contacts: person met during commuting,...).`
             ],
           ]),
           className: ''
