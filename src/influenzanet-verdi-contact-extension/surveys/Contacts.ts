@@ -26,13 +26,9 @@ class ContactsDef extends SurveyDefinition {
   Q1: Q1;
   Q2: Q2;
   ContactMatrixForHome: ContaxtMatrix;
-  ProtectionUsageForHome: ProtectionUsage;
-
   ContactMatrixForWork: ContaxtMatrix;
-  ProtectionUsageForWork: ProtectionUsage;
-
   ContactMatrixForLeisure: ContaxtMatrix;
-  ProtectionUsageForLeisure: ProtectionUsage;
+  ContactMatrixForOther: ContaxtMatrix;
   QFragile: QFragile;
 
   constructor() {
@@ -68,13 +64,6 @@ class ContactsDef extends SurveyDefinition {
       conditionForHome,
       isRequired
     );
-    this.ProtectionUsageForHome = new ProtectionUsage(
-      this.key,
-      'ProtectionHome',
-      new Map([['en', 'Did you use a sort of protection at home at any time (e.g. face mask or face shield)?']]),
-      conditionForHome,
-      isRequired
-    );
 
     /// WORK
     const conditionForWork = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.work, this.Q2.optionKeys.school);
@@ -85,28 +74,24 @@ class ContactsDef extends SurveyDefinition {
       conditionForWork,
       isRequired
     );
-    this.ProtectionUsageForWork = new ProtectionUsage(
+
+    /// LEISURE
+    const conditionForLeisure = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.leisure);
+    this.ContactMatrixForLeisure = new ContaxtMatrix(
       this.key,
-      'ProtectionWork',
-      new Map([['en', 'Did you use a sort of protection during these work or school activites at any time (e.g. face mask or face shield)?']]),
-      conditionForWork,
+      'ContactsLeisure',
+      new Map([['en', 'Indicate the number of contacts during leisure (per age category and gender)']]),
+      conditionForLeisure,
       isRequired
     );
 
-    /// LEISURE
-    const conditionForLeisure = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.leisure, this.Q2.optionKeys.other);
-    this.ContactMatrixForLeisure = new ContaxtMatrix(
+    /// OTHER
+    const conditionForOther = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.other);
+    this.ContactMatrixForOther = new ContaxtMatrix(
       this.key,
       'ContactsOther',
-      new Map([['en', 'Indicate the number of contacts during leisure and other (per age category and gender)']]),
-      conditionForLeisure,
-      isRequired
-    );
-    this.ProtectionUsageForLeisure = new ProtectionUsage(
-      this.key,
-      'ProtectionLeisure',
-      new Map([['en', 'Did you use a sort of protection during these leisure and other activites at any time (e.g. face mask or face shield)?']]),
-      conditionForLeisure,
+      new Map([['en', 'Indicate the number of contacts during other activities (per age category and gender)']]),
+      conditionForOther,
       isRequired
     );
 
@@ -127,15 +112,22 @@ class ContactsDef extends SurveyDefinition {
       ...this.ContactMatrixForWork.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
         StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForWork.key, `rg.rm.${key}-${this.ContactMatrixForWork.columnInfos[0].key}`, '0')
       ),
-      ...this.ContactMatrixForHome.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
+      ...this.ContactMatrixForWork.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
         StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForWork.key, `rg.rm.${key}-${this.ContactMatrixForWork.columnInfos[1].key}`, '0')
       ),
-      /// OTHER:
+      /// LEISURE:
       ...this.ContactMatrixForLeisure.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
         StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForLeisure.key, `rg.rm.${key}-${this.ContactMatrixForLeisure.columnInfos[0].key}`, '0')
       ),
       ...this.ContactMatrixForLeisure.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
         StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForLeisure.key, `rg.rm.${key}-${this.ContactMatrixForLeisure.columnInfos[1].key}`, '0')
+      ),
+      /// OTHER:
+      ...this.ContactMatrixForOther.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForOther.key, `rg.rm.${key}-${this.ContactMatrixForOther.columnInfos[0].key}`, '0')
+      ),
+      ...this.ContactMatrixForOther.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForOther.key, `rg.rm.${key}-${this.ContactMatrixForOther.columnInfos[1].key}`, '0')
       ),
     ]);
   }
@@ -147,13 +139,12 @@ class ContactsDef extends SurveyDefinition {
     this.addItem(this.Q2.get());
     this.addPageBreak();
     this.addItem(this.ContactMatrixForHome.get());
-    // this.addItem(this.ProtectionUsageForHome.get());
     this.addPageBreak();
     this.addItem(this.ContactMatrixForWork.get());
-    //this.addItem(this.ProtectionUsageForWork.get());
     this.addPageBreak();
     this.addItem(this.ContactMatrixForLeisure.get());
-    //this.addItem(this.ProtectionUsageForLeisure.get());
+    this.addPageBreak();
+    this.addItem(this.ContactMatrixForOther.get());
     this.addPageBreak();
     this.addItem(this.QFragile.get());
   }
@@ -191,7 +182,7 @@ are very mild, the contact you have every day (thus also when you are healthy)
 are very informative in predicting whom you might infect when you have
 influenza-like illness. For this reason, we ask you to answer a few questions
 about whom you contacted between yesterday early morning (for example since when
-you woke up) and early this morning.
+you woke up) and until the same hour the next day.
 
 We also ask about the (possible) age-range of your contacts, the setting
 (household, work, school etc.) and the gender of the people you were in contact
