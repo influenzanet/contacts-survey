@@ -200,7 +200,7 @@ locations:
   customer, co-workers, ….). If you have multiple jobs, please include them all.
 - School: your school or university or higher education location (example of
   contacts: teacher, …)
-- Social activity: Every activity you planned to do with
+- Leisure: Every activity you planned to do with
   other people (example of contacts: person met at a bar or at the gym or in a
   house **different from yours**).
 - Other: everything not listed before (example
@@ -509,7 +509,7 @@ class Q2 extends Item {
         {
           key: this.optionKeys.leisure, role: 'option',
           content: new Map([
-            ["en", "Social activities"],
+            ["en", "Leisure"],
           ])
         },
         {
