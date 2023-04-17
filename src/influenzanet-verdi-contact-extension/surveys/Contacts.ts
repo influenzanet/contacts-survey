@@ -25,10 +25,10 @@ class ContactsDef extends SurveyDefinition {
   Infos: Infos;
   Q1: Q1;
   Q2: Q2;
-  ContactMatrixForHome: ContaxtMatrix;
-  ContactMatrixForWork: ContaxtMatrix;
-  ContactMatrixForLeisure: ContaxtMatrix;
-  ContactMatrixForOther: ContaxtMatrix;
+  ContactMatrixForHome: ContactMatrix;
+  ContactMatrixForWork: ContactMatrix;
+  ContactMatrixForLeisure: ContactMatrix;
+  ContactMatrixForOther: ContactMatrix;
   QFragile: QFragile;
 
   constructor() {
@@ -57,7 +57,7 @@ class ContactsDef extends SurveyDefinition {
     this.Q2 = new Q2(this.key, SurveyEngine.singleChoice.any(this.Q1.key, this.Q1.optionKeys.yes), isRequired);
 
     const conditionForHome = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.home);
-    this.ContactMatrixForHome = new ContaxtMatrix(
+    this.ContactMatrixForHome = new ContactMatrix(
       this.key,
       'ContactsHome',
       new Map([['en', 'Indicate the number of contacts at home (per age category and gender)']]),
@@ -67,7 +67,7 @@ class ContactsDef extends SurveyDefinition {
 
     /// WORK
     const conditionForWork = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.work, this.Q2.optionKeys.school);
-    this.ContactMatrixForWork = new ContaxtMatrix(
+    this.ContactMatrixForWork = new ContactMatrix(
       this.key,
       'ContactsWork',
       new Map([['en', 'Indicate the number of contacts at work (per age category and gender)']]),
@@ -77,7 +77,7 @@ class ContactsDef extends SurveyDefinition {
 
     /// LEISURE
     const conditionForLeisure = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.leisure);
-    this.ContactMatrixForLeisure = new ContaxtMatrix(
+    this.ContactMatrixForLeisure = new ContactMatrix(
       this.key,
       'ContactsLeisure',
       new Map([['en', 'Indicate the number of contacts during leisure (per age category and gender)']]),
@@ -87,7 +87,7 @@ class ContactsDef extends SurveyDefinition {
 
     /// OTHER
     const conditionForOther = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.other);
-    this.ContactMatrixForOther = new ContaxtMatrix(
+    this.ContactMatrixForOther = new ContactMatrix(
       this.key,
       'ContactsOther',
       new Map([['en', 'Indicate the number of contacts during other activities (per age category and gender)']]),
@@ -215,7 +215,7 @@ locations:
 }
 
 
-class ContaxtMatrix extends Item {
+class ContactMatrix extends Item {
   qText: Map<string, string> | (StyledTextComponentProp | DateDisplayComponentProp)[];
 
   rowInfos: Array<{ key: string, label: Map<string, string> }> = [
