@@ -27,6 +27,7 @@ class ContactsDef extends SurveyDefinition {
   Q2: Q2;
   ContactMatrixForHome: ContactMatrix;
   ContactMatrixForWork: ContactMatrix;
+  ContactMatrixForSchool: ContactMatrix;
   ContactMatrixForLeisure: ContactMatrix;
   ContactMatrixForOther: ContactMatrix;
   QFragile: QFragile;
@@ -48,7 +49,7 @@ class ContactsDef extends SurveyDefinition {
     this.editor.setAvailableFor('public');
     this.editor.setRequireLoginBeforeSubmission(false);
 
-    const isRequired = true;
+    const isRequired = false;
 
     // Initialize/Configure questions here:
     this.Infos = new Infos(this.key);
@@ -66,12 +67,22 @@ class ContactsDef extends SurveyDefinition {
     );
 
     /// WORK
-    const conditionForWork = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.work, this.Q2.optionKeys.school);
+    const conditionForWork = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.work);
     this.ContactMatrixForWork = new ContactMatrix(
       this.key,
       'ContactsWork',
       new Map([['en', 'Indicate the number of contacts at work (per age category and gender)']]),
       conditionForWork,
+      isRequired
+    );
+
+    /// SCHOOL
+    const conditionForSchool = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.school);
+    this.ContactMatrixForSchool = new ContactMatrix(
+      this.key,
+      'ContactsSchool',
+      new Map([['en', 'Indicate the number of contacts at school (per age category and gender)']]),
+      conditionForSchool,
       isRequired
     );
 
@@ -115,6 +126,13 @@ class ContactsDef extends SurveyDefinition {
       ...this.ContactMatrixForWork.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
         StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForWork.key, `rg.rm.${key}-${this.ContactMatrixForWork.columnInfos[1].key}`, '0')
       ),
+      /// SCHOOL:
+      ...this.ContactMatrixForSchool.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForSchool.key, `rg.rm.${key}-${this.ContactMatrixForSchool.columnInfos[0].key}`, '0')
+      ),
+      ...this.ContactMatrixForSchool.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
+        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForSchool.key, `rg.rm.${key}-${this.ContactMatrixForSchool.columnInfos[1].key}`, '0')
+      ),
       /// LEISURE:
       ...this.ContactMatrixForLeisure.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
         StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForLeisure.key, `rg.rm.${key}-${this.ContactMatrixForLeisure.columnInfos[0].key}`, '0')
@@ -141,6 +159,8 @@ class ContactsDef extends SurveyDefinition {
     this.addItem(this.ContactMatrixForHome.get());
     this.addPageBreak();
     this.addItem(this.ContactMatrixForWork.get());
+    this.addPageBreak();
+    this.addItem(this.ContactMatrixForSchool.get());
     this.addPageBreak();
     this.addItem(this.ContactMatrixForLeisure.get());
     this.addPageBreak();
