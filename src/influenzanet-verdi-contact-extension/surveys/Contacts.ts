@@ -188,43 +188,56 @@ class Infos extends Item {
         ComponentGenerators.markdown({
           content: new Map([
             ["en", `
-### What is a contact
+The onward transmission of respiratory infections depends on with whom
+you talked, could have talked or whom you touched, actions we refer to
+as a *contact*.
 
-The onward transmission of respiratory infections depend on with whom you
-talked, could have talked or whom you touched. A contact is defined as the
-co-presence and interaction (even a physical one) with another individual at a
-distance of less than three meter. We are not interested in contacts by phone or
-in the internet doesn't count but we are interested in physical contact, that is
-kiss, hug, shaking hands etc.)
+### What is a contact?
 
-Why is this important? Because a lot of transmission happens when the symptoms
-are very mild, the contact you have every day (thus also when you are healthy)
-are very informative in predicting whom you might infect when you have
-influenza-like illness. For this reason, we ask you to answer a few questions
-about whom you contacted between yesterday early morning (for example since when
-you woke up) and until the same hour the next day.
+A contact is defined as the co-presence and interaction with another
+individual at a distance of less than three metres. Examples could be
+people you have talked to or people that you had a physical contact
+with, even without exchanging words (for example shaking hands, etc). We
+are not interested in contacts by phone or over the internet.
+
+### Why is this important?
+
+Because a lot of transmission happens when the symptoms are very mild,
+the contact you have every day (thus also when you are healthy) are very
+informative in predicting whom you might infect when you have
+influenza-like illness. For this reason, we ask you to answer a few
+questions about whom you contacted between yesterday (since when you
+woke up) and until the same hour the next day.
 
 We also ask about the (possible) age-range of your contacts, the setting
-(household, work, school etc.) and the gender of the people you were in contact
-with.
+(household, work, school etc.) and the gender of the people you were in
+contact with.
 
-**Household is defined as** all people you live with on a daily basis, and sleep
-under the same roof (for example also co-residents).
+### How is the setting of a contact defined?
 
 To help the analysis we also categorised contacts according categories/
 locations:
 
-- Home: your house (example of contact: your household members, people visiting
-  **your** house,...).
-- Work: your working location (example of contact:
-  customer, co-workers, ….). If you have multiple jobs, please include them all.
-- School: your school or university or higher education location (example of
-  contacts: teacher, …)
-- Leisure: Every activity you planned to do with
-  other people (example of contacts: person met at a bar or at the gym or in a
-  house **different from yours**).
-- Other: everything not listed before (example
-  of contacts: person met during commuting,...).`
+-   Home: your house (example of contact: your household members, people
+    visiting **your** house,\...).
+
+-   Work: your working location (example of contact: customer,
+    co-workers, ...). If you have multiple jobs, please include them
+    all.
+
+-   School: your school or university or higher education location
+    (example of contacts: teacher, ...
+
+-   Leisure: Every activity you planned to do with other people (example
+    of contacts: person met at a bar or at the gym or in a house
+    **different from yours**).
+
+-   Other: everything not listed before (example of contacts: person met
+    during commuting,\...).
+
+Household members are defined as all people you live with on a daily
+basis with whom you sleep under the same roof (for example also
+co-residents).`
             ],
           ]),
           className: ''
