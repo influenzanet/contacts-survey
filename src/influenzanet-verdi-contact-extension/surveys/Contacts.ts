@@ -470,7 +470,7 @@ class Q1 extends Item {
       isRequired: this.isRequired,
       condition: this.condition,
       questionText: new Map([
-        ["en", "Did you have any social contact yesterday?"],
+        ["en", "Did you have any social contact between yesterday 5am and 5 am today?"],
       ]),
       responseOptions: [
         {
