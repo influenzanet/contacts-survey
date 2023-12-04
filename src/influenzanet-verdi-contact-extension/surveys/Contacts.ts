@@ -404,53 +404,6 @@ class ContactMatrix extends Item {
   }
 }
 
-
-class ProtectionUsage extends Item {
-  qText: Map<string, string> | (StyledTextComponentProp | DateDisplayComponentProp)[];
-
-  constructor(parentKey: string,
-    itemKey: string,
-    qText: Map<string, string> | (StyledTextComponentProp | DateDisplayComponentProp)[],
-    condition: Expression,
-    isRequired?: boolean) {
-    super(parentKey, itemKey);
-    this.isRequired = isRequired;
-    this.condition = condition;
-    this.qText = qText;
-  }
-
-  buildItem(): SurveySingleItem {
-    return SurveyItems.singleChoice({
-      parentKey: this.parentKey,
-      itemKey: this.itemKey,
-      isRequired: this.isRequired,
-      condition: this.condition,
-      questionText: this.qText,
-      responseOptions: [
-        {
-          key: '0', role: 'option',
-          content: new Map([
-            ["en", "No"],
-          ])
-        },
-        {
-          key: '1', role: 'option',
-          content: new Map([
-            ["en", "Yes"],
-          ])
-        },
-        {
-          key: '2', role: 'option',
-          content: new Map([
-            ["en", "I don't remember"],
-          ])
-        },
-      ]
-    })
-  }
-}
-
-
 class Q1 extends Item {
   optionKeys = {
     yes: '1',
