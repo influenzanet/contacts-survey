@@ -3,6 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import del from 'rollup-plugin-delete';
 import multiInput from 'rollup-plugin-multi-input';
+import json from "@rollup/plugin-json";
 
 const config = {
   input: [
@@ -21,7 +22,7 @@ const config = {
     multiInput({ relative: 'src/' }),
     resolve(),
     commonjs(),
-    // json(),
+    json(),
     typescript({
       tsconfig: './tsconfig.json',
       useTsconfigDeclarationDir: true
