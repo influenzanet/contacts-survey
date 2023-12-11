@@ -6,19 +6,19 @@ import { Expression, SurveySingleItem, Validation } from "survey-engine/data_typ
 import { ComponentGenerators } from 'case-editor-tools/surveys/utils/componentGenerators';
 
 const dropdownOptions = [
-  { key: '0', label: new Map([ [ "nl", "0" ], ]), },
-  { key: '1', label: new Map([ [ "nl", "1" ], ]), },
-  { key: '2', label: new Map([ [ "nl", "2" ], ]), },
-  { key: '3', label: new Map([ [ "nl", "3" ], ]), },
-  { key: '4', label: new Map([ [ "nl", "4" ], ]), },
-  { key: '5', label: new Map([ [ "nl", "5" ], ]), },
-  { key: '6', label: new Map([ [ "nl", "6" ], ]), },
-  { key: '8', label: new Map([ [ "nl", "7-9" ], ]), },
-  { key: '12', label: new Map([ [ "nl", "10-14" ], ]), },
-  { key: '17', label: new Map([ [ "nl", "15-19" ], ]), },
-  { key: '25', label: new Map([ [ "nl", "20-30" ], ]), },
-  { key: '40', label: new Map([ [ "nl", "31-49" ], ]), },
-  { key: '50+', label: new Map([ [ "nl", "50+" ], ]), },
+  { key: '0', label: new Map([ [ "en", "0" ], ]), },
+  { key: '1', label: new Map([ [ "en", "1" ], ]), },
+  { key: '2', label: new Map([ [ "en", "2" ], ]), },
+  { key: '3', label: new Map([ [ "en", "3" ], ]), },
+  { key: '4', label: new Map([ [ "en", "4" ], ]), },
+  { key: '5', label: new Map([ [ "en", "5" ], ]), },
+  { key: '6', label: new Map([ [ "en", "6" ], ]), },
+  { key: '8', label: new Map([ [ "en", "7-9" ], ]), },
+  { key: '12', label: new Map([ [ "en", "10-14" ], ]), },
+  { key: '17', label: new Map([ [ "en", "15-19" ], ]), },
+  { key: '25', label: new Map([ [ "en", "20-30" ], ]), },
+  { key: '40', label: new Map([ [ "en", "31-49" ], ]), },
+  { key: '50+', label: new Map([ [ "en", "50+" ], ]), },
 ];
 
 
@@ -261,62 +261,74 @@ class ContactMatrix extends Item {
   rowInfos: Array<{ key: string, label: Map<string, string> }> = [
     {
       key: 'r1', label: new Map([
+        ["en", "0 - 3"],
         [ "nl", "0-3 jaar" ],
       ]),
     },
     {
       key: 'r2', label: new Map([
+        ["en", "3 - 6"],
         [ "nl", "4-6 jaar" ],
       ]),
     },
     {
       key: 'r3', label: new Map([
+        ["en", "7 - 12"],
         [ "nl", "7-12 jaar" ],
       ]),
     },
     {
       key: 'r4', label: new Map([
+        ["en", "13 - 18"],
         [ "nl", "13-18 jaar" ],
       ]),
     },
     {
       key: 'r5', label: new Map([
+        ["en", "19 - 29"],
         [ "nl", "19-29 jaar" ],
       ]),
     },
     {
       key: 'r6', label: new Map([
+        ["en", "30 - 39"],
         [ "nl", "30-39 jaar" ],
       ]),
     },
     {
       key: 'r7', label: new Map([
+        ["en", "40 - 49"],
         [ "nl", "40-49 jaar" ],
       ]),
     },
     {
       key: 'r8', label: new Map([
+        ["en", "50 - 59"],
         [ "nl", "50-59 jaar" ],
 
       ]),
     },
     {
       key: 'r9', label: new Map([
+        ["en", "60 - 69"],
         [ "nl", "60-69 jaar" ],
       ]),
     },
     {
       key: 'r10', label: new Map([
+        ["en", "70 - 79"],
         [ "nl", "70-79 jaar" ],
       ]),
     },
     {
       key: 'r11', label: new Map([
+        ["en", "80 - 89"],
         [ "nl", "80-89 jaar" ],
       ]),
     },
     {
       key: 'r12', label: new Map([
+        ["en", "90+"],
         [ "nl", "90+ jaar" ],
       ]),
     },
@@ -325,11 +337,13 @@ class ContactMatrix extends Item {
   columnInfos: Array<{ key: string, label: Map<string, string> }> = [
     {
       key: 'f', label: new Map([
+        ["en", "Female"],
         [ "nl", "Vrouw" ],
       ]),
     },
     {
       key: 'm', label: new Map([
+        ["en", "Male"],
         [ "nl", "Man" ],
       ]),
     }
@@ -402,6 +416,7 @@ class ContactMatrix extends Item {
       rows: this.generateRows(),
       dropdownConfig: {
         unselectedLabeL: new Map([
+          ["en", "Select an option"],
           [ "nl", "Selecteer een optie" ],
         ]),
         options: dropdownOptions
@@ -430,24 +445,28 @@ class Q1 extends Item {
       isRequired: this.isRequired,
       condition: this.condition,
       questionText: new Map([
+        ["en", "Did you have any social contact between yesterday 5am and 5 am today?"],
         [ "nl", "Heb je gisteren met tenminste één ander persoon gesproken en/of aangeraakt, of ben je dichtbij een ander geweest in dezelfde kamer (binnen 3 meter)?" ],
       ]),
       responseOptions: [
         {
           key: this.optionKeys.yes, role: 'option',
           content: new Map([
+            ["en", "Yes"],
             [ "nl", "Ja, ik heb met tenminste één ander persoon gesproken en/of aangeraakt, of ben dichtbij een ander geweest in dezelfde kamer (binnen 3 meter)." ],
           ])
         },
         {
           key: this.optionKeys.no, role: 'option',
           content: new Map([
+            ["en", "No"],
             [ "nl", "Nee, ik heb met niemand gesproken en/of aangeraakt, en ik ben NIET dichtbij iemand anders geweest in dezelfde kamer (binnen 3 meter)." ],
           ])
         },
         {
           key: this.optionKeys.other, role: 'option',
           content: new Map([
+            ["en", "I don't want to say"],
             [ "nl", "Dat wil ik liever niet zeggen" ],
           ])
         }
@@ -478,36 +497,42 @@ class Q2 extends Item {
       isRequired: this.isRequired,
       condition: this.condition,
       questionText: new Map([
+        ["en", "Please select all the settings that apply"],
         [ "nl", "Selecteer alsjeblieft alle plekken waar je tenminste met één persoon hebt gesproken en/of aangeraakt, of dichtbij bent geweest in dezelfde kamer (binnen 3 meter)?" ],
       ]),
       responseOptions: [
         {
           key: this.optionKeys.home, role: 'option',
           content: new Map([
+            ["en", "Home"],
             [ "nl", "Thuis: je woning (bijv. gezinsleden, bezoekers)." ],
           ])
         },
         {
           key: this.optionKeys.work, role: 'option',
           content: new Map([
+            ["en", "Work"],
             [ "nl", "Werk: je werk (bijv. klanten, collega's)" ],
           ])
         },
         {
           key: this.optionKeys.school, role: 'option',
           content: new Map([
+            ["en", "School"],
             [ "nl", "School: onderwijsinstellingen (bijv. docenten, klasgenoten)" ],
           ])
         },
         {
           key: this.optionKeys.leisure, role: 'option',
           content: new Map([
+            ["en", "Leisure"],
             [ "nl", "Vrije tijd: geplande activiteiten met anderen (bijv. mensen die je ontmoet in een café, wandeling, sport(school) of bij iemand anders thuis)." ],
           ])
         },
         {
           key: this.optionKeys.other, role: 'option',
           content: new Map([
+            ["en", "Other"],
             [ "nl", "Overige activiteiten: alle locaties die hierboven niet worden genoemd (bijv. mensen die je ontmoet in het openbaar vervoer of winkel)." ],
           ])
         }
@@ -535,12 +560,14 @@ class QFragile extends Item {
       isRequired: this.isRequired,
       condition: this.condition,
       questionText: new Map([
+        ["en", "Did you visit an institute with (many) fragile people between yesterday 5am and 5 am today?"],
         [ "nl", "Heb je gisteren een instelling met (veel) kwetsbare mensen bezocht? (kwetsbare mensen zijn mensen met een extra hoog risico voor ernstige klachten bij een besmetting)" ],
       ]),
       responseOptions: [
         {
           key: this.optionKeys.no, role: 'option',
           content: new Map([
+            [ "en", "No" ],
             [ "nl", "Nee" ],
           ]),
           disabled: SurveyEngine.multipleChoice.any(this.key, '1', '2', '3', '4', '5', 'other')
@@ -548,6 +575,7 @@ class QFragile extends Item {
         {
           key: '1', role: 'option',
           content: new Map([
+            ["en", "Yes, a care home"],
             [ "nl", "Ja, een verpleeg- of verzorgingstehuis" ],
           ]),
           disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
@@ -562,6 +590,7 @@ class QFragile extends Item {
         {
           key: '2', role: 'option',
           content: new Map([
+            ["en", "Yes, a hospital"],
             [ "nl", "Ja, een ziekenhuis" ],
           ]),
           disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
@@ -584,6 +613,7 @@ class QFragile extends Item {
           key: 'other', role: 'input',
           style: [ { key: 'maxLength', value: '160' } ],
           content: new Map([
+            ["en", "Other: "],
             [ "nl", "Anders: " ],
           ]),
           disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
