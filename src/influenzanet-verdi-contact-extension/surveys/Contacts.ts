@@ -583,6 +583,7 @@ class QFragile extends Item {
         {
           key: '3', role: 'option',
           content: new Map([
+            [ "en", "TODO" ],
             [ "nl", "Ja, een instelling voor begeleid wonen" ],
           ]),
           disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
@@ -598,6 +599,7 @@ class QFragile extends Item {
         {
           key: '4', role: 'option',
           content: new Map([
+            [ "en", "TODO" ],
             [ "nl", "Ja, een zorginstelling anders dan een ziekenhuis (bijvoorbeeld huisarts, fysiotherapeut, vaccinatiekliniek)" ],
           ]),
           disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
@@ -605,6 +607,7 @@ class QFragile extends Item {
         {
           key: '5', role: 'option',
           content: new Map([
+            [ "en", "TODO" ],
             [ "nl", "Ja, een hospice" ],
           ]),
           disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
