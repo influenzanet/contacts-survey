@@ -1,26 +1,34 @@
-import { DateDisplayComponentProp, Item, StyledTextComponentProp, SurveyDefinition } from "case-editor-tools/surveys/types";
+import {
+  DateDisplayComponentProp,
+  Item,
+  StyledTextComponentProp,
+  SurveyDefinition,
+} from "case-editor-tools/surveys/types";
 import { SurveyEngine, SurveyItems } from "case-editor-tools/surveys";
 import { StudyEngine } from "case-editor-tools/expression-utils/studyEngineExpressions";
 import { surveyKeys } from "../constants";
-import { Expression, SurveySingleItem, Validation } from "survey-engine/data_types";
-import { ComponentGenerators } from 'case-editor-tools/surveys/utils/componentGenerators';
+import {
+  Expression,
+  SurveySingleItem,
+  Validation,
+} from "survey-engine/data_types";
+import { ComponentGenerators } from "case-editor-tools/surveys/utils/componentGenerators";
 
 const dropdownOptions = [
-  { key: '0', label: new Map([ [ "en", "0" ], ]), },
-  { key: '1', label: new Map([ [ "en", "1" ], ]), },
-  { key: '2', label: new Map([ [ "en", "2" ], ]), },
-  { key: '3', label: new Map([ [ "en", "3" ], ]), },
-  { key: '4', label: new Map([ [ "en", "4" ], ]), },
-  { key: '5', label: new Map([ [ "en", "5" ], ]), },
-  { key: '6', label: new Map([ [ "en", "6" ], ]), },
-  { key: '8', label: new Map([ [ "en", "7-9" ], ]), },
-  { key: '12', label: new Map([ [ "en", "10-14" ], ]), },
-  { key: '17', label: new Map([ [ "en", "15-19" ], ]), },
-  { key: '25', label: new Map([ [ "en", "20-30" ], ]), },
-  { key: '40', label: new Map([ [ "en", "31-49" ], ]), },
-  { key: '50+', label: new Map([ [ "en", "50+" ], ]), },
+  { key: "0", label: new Map([["en", "0"]]) },
+  { key: "1", label: new Map([["en", "1"]]) },
+  { key: "2", label: new Map([["en", "2"]]) },
+  { key: "3", label: new Map([["en", "3"]]) },
+  { key: "4", label: new Map([["en", "4"]]) },
+  { key: "5", label: new Map([["en", "5"]]) },
+  { key: "6", label: new Map([["en", "6"]]) },
+  { key: "8", label: new Map([["en", "7-9"]]) },
+  { key: "12", label: new Map([["en", "10-14"]]) },
+  { key: "17", label: new Map([["en", "15-19"]]) },
+  { key: "25", label: new Map([["en", "20-30"]]) },
+  { key: "40", label: new Map([["en", "31-49"]]) },
+  { key: "50+", label: new Map([["en", "50+"]]) },
 ];
-
 
 class ContactsDef extends SurveyDefinition {
   Infos: Infos;
@@ -36,18 +44,12 @@ class ContactsDef extends SurveyDefinition {
   constructor() {
     super({
       surveyKey: surveyKeys.Contacts,
-      name: new Map([
-        ["en", "Survey about your everyday social contacts"],
-      ]),
-      description: new Map([
-        ["en", ""],
-      ]),
-      durationText: new Map([
-        ["en", "1 minute"],
-      ])
+      name: new Map([["en", "Survey about your everyday social contacts"]]),
+      description: new Map([["en", ""]]),
+      durationText: new Map([["en", "1 minute"]]),
     });
 
-    this.editor.setAvailableFor('public');
+    this.editor.setAvailableFor("public");
     this.editor.setRequireLoginBeforeSubmission(false);
 
     const isRequired = false;
@@ -56,104 +58,241 @@ class ContactsDef extends SurveyDefinition {
     this.Infos = new Infos(this.key);
 
     this.Q1 = new Q1(this.key, isRequired);
-    this.Q2 = new Q2(this.key, SurveyEngine.singleChoice.any(this.Q1.key, this.Q1.optionKeys.yes), isRequired);
+    this.Q2 = new Q2(
+      this.key,
+      SurveyEngine.singleChoice.any(this.Q1.key, this.Q1.optionKeys.yes),
+      isRequired
+    );
 
-    const conditionForHome = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.home);
+    const conditionForHome = SurveyEngine.multipleChoice.any(
+      this.Q2.key,
+      this.Q2.optionKeys.home
+    );
     this.ContactMatrixForHome = new ContactMatrix(
       this.key,
-      'ContactsHome',
-      new Map([ [ 'en', 'Indicate the number of contacts at home (per age category and gender)' ],
-      [ 'nl', 'Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren THUIS hebt gesproken, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Thuis = je woning (bijv. gezinsleden, bezoekers)' ] ]),
+      "ContactsHome",
+      new Map([
+        [
+          "en",
+          "Indicate the number of contacts at home (per age category and gender)",
+        ],
+        [
+          "nl",
+          "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren THUIS hebt gesproken, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Thuis = je woning (bijv. gezinsleden, bezoekers)",
+        ],
+      ]),
       conditionForHome,
       isRequired
     );
 
     /// WORK
-    const conditionForWork = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.work);
+    const conditionForWork = SurveyEngine.multipleChoice.any(
+      this.Q2.key,
+      this.Q2.optionKeys.work
+    );
     this.ContactMatrixForWork = new ContactMatrix(
       this.key,
-      'ContactsWork',
-      new Map([ [ 'en', 'Indicate the number of contacts at work (per age category and gender)' ],
-      [ 'nl', 'Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren op je WERK hebt gesproken, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Werk = je werk (bijv. klanten, collegas)'
-      ] ]),
+      "ContactsWork",
+      new Map([
+        [
+          "en",
+          "Indicate the number of contacts at work (per age category and gender)",
+        ],
+        [
+          "nl",
+          "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren op je WERK hebt gesproken, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Werk = je werk (bijv. klanten, collegas)",
+        ],
+      ]),
       conditionForWork,
       isRequired
     );
 
     /// SCHOOL
-    const conditionForSchool = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.school);
+    const conditionForSchool = SurveyEngine.multipleChoice.any(
+      this.Q2.key,
+      this.Q2.optionKeys.school
+    );
     this.ContactMatrixForSchool = new ContactMatrix(
       this.key,
-      'ContactsSchool',
-      new Map([ [ 'en', 'Indicate the number of contacts at school (per age category and gender)' ],
-      [ 'nl', 'Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren op SCHOOL hebt gesproken, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). School = onderwijsinstellingen (bijv. docenten, klasgenoten)' ] ]),
+      "ContactsSchool",
+      new Map([
+        [
+          "en",
+          "Indicate the number of contacts at school (per age category and gender)",
+        ],
+        [
+          "nl",
+          "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren op SCHOOL hebt gesproken, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). School = onderwijsinstellingen (bijv. docenten, klasgenoten)",
+        ],
+      ]),
       conditionForSchool,
       isRequired
     );
 
     /// LEISURE
-    const conditionForLeisure = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.leisure);
+    const conditionForLeisure = SurveyEngine.multipleChoice.any(
+      this.Q2.key,
+      this.Q2.optionKeys.leisure
+    );
     this.ContactMatrixForLeisure = new ContactMatrix(
       this.key,
-      'ContactsLeisure',
-      new Map([ [ 'en', 'Indicate the number of contacts during leisure (per age category and gender)' ],
-      [ 'nl', 'Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren tijdens VRIJE TIJD hebt gesproken en/of aangeraakt, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Vrije tijd = geplande activiteiten met anderen (bijv. mensen die je ontmoet in een café, sportschool of bij iemand anders thuis).' ] ]),
+      "ContactsLeisure",
+      new Map([
+        [
+          "en",
+          "Indicate the number of contacts during leisure (per age category and gender)",
+        ],
+        [
+          "nl",
+          "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren tijdens VRIJE TIJD hebt gesproken en/of aangeraakt, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Vrije tijd = geplande activiteiten met anderen (bijv. mensen die je ontmoet in een café, sportschool of bij iemand anders thuis).",
+        ],
+      ]),
       conditionForLeisure,
       isRequired
     );
 
     /// OTHER
-    const conditionForOther = SurveyEngine.multipleChoice.any(this.Q2.key, this.Q2.optionKeys.other);
+    const conditionForOther = SurveyEngine.multipleChoice.any(
+      this.Q2.key,
+      this.Q2.optionKeys.other
+    );
     this.ContactMatrixForOther = new ContactMatrix(
       this.key,
-      'ContactsOther',
-      new Map([ [ 'en', 'Indicate the number of contacts during other activities (per age category and gender)' ],
-      [ 'nl', 'Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren tijdens OVERIGE ACTIVITEITEN hebt gesproken en/of aangeraakt, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Overige activiteiten = alle locaties die niet worden genoemd in de andere groepen (bijv. mensen die u ontmoet in het openbaar vervoer).' ] ]),
+      "ContactsOther",
+      new Map([
+        [
+          "en",
+          "Indicate the number of contacts during other activities (per age category and gender)",
+        ],
+        [
+          "nl",
+          "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren tijdens OVERIGE ACTIVITEITEN hebt gesproken en/of aangeraakt, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Overige activiteiten = alle locaties die niet worden genoemd in de andere groepen (bijv. mensen die u ontmoet in het openbaar vervoer).",
+        ],
+      ]),
       conditionForOther,
       isRequired
     );
 
-    this.QFragile = new QFragile(this.key, isRequired)
-
+    this.QFragile = new QFragile(this.key, isRequired);
 
     /// Prefill rules:
 
     this.editor.setPrefillRules([
       /// HOME:
-      ...this.ContactMatrixForHome.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForHome.key, `rg.rm.${key}-${this.ContactMatrixForHome.columnInfos[0].key}`, '0')
-      ),
-      ...this.ContactMatrixForHome.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForHome.key, `rg.rm.${key}-${this.ContactMatrixForHome.columnInfos[1].key}`, '0')
-      ),
+      ...this.ContactMatrixForHome.rowInfos
+        .map((rowInfo) => {
+          return rowInfo.key;
+        })
+        .map((key) =>
+          StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(
+            this.ContactMatrixForHome.key,
+            `rg.rm.${key}-${this.ContactMatrixForHome.columnInfos[0].key}`,
+            "0"
+          )
+        ),
+      ...this.ContactMatrixForHome.rowInfos
+        .map((rowInfo) => {
+          return rowInfo.key;
+        })
+        .map((key) =>
+          StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(
+            this.ContactMatrixForHome.key,
+            `rg.rm.${key}-${this.ContactMatrixForHome.columnInfos[1].key}`,
+            "0"
+          )
+        ),
       /// WORK:
-      ...this.ContactMatrixForWork.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForWork.key, `rg.rm.${key}-${this.ContactMatrixForWork.columnInfos[0].key}`, '0')
-      ),
-      ...this.ContactMatrixForWork.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForWork.key, `rg.rm.${key}-${this.ContactMatrixForWork.columnInfos[1].key}`, '0')
-      ),
+      ...this.ContactMatrixForWork.rowInfos
+        .map((rowInfo) => {
+          return rowInfo.key;
+        })
+        .map((key) =>
+          StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(
+            this.ContactMatrixForWork.key,
+            `rg.rm.${key}-${this.ContactMatrixForWork.columnInfos[0].key}`,
+            "0"
+          )
+        ),
+      ...this.ContactMatrixForWork.rowInfos
+        .map((rowInfo) => {
+          return rowInfo.key;
+        })
+        .map((key) =>
+          StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(
+            this.ContactMatrixForWork.key,
+            `rg.rm.${key}-${this.ContactMatrixForWork.columnInfos[1].key}`,
+            "0"
+          )
+        ),
       /// SCHOOL:
-      ...this.ContactMatrixForSchool.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForSchool.key, `rg.rm.${key}-${this.ContactMatrixForSchool.columnInfos[0].key}`, '0')
-      ),
-      ...this.ContactMatrixForSchool.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForSchool.key, `rg.rm.${key}-${this.ContactMatrixForSchool.columnInfos[1].key}`, '0')
-      ),
+      ...this.ContactMatrixForSchool.rowInfos
+        .map((rowInfo) => {
+          return rowInfo.key;
+        })
+        .map((key) =>
+          StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(
+            this.ContactMatrixForSchool.key,
+            `rg.rm.${key}-${this.ContactMatrixForSchool.columnInfos[0].key}`,
+            "0"
+          )
+        ),
+      ...this.ContactMatrixForSchool.rowInfos
+        .map((rowInfo) => {
+          return rowInfo.key;
+        })
+        .map((key) =>
+          StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(
+            this.ContactMatrixForSchool.key,
+            `rg.rm.${key}-${this.ContactMatrixForSchool.columnInfos[1].key}`,
+            "0"
+          )
+        ),
       /// LEISURE:
-      ...this.ContactMatrixForLeisure.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForLeisure.key, `rg.rm.${key}-${this.ContactMatrixForLeisure.columnInfos[0].key}`, '0')
-      ),
-      ...this.ContactMatrixForLeisure.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForLeisure.key, `rg.rm.${key}-${this.ContactMatrixForLeisure.columnInfos[1].key}`, '0')
-      ),
+      ...this.ContactMatrixForLeisure.rowInfos
+        .map((rowInfo) => {
+          return rowInfo.key;
+        })
+        .map((key) =>
+          StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(
+            this.ContactMatrixForLeisure.key,
+            `rg.rm.${key}-${this.ContactMatrixForLeisure.columnInfos[0].key}`,
+            "0"
+          )
+        ),
+      ...this.ContactMatrixForLeisure.rowInfos
+        .map((rowInfo) => {
+          return rowInfo.key;
+        })
+        .map((key) =>
+          StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(
+            this.ContactMatrixForLeisure.key,
+            `rg.rm.${key}-${this.ContactMatrixForLeisure.columnInfos[1].key}`,
+            "0"
+          )
+        ),
       /// OTHER:
-      ...this.ContactMatrixForOther.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForOther.key, `rg.rm.${key}-${this.ContactMatrixForOther.columnInfos[0].key}`, '0')
-      ),
-      ...this.ContactMatrixForOther.rowInfos.map(rowInfo => { return rowInfo.key; }).map(key =>
-        StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(this.ContactMatrixForOther.key, `rg.rm.${key}-${this.ContactMatrixForOther.columnInfos[1].key}`, '0')
-      ),
+      ...this.ContactMatrixForOther.rowInfos
+        .map((rowInfo) => {
+          return rowInfo.key;
+        })
+        .map((key) =>
+          StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(
+            this.ContactMatrixForOther.key,
+            `rg.rm.${key}-${this.ContactMatrixForOther.columnInfos[0].key}`,
+            "0"
+          )
+        ),
+      ...this.ContactMatrixForOther.rowInfos
+        .map((rowInfo) => {
+          return rowInfo.key;
+        })
+        .map((key) =>
+          StudyEngine.prefillRules.PREFILL_SLOT_WITH_VALUE(
+            this.ContactMatrixForOther.key,
+            `rg.rm.${key}-${this.ContactMatrixForOther.columnInfos[1].key}`,
+            "0"
+          )
+        ),
     ]);
   }
 
@@ -177,12 +316,9 @@ class ContactsDef extends SurveyDefinition {
   }
 }
 
-
 class Infos extends Item {
-
-
   constructor(parentKey: string, condition?: Expression) {
-    super(parentKey, 'Info');
+    super(parentKey, "Info");
     this.condition = condition;
   }
 
@@ -194,7 +330,9 @@ class Infos extends Item {
       content: [
         ComponentGenerators.markdown({
           content: new Map([
-            ["en", `
+            [
+              "en",
+              `
 The onward transmission of respiratory infections depends on with whom
 you talked, could have talked or whom you touched, actions we refer to
 as a *contact*.
@@ -244,116 +382,134 @@ locations:
 
 Household members are defined as all people you live with on a daily
 basis with whom you sleep under the same roof (for example also
-co-residents).`
+co-residents).`,
             ],
           ]),
-          className: ''
-        })
-      ]
-    })
+          className: "",
+        }),
+      ],
+    });
   }
 }
 
-
 class ContactMatrix extends Item {
-  qText: Map<string, string> | (StyledTextComponentProp | DateDisplayComponentProp)[];
+  qText:
+    | Map<string, string>
+    | (StyledTextComponentProp | DateDisplayComponentProp)[];
 
-  rowInfos: Array<{ key: string, label: Map<string, string> }> = [
+  rowInfos: Array<{ key: string; label: Map<string, string> }> = [
     {
-      key: 'r1', label: new Map([
+      key: "r1",
+      label: new Map([
         ["en", "0 - 3"],
-        [ "nl", "0-3 jaar" ],
+        ["nl", "0-3 jaar"],
       ]),
     },
     {
-      key: 'r2', label: new Map([
+      key: "r2",
+      label: new Map([
         ["en", "3 - 6"],
-        [ "nl", "4-6 jaar" ],
+        ["nl", "4-6 jaar"],
       ]),
     },
     {
-      key: 'r3', label: new Map([
+      key: "r3",
+      label: new Map([
         ["en", "7 - 12"],
-        [ "nl", "7-12 jaar" ],
+        ["nl", "7-12 jaar"],
       ]),
     },
     {
-      key: 'r4', label: new Map([
+      key: "r4",
+      label: new Map([
         ["en", "13 - 18"],
-        [ "nl", "13-18 jaar" ],
+        ["nl", "13-18 jaar"],
       ]),
     },
     {
-      key: 'r5', label: new Map([
+      key: "r5",
+      label: new Map([
         ["en", "19 - 29"],
-        [ "nl", "19-29 jaar" ],
+        ["nl", "19-29 jaar"],
       ]),
     },
     {
-      key: 'r6', label: new Map([
+      key: "r6",
+      label: new Map([
         ["en", "30 - 39"],
-        [ "nl", "30-39 jaar" ],
+        ["nl", "30-39 jaar"],
       ]),
     },
     {
-      key: 'r7', label: new Map([
+      key: "r7",
+      label: new Map([
         ["en", "40 - 49"],
-        [ "nl", "40-49 jaar" ],
+        ["nl", "40-49 jaar"],
       ]),
     },
     {
-      key: 'r8', label: new Map([
+      key: "r8",
+      label: new Map([
         ["en", "50 - 59"],
-        [ "nl", "50-59 jaar" ],
-
+        ["nl", "50-59 jaar"],
       ]),
     },
     {
-      key: 'r9', label: new Map([
+      key: "r9",
+      label: new Map([
         ["en", "60 - 69"],
-        [ "nl", "60-69 jaar" ],
+        ["nl", "60-69 jaar"],
       ]),
     },
     {
-      key: 'r10', label: new Map([
+      key: "r10",
+      label: new Map([
         ["en", "70 - 79"],
-        [ "nl", "70-79 jaar" ],
+        ["nl", "70-79 jaar"],
       ]),
     },
     {
-      key: 'r11', label: new Map([
+      key: "r11",
+      label: new Map([
         ["en", "80 - 89"],
-        [ "nl", "80-89 jaar" ],
+        ["nl", "80-89 jaar"],
       ]),
     },
     {
-      key: 'r12', label: new Map([
+      key: "r12",
+      label: new Map([
         ["en", "90+"],
-        [ "nl", "90+ jaar" ],
+        ["nl", "90+ jaar"],
       ]),
     },
   ];
 
-  columnInfos: Array<{ key: string, label: Map<string, string> }> = [
+  columnInfos: Array<{ key: string; label: Map<string, string> }> = [
     {
-      key: 'f', label: new Map([
+      key: "f",
+      label: new Map([
         ["en", "Female"],
-        [ "nl", "Vrouw" ],
+        ["nl", "Vrouw"],
       ]),
     },
     {
-      key: 'm', label: new Map([
+      key: "m",
+      label: new Map([
         ["en", "Male"],
-        [ "nl", "Man" ],
+        ["nl", "Man"],
       ]),
-    }
+    },
   ];
 
-  constructor(parentKey: string,
+  constructor(
+    parentKey: string,
     itemKey: string,
-    qText: Map<string, string> | (StyledTextComponentProp | DateDisplayComponentProp)[],
+    qText:
+      | Map<string, string>
+      | (StyledTextComponentProp | DateDisplayComponentProp)[],
     condition: Expression,
-    isRequired?: boolean) {
+    isRequired?: boolean
+  ) {
     super(parentKey, itemKey);
     this.isRequired = isRequired;
     this.condition = condition;
@@ -361,16 +517,18 @@ class ContactMatrix extends Item {
   }
 
   generateRows() {
-    const rowCategories = this.rowInfos.map(row => {
+    const rowCategories = this.rowInfos.map((row) => {
       return {
-        key: row.key, role: 'row', label: row.label,
-      }
+        key: row.key,
+        role: "row",
+        label: row.label,
+      };
     });
 
     const rows: any[] = [];
-    rowCategories.forEach(row => {
+    rowCategories.forEach((row) => {
       rows.push(row);
-    })
+    });
 
     return rows;
   }
@@ -378,28 +536,34 @@ class ContactMatrix extends Item {
   validationRules(): Validation[] {
     return [
       {
-        key: 'v1',
-        type: 'hard',
+        key: "v1",
+        type: "hard",
         // at least one value is not 0
         rule: SurveyEngine.logic.or(
-          ...this.rowInfos.map(row => {
+          ...this.rowInfos.map((row) => {
             return SurveyEngine.logic.not(
               SurveyEngine.compare.eq(
-                SurveyEngine.getResponseValueAsStr(this.key, `rg.rm.${row.key}-${this.columnInfos[0].key}`),
-                '0'
+                SurveyEngine.getResponseValueAsStr(
+                  this.key,
+                  `rg.rm.${row.key}-${this.columnInfos[0].key}`
+                ),
+                "0"
               )
-            )
+            );
           }),
-          ...this.rowInfos.map(row => {
+          ...this.rowInfos.map((row) => {
             return SurveyEngine.logic.not(
               SurveyEngine.compare.eq(
-                SurveyEngine.getResponseValueAsStr(this.key, `rg.rm.${row.key}-${this.columnInfos[1].key}`),
-                '0'
+                SurveyEngine.getResponseValueAsStr(
+                  this.key,
+                  `rg.rm.${row.key}-${this.columnInfos[1].key}`
+                ),
+                "0"
               )
-            )
+            );
           })
-        )
-      }
+        ),
+      },
     ];
   }
 
@@ -410,31 +574,31 @@ class ContactMatrix extends Item {
       isRequired: this.isRequired,
       condition: this.condition,
       questionText: this.qText,
-      responseType: 'dropdown',
-      breakpoint: 'sm',
+      responseType: "dropdown",
+      breakpoint: "sm",
       columns: this.columnInfos,
       rows: this.generateRows(),
       dropdownConfig: {
         unselectedLabeL: new Map([
           ["en", "Select an option"],
-          [ "nl", "Selecteer een optie" ],
+          ["nl", "Selecteer een optie"],
         ]),
-        options: dropdownOptions
+        options: dropdownOptions,
       },
       customValidations: this.validationRules(),
-    })
+    });
   }
 }
 
 class Q1 extends Item {
   optionKeys = {
-    yes: '1',
-    no: '0',
-    other: '3',
+    yes: "1",
+    no: "0",
+    other: "3",
   };
 
   constructor(parentKey: string, isRequired?: boolean) {
-    super(parentKey, 'Q1');
+    super(parentKey, "Q1");
     this.isRequired = isRequired;
   }
 
@@ -445,47 +609,62 @@ class Q1 extends Item {
       isRequired: this.isRequired,
       condition: this.condition,
       questionText: new Map([
-        ["en", "Did you have any social contact between yesterday 5am and 5 am today?"],
-        [ "nl", "Heb je gisteren met tenminste één ander persoon gesproken en/of aangeraakt, of ben je dichtbij een ander geweest in dezelfde kamer (binnen 3 meter)?" ],
+        [
+          "en",
+          "Did you have any social contact between yesterday 5am and 5 am today?",
+        ],
+        [
+          "nl",
+          "Heb je gisteren met tenminste één ander persoon gesproken en/of aangeraakt, of ben je dichtbij een ander geweest in dezelfde kamer (binnen 3 meter)?",
+        ],
       ]),
       responseOptions: [
         {
-          key: this.optionKeys.yes, role: 'option',
+          key: this.optionKeys.yes,
+          role: "option",
           content: new Map([
             ["en", "Yes"],
-            [ "nl", "Ja, ik heb met tenminste één ander persoon gesproken en/of aangeraakt, of ben dichtbij een ander geweest in dezelfde kamer (binnen 3 meter)." ],
-          ])
+            [
+              "nl",
+              "Ja, ik heb met tenminste één ander persoon gesproken en/of aangeraakt, of ben dichtbij een ander geweest in dezelfde kamer (binnen 3 meter).",
+            ],
+          ]),
         },
         {
-          key: this.optionKeys.no, role: 'option',
+          key: this.optionKeys.no,
+          role: "option",
           content: new Map([
             ["en", "No"],
-            [ "nl", "Nee, ik heb met niemand gesproken en/of aangeraakt, en ik ben NIET dichtbij iemand anders geweest in dezelfde kamer (binnen 3 meter)." ],
-          ])
+            [
+              "nl",
+              "Nee, ik heb met niemand gesproken en/of aangeraakt, en ik ben NIET dichtbij iemand anders geweest in dezelfde kamer (binnen 3 meter).",
+            ],
+          ]),
         },
         {
-          key: this.optionKeys.other, role: 'option',
+          key: this.optionKeys.other,
+          role: "option",
           content: new Map([
             ["en", "I don't want to say"],
-            [ "nl", "Dat wil ik liever niet zeggen" ],
-          ])
-        }
-      ]
-    })
+            ["nl", "Dat wil ik liever niet zeggen"],
+          ]),
+        },
+      ],
+    });
   }
 }
 
 class Q2 extends Item {
   optionKeys = {
-    home: '1',
-    work: '2',
-    school: '3',
-    leisure: '4',
-    other: '5',
+    home: "1",
+    work: "2",
+    school: "3",
+    leisure: "4",
+    other: "5",
   };
 
   constructor(parentKey: string, condition: Expression, isRequired?: boolean) {
-    super(parentKey, 'Q2');
+    super(parentKey, "Q2");
     this.isRequired = isRequired;
     this.condition = condition;
   }
@@ -498,57 +677,73 @@ class Q2 extends Item {
       condition: this.condition,
       questionText: new Map([
         ["en", "Please select all the settings that apply"],
-        [ "nl", "Selecteer alsjeblieft alle plekken waar je tenminste met één persoon hebt gesproken en/of aangeraakt, of dichtbij bent geweest in dezelfde kamer (binnen 3 meter)?" ],
+        [
+          "nl",
+          "Selecteer alsjeblieft alle plekken waar je tenminste met één persoon hebt gesproken en/of aangeraakt, of dichtbij bent geweest in dezelfde kamer (binnen 3 meter)?",
+        ],
       ]),
       responseOptions: [
         {
-          key: this.optionKeys.home, role: 'option',
+          key: this.optionKeys.home,
+          role: "option",
           content: new Map([
             ["en", "Home"],
-            [ "nl", "Thuis: je woning (bijv. gezinsleden, bezoekers)." ],
-          ])
+            ["nl", "Thuis: je woning (bijv. gezinsleden, bezoekers)."],
+          ]),
         },
         {
-          key: this.optionKeys.work, role: 'option',
+          key: this.optionKeys.work,
+          role: "option",
           content: new Map([
             ["en", "Work"],
-            [ "nl", "Werk: je werk (bijv. klanten, collega's)" ],
-          ])
+            ["nl", "Werk: je werk (bijv. klanten, collega's)"],
+          ]),
         },
         {
-          key: this.optionKeys.school, role: 'option',
+          key: this.optionKeys.school,
+          role: "option",
           content: new Map([
             ["en", "School"],
-            [ "nl", "School: onderwijsinstellingen (bijv. docenten, klasgenoten)" ],
-          ])
+            [
+              "nl",
+              "School: onderwijsinstellingen (bijv. docenten, klasgenoten)",
+            ],
+          ]),
         },
         {
-          key: this.optionKeys.leisure, role: 'option',
+          key: this.optionKeys.leisure,
+          role: "option",
           content: new Map([
             ["en", "Leisure"],
-            [ "nl", "Vrije tijd: geplande activiteiten met anderen (bijv. mensen die je ontmoet in een café, wandeling, sport(school) of bij iemand anders thuis)." ],
-          ])
+            [
+              "nl",
+              "Vrije tijd: geplande activiteiten met anderen (bijv. mensen die je ontmoet in een café, wandeling, sport(school) of bij iemand anders thuis).",
+            ],
+          ]),
         },
         {
-          key: this.optionKeys.other, role: 'option',
+          key: this.optionKeys.other,
+          role: "option",
           content: new Map([
             ["en", "Other"],
-            [ "nl", "Overige activiteiten: alle locaties die hierboven niet worden genoemd (bijv. mensen die je ontmoet in het openbaar vervoer of winkel)." ],
-          ])
-        }
-      ]
-    })
+            [
+              "nl",
+              "Overige activiteiten: alle locaties die hierboven niet worden genoemd (bijv. mensen die je ontmoet in het openbaar vervoer of winkel).",
+            ],
+          ]),
+        },
+      ],
+    });
   }
 }
 
-
 class QFragile extends Item {
   optionKeys = {
-    no: '0',
+    no: "0",
   };
 
   constructor(parentKey: string, isRequired?: boolean) {
-    super(parentKey, 'QFragile');
+    super(parentKey, "QFragile");
     this.isRequired = isRequired;
     // this.condition = condition;
   }
@@ -560,72 +755,112 @@ class QFragile extends Item {
       isRequired: this.isRequired,
       condition: this.condition,
       questionText: new Map([
-        ["en", "Did you visit an institute with (many) fragile people between yesterday 5am and 5 am today?"],
-        [ "nl", "Heb je gisteren een instelling met (veel) kwetsbare mensen bezocht? (kwetsbare mensen zijn mensen met een extra hoog risico voor ernstige klachten bij een besmetting)" ],
+        [
+          "en",
+          "Did you visit an institute with (many) fragile people between yesterday 5am and 5 am today?",
+        ],
+        [
+          "nl",
+          "Heb je gisteren een instelling met (veel) kwetsbare mensen bezocht? (kwetsbare mensen zijn mensen met een extra hoog risico voor ernstige klachten bij een besmetting)",
+        ],
       ]),
       responseOptions: [
         {
-          key: this.optionKeys.no, role: 'option',
+          key: this.optionKeys.no,
+          role: "option",
           content: new Map([
-            [ "en", "No" ],
-            [ "nl", "Nee" ],
+            ["en", "No"],
+            ["nl", "Nee"],
           ]),
-          disabled: SurveyEngine.multipleChoice.any(this.key, '1', '2', '3', '4', '5', 'other')
+          disabled: SurveyEngine.multipleChoice.any(
+            this.key,
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "other"
+          ),
         },
         {
-          key: '1', role: 'option',
+          key: "1",
+          role: "option",
           content: new Map([
             ["en", "Yes, a care home"],
-            [ "nl", "Ja, een verpleeg- of verzorgingstehuis" ],
+            ["nl", "Ja, een verpleeg- of verzorgingstehuis"],
           ]),
-          disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
+          disabled: SurveyEngine.multipleChoice.any(
+            this.key,
+            this.optionKeys.no
+          ),
         },
         {
-          key: '3', role: 'option',
+          key: "3",
+          role: "option",
           content: new Map([
-            [ "en", "TODO" ],
-            [ "nl", "Ja, een instelling voor begeleid wonen" ],
+            ["en", "TODO"],
+            ["nl", "Ja, een instelling voor begeleid wonen"],
           ]),
-          disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
+          disabled: SurveyEngine.multipleChoice.any(
+            this.key,
+            this.optionKeys.no
+          ),
         },
         {
-          key: '2', role: 'option',
+          key: "2",
+          role: "option",
           content: new Map([
             ["en", "Yes, a hospital"],
-            [ "nl", "Ja, een ziekenhuis" ],
+            ["nl", "Ja, een ziekenhuis"],
           ]),
-          disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
+          disabled: SurveyEngine.multipleChoice.any(
+            this.key,
+            this.optionKeys.no
+          ),
         },
         {
-          key: '4', role: 'option',
+          key: "4",
+          role: "option",
           content: new Map([
-            [ "en", "TODO" ],
-            [ "nl", "Ja, een zorginstelling anders dan een ziekenhuis (bijvoorbeeld huisarts, fysiotherapeut, vaccinatiekliniek)" ],
+            ["en", "TODO"],
+            [
+              "nl",
+              "Ja, een zorginstelling anders dan een ziekenhuis (bijvoorbeeld huisarts, fysiotherapeut, vaccinatiekliniek)",
+            ],
           ]),
-          disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
+          disabled: SurveyEngine.multipleChoice.any(
+            this.key,
+            this.optionKeys.no
+          ),
         },
         {
-          key: '5', role: 'option',
+          key: "5",
+          role: "option",
           content: new Map([
-            [ "en", "TODO" ],
-            [ "nl", "Ja, een hospice" ],
+            ["en", "TODO"],
+            ["nl", "Ja, een hospice"],
           ]),
-          disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
+          disabled: SurveyEngine.multipleChoice.any(
+            this.key,
+            this.optionKeys.no
+          ),
         },
         {
-          key: 'other', role: 'input',
-          style: [ { key: 'maxLength', value: '160' } ],
+          key: "other",
+          role: "input",
+          style: [{ key: "maxLength", value: "160" }],
           content: new Map([
             ["en", "Other: "],
-            [ "nl", "Anders: " ],
+            ["nl", "Anders: "],
           ]),
-          disabled: SurveyEngine.multipleChoice.any(this.key, this.optionKeys.no)
+          disabled: SurveyEngine.multipleChoice.any(
+            this.key,
+            this.optionKeys.no
+          ),
         },
-      ]
-    })
+      ],
+    });
   }
 }
-
-
 
 export const Contacts = new ContactsDef();
