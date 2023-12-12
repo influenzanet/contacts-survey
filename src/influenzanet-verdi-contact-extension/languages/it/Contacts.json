@@ -1,0 +1,837 @@
+{
+  "Contacts.name.0": {
+    "nl": "TODO",
+    "it": "TODO",
+    "en": "Survey about your everyday social contacts"
+  },
+  "Contacts.description.0": {
+    "nl": "TODO",
+    "it": "TODO",
+    "en": ""
+  },
+  "Contacts.typicalDuration.0": {
+    "nl": "TODO",
+    "it": "TODO",
+    "en": "1 minute"
+  },
+  "Contacts.Info.x46.markdown.0": {
+    "nl": "TODO",
+    "it": "TODO",
+    "en": "\nThe onward transmission of respiratory infections depends on with whom\nyou talked, could have talked or whom you touched, actions we refer to\nas a *contact*.\n\n### What is a contact?\n\nA contact is defined as the co-presence and interaction with another\nindividual at a distance of less than three metres. Examples could be\npeople you have talked to or people that you had a physical contact\nwith, even without exchanging words (for example shaking hands, etc). We\nare not interested in contacts by phone or over the internet.\n\n### Why is this important?\n\nBecause a lot of transmission happens when the symptoms are very mild,\nthe contact you have every day (thus also when you are healthy) are very\ninformative in predicting whom you might infect when you have\ninfluenza-like illness. For this reason, we ask you to answer a few\nquestions about whom you contacted between yesterday (since when you\nwoke up) and until the same hour the next day.\n\nWe also ask about the (possible) age-range of your contacts, the setting\n(household, work, school etc.) and the gender of the people you were in\ncontact with.\n\n### How is the setting of a contact defined?\n\nTo help the analysis we also categorised contacts according categories/\nlocations:\n\n-   Home: your house (example of contact: your household members, people\n    visiting **your** house,...).\n\n-   Work: your working location (example of contact: customer,\n    co-workers, ...). If you have multiple jobs, please include them\n    all.\n\n-   School: your school or university or higher education location\n    (example of contacts: teacher, ...\n\n-   Leisure: Every activity you planned to do with other people (example\n    of contacts: person met at a bar or at the gym or in a house\n    **different from yours**).\n\n-   Other: everything not listed before (example of contacts: person met\n    during commuting,...).\n\nHousehold members are defined as all people you live with on a daily\nbasis with whom you sleep under the same roof (for example also\nco-residents)."
+  },
+  "Contacts.Q1.title.0": {
+    "nl": "Did you speak and/or touch at least one other person yesterday, or were you near another person in the same room (within 3 meters)?",
+    "it": "TODO",
+    "en": "Did you have any social contact between yesterday 5am and 5 am today?"
+  },
+  "Contacts.Q1.rg.scg.option.0": {
+    "nl": "Yes, I spoke and/or touched at least one other person, or I have been near another in the same room (within 3 meters).",
+    "it": "TODO",
+    "en": "Yes"
+  },
+  "Contacts.Q1.rg.scg.option.1": {
+    "nl": "No, I did not speak and/or touch anyone, and I was NOT near anyone else in the same room (within 3 meters).",
+    "it": "TODO",
+    "en": "No"
+  },
+  "Contacts.Q1.rg.scg.option.2": {
+    "nl": "I would rather not say",
+    "it": "TODO",
+    "en": "I don't want to say"
+  },
+  "Contacts.Q2.title.0": {
+    "nl": "Please select all the places where you spoke and/or touched at least one person, or were near someone in the same room (within 3 meters)?",
+    "it": "TODO",
+    "en": "Please select all the settings that apply"
+  },
+  "Contacts.Q2.rg.mcg.option.0": {
+    "nl": "Home: your residence (e.g., family members, visitors).",
+    "it": "TODO",
+    "en": "Home"
+  },
+  "Contacts.Q2.rg.mcg.option.1": {
+    "nl": "Work: your workplace (e.g., customers, colleagues)",
+    "it": "TODO",
+    "en": "Work"
+  },
+  "Contacts.Q2.rg.mcg.option.2": {
+    "nl": "School: educational institutions (e.g., teachers, classmates)",
+    "it": "TODO",
+    "en": "School"
+  },
+  "Contacts.Q2.rg.mcg.option.3": {
+    "nl": "Leisure: planned activities with others (e.g., people you meet at a café, during a walk, at a sports club or at someone else's home).",
+    "it": "TODO",
+    "en": "Leisure"
+  },
+  "Contacts.Q2.rg.mcg.option.4": {
+    "nl": "Other activities: all locations not mentioned above (e.g., people you meet in public transport or shopping).",
+    "it": "TODO",
+    "en": "Other"
+  },
+  "Contacts.ContactsHome.title.0": {
+    "nl": "Please specify the number of people (per age category and gender) you spoke with or were near in the same room (within 3 meters) YESTERDAY at HOME. Home = your residence (e.g., family members, visitors)",
+    "it": "TODO",
+    "en": "Indicate the number of contacts at home (per age category and gender)"
+  },
+  "Contacts.ContactsHome.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
+    "nl": "Female",
+    "it": "TODO",
+    "en": "Female"
+  },
+  "Contacts.ContactsHome.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
+    "nl": "Male",
+    "it": "TODO",
+    "en": "Male"
+  },
+  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
+    "nl": "Select an option",
+    "it": "TODO",
+    "en": "Select an option"
+  },
+  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
+    "nl": "0",
+    "it": "TODO",
+    "en": "0"
+  },
+  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
+    "nl": "1",
+    "it": "TODO",
+    "en": "1"
+  },
+  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
+    "nl": "2",
+    "it": "TODO",
+    "en": "2"
+  },
+  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
+    "nl": "3",
+    "it": "TODO",
+    "en": "3"
+  },
+  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
+    "nl": "4",
+    "it": "TODO",
+    "en": "4"
+  },
+  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
+    "nl": "5",
+    "it": "TODO",
+    "en": "5"
+  },
+  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
+    "nl": "6",
+    "it": "TODO",
+    "en": "6"
+  },
+  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
+    "nl": "7-9",
+    "it": "TODO",
+    "en": "7-9"
+  },
+  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
+    "nl": "10-14",
+    "it": "TODO",
+    "en": "10-14"
+  },
+  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
+    "nl": "15-19",
+    "it": "TODO",
+    "en": "15-19"
+  },
+  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
+    "nl": "20-30",
+    "it": "TODO",
+    "en": "20-30"
+  },
+  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
+    "nl": "31-49",
+    "it": "TODO",
+    "en": "31-49"
+  },
+  "Contacts.ContactsHome.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
+    "nl": "50+",
+    "it": "TODO",
+    "en": "50+"
+  },
+  "Contacts.ContactsHome.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
+    "nl": "0-3 years",
+    "it": "TODO",
+    "en": "0 - 3"
+  },
+  "Contacts.ContactsHome.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
+    "nl": "4-6 years",
+    "it": "TODO",
+    "en": "3 - 6"
+  },
+  "Contacts.ContactsHome.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
+    "nl": "7-12 years",
+    "it": "TODO",
+    "en": "7 - 12"
+  },
+  "Contacts.ContactsHome.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
+    "nl": "13-18 years",
+    "it": "TODO",
+    "en": "13 - 18"
+  },
+  "Contacts.ContactsHome.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
+    "nl": "19-29 years",
+    "it": "TODO",
+    "en": "19 - 29"
+  },
+  "Contacts.ContactsHome.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
+    "nl": "30-39 years",
+    "it": "TODO",
+    "en": "30 - 39"
+  },
+  "Contacts.ContactsHome.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
+    "nl": "40-49 years",
+    "it": "TODO",
+    "en": "40 - 49"
+  },
+  "Contacts.ContactsHome.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
+    "nl": "50-59 years",
+    "it": "TODO",
+    "en": "50 - 59"
+  },
+  "Contacts.ContactsHome.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
+    "nl": "60-69 years",
+    "it": "TODO",
+    "en": "60 - 69"
+  },
+  "Contacts.ContactsHome.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
+    "nl": "70-79 years",
+    "it": "TODO",
+    "en": "70 - 79"
+  },
+  "Contacts.ContactsHome.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
+    "nl": "80-89 years",
+    "it": "TODO",
+    "en": "80 - 89"
+  },
+  "Contacts.ContactsHome.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
+    "nl": "90+ years",
+    "it": "TODO",
+    "en": "90+"
+  },
+  "Contacts.ContactsWork.title.0": {
+    "nl": "Please specify the number of people (per age category and gender) you spoke with or were near in the same room (within 3 meters) YESTERDAY at WORK. Work = your workplace (e.g., customers, colleagues)",
+    "it": "TODO",
+    "en": "Indicate the number of contacts at work (per age category and gender)"
+  },
+  "Contacts.ContactsWork.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
+    "nl": "Female",
+    "it": "TODO",
+    "en": "Female"
+  },
+  "Contacts.ContactsWork.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
+    "nl": "Male",
+    "it": "TODO",
+    "en": "Male"
+  },
+  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
+    "nl": "Select an option",
+    "it": "TODO",
+    "en": "Select an option"
+  },
+  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
+    "nl": "0",
+    "it": "TODO",
+    "en": "0"
+  },
+  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
+    "nl": "1",
+    "it": "TODO",
+    "en": "1"
+  },
+  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
+    "nl": "2",
+    "it": "TODO",
+    "en": "2"
+  },
+  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
+    "nl": "3",
+    "it": "TODO",
+    "en": "3"
+  },
+  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
+    "nl": "4",
+    "it": "TODO",
+    "en": "4"
+  },
+  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
+    "nl": "5",
+    "it": "TODO",
+    "en": "5"
+  },
+  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
+    "nl": "6",
+    "it": "TODO",
+    "en": "6"
+  },
+  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
+    "nl": "7-9",
+    "it": "TODO",
+    "en": "7-9"
+  },
+  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
+    "nl": "10-14",
+    "it": "TODO",
+    "en": "10-14"
+  },
+  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
+    "nl": "15-19",
+    "it": "TODO",
+    "en": "15-19"
+  },
+  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
+    "nl": "20-30",
+    "it": "TODO",
+    "en": "20-30"
+  },
+  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
+    "nl": "31-49",
+    "it": "TODO",
+    "en": "31-49"
+  },
+  "Contacts.ContactsWork.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
+    "nl": "50+",
+    "it": "TODO",
+    "en": "50+"
+  },
+  "Contacts.ContactsWork.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
+    "nl": "0-3 years",
+    "it": "TODO",
+    "en": "0 - 3"
+  },
+  "Contacts.ContactsWork.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
+    "nl": "4-6 years",
+    "it": "TODO",
+    "en": "3 - 6"
+  },
+  "Contacts.ContactsWork.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
+    "nl": "7-12 years",
+    "it": "TODO",
+    "en": "7 - 12"
+  },
+  "Contacts.ContactsWork.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
+    "nl": "13-18 years",
+    "it": "TODO",
+    "en": "13 - 18"
+  },
+  "Contacts.ContactsWork.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
+    "nl": "19-29 years",
+    "it": "TODO",
+    "en": "19 - 29"
+  },
+  "Contacts.ContactsWork.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
+    "nl": "30-39 years",
+    "it": "TODO",
+    "en": "30 - 39"
+  },
+  "Contacts.ContactsWork.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
+    "nl": "40-49 years",
+    "it": "TODO",
+    "en": "40 - 49"
+  },
+  "Contacts.ContactsWork.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
+    "nl": "50-59 years",
+    "it": "TODO",
+    "en": "50 - 59"
+  },
+  "Contacts.ContactsWork.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
+    "nl": "60-69 years",
+    "it": "TODO",
+    "en": "60 - 69"
+  },
+  "Contacts.ContactsWork.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
+    "nl": "70-79 years",
+    "it": "TODO",
+    "en": "70 - 79"
+  },
+  "Contacts.ContactsWork.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
+    "nl": "80-89 years",
+    "it": "TODO",
+    "en": "80 - 89"
+  },
+  "Contacts.ContactsWork.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
+    "nl": "90+ years",
+    "it": "TODO",
+    "en": "90+"
+  },
+  "Contacts.ContactsSchool.title.0": {
+    "nl": "Please specify the number of people (per age category and gender) you spoke with or were near in the same room (within 3 meters) YESTERDAY at SCHOOL. School = education institutions (e.g., teachers, classmates)",
+    "it": "TODO",
+    "en": "Indicate the number of contacts at school (per age category and gender)"
+  },
+  "Contacts.ContactsSchool.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
+    "nl": "Female",
+    "it": "TODO",
+    "en": "Female"
+  },
+  "Contacts.ContactsSchool.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
+    "nl": "Male",
+    "it": "TODO",
+    "en": "Male"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
+    "nl": "Select an option",
+    "it": "TODO",
+    "en": "Select an option"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
+    "nl": "0",
+    "it": "TODO",
+    "en": "0"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
+    "nl": "1",
+    "it": "TODO",
+    "en": "1"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
+    "nl": "2",
+    "it": "TODO",
+    "en": "2"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
+    "nl": "3",
+    "it": "TODO",
+    "en": "3"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
+    "nl": "4",
+    "it": "TODO",
+    "en": "4"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
+    "nl": "5",
+    "it": "TODO",
+    "en": "5"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
+    "nl": "6",
+    "it": "TODO",
+    "en": "6"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
+    "nl": "7-9",
+    "it": "TODO",
+    "en": "7-9"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
+    "nl": "10-14",
+    "it": "TODO",
+    "en": "10-14"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
+    "nl": "15-19",
+    "it": "TODO",
+    "en": "15-19"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
+    "nl": "20-30",
+    "it": "TODO",
+    "en": "20-30"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
+    "nl": "31-49",
+    "it": "TODO",
+    "en": "31-49"
+  },
+  "Contacts.ContactsSchool.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
+    "nl": "50+",
+    "it": "TODO",
+    "en": "50+"
+  },
+  "Contacts.ContactsSchool.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
+    "nl": "0-3 years",
+    "it": "TODO",
+    "en": "0 - 3"
+  },
+  "Contacts.ContactsSchool.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
+    "nl": "4-6 years",
+    "it": "TODO",
+    "en": "3 - 6"
+  },
+  "Contacts.ContactsSchool.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
+    "nl": "7-12 years",
+    "it": "TODO",
+    "en": "7 - 12"
+  },
+  "Contacts.ContactsSchool.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
+    "nl": "13-18 years",
+    "it": "TODO",
+    "en": "13 - 18"
+  },
+  "Contacts.ContactsSchool.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
+    "nl": "19-29 years",
+    "it": "TODO",
+    "en": "19 - 29"
+  },
+  "Contacts.ContactsSchool.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
+    "nl": "30-39 years",
+    "it": "TODO",
+    "en": "30 - 39"
+  },
+  "Contacts.ContactsSchool.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
+    "nl": "40-49 years",
+    "it": "TODO",
+    "en": "40 - 49"
+  },
+  "Contacts.ContactsSchool.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
+    "nl": "50-59 years",
+    "it": "TODO",
+    "en": "50 - 59"
+  },
+  "Contacts.ContactsSchool.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
+    "nl": "60-69 years",
+    "it": "TODO",
+    "en": "60 - 69"
+  },
+  "Contacts.ContactsSchool.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
+    "nl": "70-79 years",
+    "it": "TODO",
+    "en": "70 - 79"
+  },
+  "Contacts.ContactsSchool.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
+    "nl": "80-89 years",
+    "it": "TODO",
+    "en": "80 - 89"
+  },
+  "Contacts.ContactsSchool.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
+    "nl": "90+ years",
+    "it": "TODO",
+    "en": "90+"
+  },
+  "Contacts.ContactsLeisure.title.0": {
+    "nl": "Please specify the number of people (per age category and gender) you spoke with and/or touched, or were near in the same room (within 3 meters) YESTERDAY during LEISURE TIME. Leisure time = planned activities with others (e.g., people you meet at a café, gym or at someone else's home).",
+    "it": "TODO",
+    "en": "Indicate the number of contacts during leisure (per age category and gender)"
+  },
+  "Contacts.ContactsLeisure.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
+    "nl": "Female",
+    "it": "TODO",
+    "en": "Female"
+  },
+  "Contacts.ContactsLeisure.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
+    "nl": "Male",
+    "it": "TODO",
+    "en": "Male"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
+    "nl": "Select an option",
+    "it": "TODO",
+    "en": "Select an option"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
+    "nl": "0",
+    "it": "TODO",
+    "en": "0"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
+    "nl": "1",
+    "it": "TODO",
+    "en": "1"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
+    "nl": "2",
+    "it": "TODO",
+    "en": "2"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
+    "nl": "3",
+    "it": "TODO",
+    "en": "3"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
+    "nl": "4",
+    "it": "TODO",
+    "en": "4"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
+    "nl": "5",
+    "it": "TODO",
+    "en": "5"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
+    "nl": "6",
+    "it": "TODO",
+    "en": "6"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
+    "nl": "7-9",
+    "it": "TODO",
+    "en": "7-9"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
+    "nl": "10-14",
+    "it": "TODO",
+    "en": "10-14"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
+    "nl": "15-19",
+    "it": "TODO",
+    "en": "15-19"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
+    "nl": "20-30",
+    "it": "TODO",
+    "en": "20-30"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
+    "nl": "31-49",
+    "it": "TODO",
+    "en": "31-49"
+  },
+  "Contacts.ContactsLeisure.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
+    "nl": "50+",
+    "it": "TODO",
+    "en": "50+"
+  },
+  "Contacts.ContactsLeisure.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
+    "nl": "0-3 years",
+    "it": "TODO",
+    "en": "0 - 3"
+  },
+  "Contacts.ContactsLeisure.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
+    "nl": "4-6 years",
+    "it": "TODO",
+    "en": "3 - 6"
+  },
+  "Contacts.ContactsLeisure.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
+    "nl": "7-12 years",
+    "it": "TODO",
+    "en": "7 - 12"
+  },
+  "Contacts.ContactsLeisure.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
+    "nl": "13-18 years",
+    "it": "TODO",
+    "en": "13 - 18"
+  },
+  "Contacts.ContactsLeisure.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
+    "nl": "19-29 years",
+    "it": "TODO",
+    "en": "19 - 29"
+  },
+  "Contacts.ContactsLeisure.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
+    "nl": "30-39 years",
+    "it": "TODO",
+    "en": "30 - 39"
+  },
+  "Contacts.ContactsLeisure.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
+    "nl": "40-49 years",
+    "it": "TODO",
+    "en": "40 - 49"
+  },
+  "Contacts.ContactsLeisure.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
+    "nl": "50-59 years",
+    "it": "TODO",
+    "en": "50 - 59"
+  },
+  "Contacts.ContactsLeisure.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
+    "nl": "60-69 years",
+    "it": "TODO",
+    "en": "60 - 69"
+  },
+  "Contacts.ContactsLeisure.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
+    "nl": "70-79 years",
+    "it": "TODO",
+    "en": "70 - 79"
+  },
+  "Contacts.ContactsLeisure.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
+    "nl": "80-89 years",
+    "it": "TODO",
+    "en": "80 - 89"
+  },
+  "Contacts.ContactsLeisure.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
+    "nl": "90+ years",
+    "it": "TODO",
+    "en": "90+"
+  },
+  "Contacts.ContactsOther.title.0": {
+    "nl": "Please specify the number of people (per age category and gender) you spoke with and/or touched, or were near in the same room (within 3 meters) YESTERDAY during OTHER ACTIVITIES. Other activities = all locations not named in the other groups (e.g., people you meet in public transportation).",
+    "it": "TODO",
+    "en": "Indicate the number of contacts during other activities (per age category and gender)"
+  },
+  "Contacts.ContactsOther.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
+    "nl": "Female",
+    "it": "TODO",
+    "en": "Female"
+  },
+  "Contacts.ContactsOther.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
+    "nl": "Male",
+    "it": "TODO",
+    "en": "Male"
+  },
+  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
+    "nl": "Select an option",
+    "it": "TODO",
+    "en": "Select an option"
+  },
+  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
+    "nl": "0",
+    "it": "TODO",
+    "en": "0"
+  },
+  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
+    "nl": "1",
+    "it": "TODO",
+    "en": "1"
+  },
+  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
+    "nl": "2",
+    "it": "TODO",
+    "en": "2"
+  },
+  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
+    "nl": "3",
+    "it": "TODO",
+    "en": "3"
+  },
+  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
+    "nl": "4",
+    "it": "TODO",
+    "en": "4"
+  },
+  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
+    "nl": "5",
+    "it": "TODO",
+    "en": "5"
+  },
+  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
+    "nl": "6",
+    "it": "TODO",
+    "en": "6"
+  },
+  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
+    "nl": "7-9",
+    "it": "TODO",
+    "en": "7-9"
+  },
+  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
+    "nl": "10-14",
+    "it": "TODO",
+    "en": "10-14"
+  },
+  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
+    "nl": "15-19",
+    "it": "TODO",
+    "en": "15-19"
+  },
+  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
+    "nl": "20-30",
+    "it": "TODO",
+    "en": "20-30"
+  },
+  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
+    "nl": "31-49",
+    "it": "TODO",
+    "en": "31-49"
+  },
+  "Contacts.ContactsOther.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
+    "nl": "50+",
+    "it": "TODO",
+    "en": "50+"
+  },
+  "Contacts.ContactsOther.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
+    "nl": "0-3 years",
+    "it": "TODO",
+    "en": "0 - 3"
+  },
+  "Contacts.ContactsOther.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
+    "nl": "4-6 years",
+    "it": "TODO",
+    "en": "3 - 6"
+  },
+  "Contacts.ContactsOther.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
+    "nl": "7-12 years",
+    "it": "TODO",
+    "en": "7 - 12"
+  },
+  "Contacts.ContactsOther.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
+    "nl": "13-18 years",
+    "it": "TODO",
+    "en": "13 - 18"
+  },
+  "Contacts.ContactsOther.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
+    "nl": "19-29 years",
+    "it": "TODO",
+    "en": "19 - 29"
+  },
+  "Contacts.ContactsOther.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
+    "nl": "30-39 years",
+    "it": "TODO",
+    "en": "30 - 39"
+  },
+  "Contacts.ContactsOther.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
+    "nl": "40-49 years",
+    "it": "TODO",
+    "en": "40 - 49"
+  },
+  "Contacts.ContactsOther.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
+    "nl": "50-59 years",
+    "it": "TODO",
+    "en": "50 - 59"
+  },
+  "Contacts.ContactsOther.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
+    "nl": "60-69 years",
+    "it": "TODO",
+    "en": "60 - 69"
+  },
+  "Contacts.ContactsOther.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
+    "nl": "70-79 years",
+    "it": "TODO",
+    "en": "70 - 79"
+  },
+  "Contacts.ContactsOther.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
+    "nl": "80-89 years",
+    "it": "TODO",
+    "en": "80 - 89"
+  },
+  "Contacts.ContactsOther.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
+    "nl": "90+ years",
+    "it": "TODO",
+    "en": "90+"
+  },
+  "Contacts.QFragile.title.0": {
+    "nl": "Did you visit an institution with (many) vulnerable people yesterday? (vulnerable people are those with an extra high risk of severe symptoms if infected)",
+    "it": "TODO",
+    "en": "Did you visit an institute with (many) fragile people between yesterday 5am and 5 am today?"
+  },
+  "Contacts.QFragile.rg.mcg.option.0": {
+    "nl": "No",
+    "it": "TODO",
+    "en": "No"
+  },
+  "Contacts.QFragile.rg.mcg.option.1": {
+    "nl": "Yes, a nursing or care home",
+    "it": "TODO",
+    "en": "Yes, a care home"
+  },
+  "Contacts.QFragile.rg.mcg.option.2": {
+    "nl": "Yes, a facility for assisted living",
+    "it": "TODO",
+    "en": "TODO"
+  },
+  "Contacts.QFragile.rg.mcg.option.3": {
+    "nl": "Yes, a hospital",
+    "it": "TODO",
+    "en": "Yes, a hospital"
+  },
+  "Contacts.QFragile.rg.mcg.option.4": {
+    "nl": "Yes, a healthcare institution other than a hospital (e.g., general practitioner, physiotherapist, vaccination clinic)",
+    "it": "TODO",
+    "en": "TODO"
+  },
+  "Contacts.QFragile.rg.mcg.option.5": {
+    "nl": "Yes, a hospice",
+    "it": "TODO",
+    "en": "TODO"
+  },
+  "Contacts.QFragile.rg.mcg.other.input.6": {
+    "nl": "Other: ",
+    "it": "TODO",
+    "en": "Other: "
+  }
+}
