@@ -15,19 +15,97 @@ import {
 import { ComponentGenerators } from "case-editor-tools/surveys/utils/componentGenerators";
 
 const dropdownOptions = [
-  { key: "0", label: new Map([["en", "0"]]) },
-  { key: "1", label: new Map([["en", "1"]]) },
-  { key: "2", label: new Map([["en", "2"]]) },
-  { key: "3", label: new Map([["en", "3"]]) },
-  { key: "4", label: new Map([["en", "4"]]) },
-  { key: "5", label: new Map([["en", "5"]]) },
-  { key: "6", label: new Map([["en", "6"]]) },
-  { key: "8", label: new Map([["en", "7-9"]]) },
-  { key: "12", label: new Map([["en", "10-14"]]) },
-  { key: "17", label: new Map([["en", "15-19"]]) },
-  { key: "25", label: new Map([["en", "20-30"]]) },
-  { key: "40", label: new Map([["en", "31-49"]]) },
-  { key: "50+", label: new Map([["en", "50+"]]) },
+  {
+    key: "0",
+    label: new Map([
+      ["en", "0"],
+      ["nl", "0"],
+    ]),
+  },
+  {
+    key: "1",
+    label: new Map([
+      ["en", "1"],
+      ["nl", "1"],
+    ]),
+  },
+  {
+    key: "2",
+    label: new Map([
+      ["en", "2"],
+      ["nl", "2"],
+    ]),
+  },
+  {
+    key: "3",
+    label: new Map([
+      ["en", "3"],
+      ["nl", "3"],
+    ]),
+  },
+  {
+    key: "4",
+    label: new Map([
+      ["en", "4"],
+      ["nl", "4"],
+    ]),
+  },
+  {
+    key: "5",
+    label: new Map([
+      ["en", "5"],
+      ["nl", "5"],
+    ]),
+  },
+  {
+    key: "6",
+    label: new Map([
+      ["en", "6"],
+      ["nl", "6"],
+    ]),
+  },
+  {
+    key: "8",
+    label: new Map([
+      ["en", "7-9"],
+      ["nl", "7-9"],
+    ]),
+  },
+  {
+    key: "12",
+    label: new Map([
+      ["en", "10-14"],
+      ["nl", "10-14"],
+    ]),
+  },
+  {
+    key: "17",
+    label: new Map([
+      ["en", "15-19"],
+      ["nl", "15-19"],
+    ]),
+  },
+  {
+    key: "25",
+    label: new Map([
+      ["en", "20-30"],
+      ["nl", "20-30"],
+    ]),
+  },
+  {
+    key: "40",
+    label: new Map([
+      ["en", "31-49"],
+      ["nl", "31-49"],
+    ]),
+  },
+  {
+    key: "50+",
+    label: new Map([
+      ["en", "50+"],
+      ["nl", "50+"],
+    ]),
+  },
 ];
 
 class ContactsDef extends SurveyDefinition {
