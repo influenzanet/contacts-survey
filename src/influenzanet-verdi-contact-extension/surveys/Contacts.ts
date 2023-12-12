@@ -13,11 +13,14 @@ import {
   Validation,
 } from "survey-engine/data_types";
 import { ComponentGenerators } from "case-editor-tools/surveys/utils/componentGenerators";
+import { LanguageMap } from "../languages/languageHelpers";
+
+import "../languages/it"
 
 const dropdownOptions = [
   {
     key: "0",
-    label: new Map([
+    label: new LanguageMap([
       [
         "id",
         "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.0",
@@ -28,7 +31,7 @@ const dropdownOptions = [
   },
   {
     key: "1",
-    label: new Map([
+    label: new LanguageMap([
       [
         "id",
         "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.1",
@@ -39,7 +42,7 @@ const dropdownOptions = [
   },
   {
     key: "2",
-    label: new Map([
+    label: new LanguageMap([
       [
         "id",
         "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.2",
@@ -50,7 +53,7 @@ const dropdownOptions = [
   },
   {
     key: "3",
-    label: new Map([
+    label: new LanguageMap([
       [
         "id",
         "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.3",
@@ -61,7 +64,7 @@ const dropdownOptions = [
   },
   {
     key: "4",
-    label: new Map([
+    label: new LanguageMap([
       [
         "id",
         "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.4",
@@ -72,7 +75,7 @@ const dropdownOptions = [
   },
   {
     key: "5",
-    label: new Map([
+    label: new LanguageMap([
       [
         "id",
         "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.5",
@@ -83,7 +86,7 @@ const dropdownOptions = [
   },
   {
     key: "6",
-    label: new Map([
+    label: new LanguageMap([
       [
         "id",
         "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.6",
@@ -94,7 +97,7 @@ const dropdownOptions = [
   },
   {
     key: "8",
-    label: new Map([
+    label: new LanguageMap([
       [
         "id",
         "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.7",
@@ -105,7 +108,7 @@ const dropdownOptions = [
   },
   {
     key: "12",
-    label: new Map([
+    label: new LanguageMap([
       [
         "id",
         "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.8",
@@ -116,7 +119,7 @@ const dropdownOptions = [
   },
   {
     key: "17",
-    label: new Map([
+    label: new LanguageMap([
       [
         "id",
         "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.9",
@@ -127,7 +130,7 @@ const dropdownOptions = [
   },
   {
     key: "25",
-    label: new Map([
+    label: new LanguageMap([
       [
         "id",
         "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.10",
@@ -138,7 +141,7 @@ const dropdownOptions = [
   },
   {
     key: "40",
-    label: new Map([
+    label: new LanguageMap([
       [
         "id",
         "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.11",
@@ -149,7 +152,7 @@ const dropdownOptions = [
   },
   {
     key: "50+",
-    label: new Map([
+    label: new LanguageMap([
       [
         "id",
         "Contacts.ContactsHome.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12",
@@ -174,15 +177,15 @@ class ContactsDef extends SurveyDefinition {
   constructor() {
     super({
       surveyKey: surveyKeys.Contacts,
-      name: new Map([
+      name: new LanguageMap([
         ["id", "Contacts.name.0"],
         ["en", "Survey about your everyday social contacts"],
       ]),
-      description: new Map([
+      description: new LanguageMap([
         ["id", "Contacts.description.0"],
         ["en", ""],
       ]),
-      durationText: new Map([
+      durationText: new LanguageMap([
         ["id", "Contacts.typicalDuration.0"],
         ["en", "1 minute"],
       ]),
@@ -210,7 +213,7 @@ class ContactsDef extends SurveyDefinition {
     this.ContactMatrixForHome = new ContactMatrix(
       this.key,
       "ContactsHome",
-      new Map([
+      new LanguageMap([
         ["id", "Contacts.ContactsHome.title.0"],
         [
           "en",
@@ -233,7 +236,7 @@ class ContactsDef extends SurveyDefinition {
     this.ContactMatrixForWork = new ContactMatrix(
       this.key,
       "ContactsWork",
-      new Map([
+      new LanguageMap([
         ["id", "Contacts.ContactsWork.title.0"],
         [
           "en",
@@ -256,7 +259,7 @@ class ContactsDef extends SurveyDefinition {
     this.ContactMatrixForSchool = new ContactMatrix(
       this.key,
       "ContactsSchool",
-      new Map([
+      new LanguageMap([
         ["id", "Contacts.ContactsSchool.title.0"],
         [
           "en",
@@ -279,7 +282,7 @@ class ContactsDef extends SurveyDefinition {
     this.ContactMatrixForLeisure = new ContactMatrix(
       this.key,
       "ContactsLeisure",
-      new Map([
+      new LanguageMap([
         ["id", "Contacts.ContactsLeisure.title.0"],
         [
           "en",
@@ -302,7 +305,7 @@ class ContactsDef extends SurveyDefinition {
     this.ContactMatrixForOther = new ContactMatrix(
       this.key,
       "ContactsOther",
-      new Map([
+      new LanguageMap([
         ["id", "Contacts.ContactsOther.title.0"],
         [
           "en",
@@ -473,7 +476,7 @@ class Infos extends Item {
       condition: this.condition,
       content: [
         ComponentGenerators.markdown({
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.Info.x46.markdown.0"],
             [
               "en",
@@ -545,7 +548,7 @@ class ContactMatrix extends Item {
   rowInfos: Array<{ key: string; label: Map<string, string> }> = [
     {
       key: "r1",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.rows.r1.responsiveMatrix.rows.row.0",
@@ -556,7 +559,7 @@ class ContactMatrix extends Item {
     },
     {
       key: "r2",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.rows.r2.responsiveMatrix.rows.row.1",
@@ -567,7 +570,7 @@ class ContactMatrix extends Item {
     },
     {
       key: "r3",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.rows.r3.responsiveMatrix.rows.row.2",
@@ -578,7 +581,7 @@ class ContactMatrix extends Item {
     },
     {
       key: "r4",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.rows.r4.responsiveMatrix.rows.row.3",
@@ -589,7 +592,7 @@ class ContactMatrix extends Item {
     },
     {
       key: "r5",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.rows.r5.responsiveMatrix.rows.row.4",
@@ -600,7 +603,7 @@ class ContactMatrix extends Item {
     },
     {
       key: "r6",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.rows.r6.responsiveMatrix.rows.row.5",
@@ -611,7 +614,7 @@ class ContactMatrix extends Item {
     },
     {
       key: "r7",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.rows.r7.responsiveMatrix.rows.row.6",
@@ -622,7 +625,7 @@ class ContactMatrix extends Item {
     },
     {
       key: "r8",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.rows.r8.responsiveMatrix.rows.row.7",
@@ -633,7 +636,7 @@ class ContactMatrix extends Item {
     },
     {
       key: "r9",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.rows.r9.responsiveMatrix.rows.row.8",
@@ -644,7 +647,7 @@ class ContactMatrix extends Item {
     },
     {
       key: "r10",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.rows.r10.responsiveMatrix.rows.row.9",
@@ -655,7 +658,7 @@ class ContactMatrix extends Item {
     },
     {
       key: "r11",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.rows.r11.responsiveMatrix.rows.row.10",
@@ -666,7 +669,7 @@ class ContactMatrix extends Item {
     },
     {
       key: "r12",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.rows.r12.responsiveMatrix.rows.row.11",
@@ -680,7 +683,7 @@ class ContactMatrix extends Item {
   columnInfos: Array<{ key: string; label: Map<string, string> }> = [
     {
       key: "f",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.cols.f.responsiveMatrix.columns.category.0",
@@ -691,7 +694,7 @@ class ContactMatrix extends Item {
     },
     {
       key: "m",
-      label: new Map([
+      label: new LanguageMap([
         [
           "id",
           "Contacts.ContactsHome.rg.rm.cols.m.responsiveMatrix.columns.category.1",
@@ -780,7 +783,7 @@ class ContactMatrix extends Item {
       columns: this.columnInfos,
       rows: this.generateRows(),
       dropdownConfig: {
-        unselectedLabeL: new Map([
+        unselectedLabeL: new LanguageMap([
           [
             "id",
             "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.1",
@@ -813,7 +816,7 @@ class Q1 extends Item {
       itemKey: this.itemKey,
       isRequired: this.isRequired,
       condition: this.condition,
-      questionText: new Map([
+      questionText: new LanguageMap([
         ["id", "Contacts.Q1.title.0"],
         [
           "en",
@@ -828,7 +831,7 @@ class Q1 extends Item {
         {
           key: this.optionKeys.yes,
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.Q1.rg.scg.option.0"],
             ["en", "Yes"],
             [
@@ -840,7 +843,7 @@ class Q1 extends Item {
         {
           key: this.optionKeys.no,
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.Q1.rg.scg.option.1"],
             ["en", "No"],
             [
@@ -852,7 +855,7 @@ class Q1 extends Item {
         {
           key: this.optionKeys.other,
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.Q1.rg.scg.option.2"],
             ["en", "I don't want to say"],
             ["nl", "Dat wil ik liever niet zeggen"],
@@ -884,7 +887,7 @@ class Q2 extends Item {
       itemKey: this.itemKey,
       isRequired: this.isRequired,
       condition: this.condition,
-      questionText: new Map([
+      questionText: new LanguageMap([
         ["id", "Contacts.Q2.title.0"],
         ["en", "Please select all the settings that apply"],
         [
@@ -896,7 +899,7 @@ class Q2 extends Item {
         {
           key: this.optionKeys.home,
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.Q2.rg.mcg.option.0"],
             ["en", "Home"],
             ["nl", "Thuis: je woning (bijv. gezinsleden, bezoekers)."],
@@ -905,7 +908,7 @@ class Q2 extends Item {
         {
           key: this.optionKeys.work,
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.Q2.rg.mcg.option.1"],
             ["en", "Work"],
             ["nl", "Werk: je werk (bijv. klanten, collega's)"],
@@ -914,7 +917,7 @@ class Q2 extends Item {
         {
           key: this.optionKeys.school,
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.Q2.rg.mcg.option.2"],
             ["en", "School"],
             [
@@ -926,7 +929,7 @@ class Q2 extends Item {
         {
           key: this.optionKeys.leisure,
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.Q2.rg.mcg.option.3"],
             ["en", "Leisure"],
             [
@@ -938,7 +941,7 @@ class Q2 extends Item {
         {
           key: this.optionKeys.other,
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.Q2.rg.mcg.option.4"],
             ["en", "Other"],
             [
@@ -969,7 +972,7 @@ class QFragile extends Item {
       itemKey: this.itemKey,
       isRequired: this.isRequired,
       condition: this.condition,
-      questionText: new Map([
+      questionText: new LanguageMap([
         ["id", "Contacts.QFragile.title.0"],
         [
           "en",
@@ -984,7 +987,7 @@ class QFragile extends Item {
         {
           key: this.optionKeys.no,
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.0"],
             ["en", "No"],
             ["nl", "Nee"],
@@ -1002,7 +1005,7 @@ class QFragile extends Item {
         {
           key: "1",
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.1"],
             ["en", "Yes, a care home"],
             ["nl", "Ja, een verpleeg- of verzorgingstehuis"],
@@ -1015,7 +1018,7 @@ class QFragile extends Item {
         {
           key: "3",
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.2"],
             ["en", "TODO"],
             ["nl", "Ja, een instelling voor begeleid wonen"],
@@ -1028,7 +1031,7 @@ class QFragile extends Item {
         {
           key: "2",
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.3"],
             ["en", "Yes, a hospital"],
             ["nl", "Ja, een ziekenhuis"],
@@ -1041,7 +1044,7 @@ class QFragile extends Item {
         {
           key: "4",
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.4"],
             ["en", "TODO"],
             [
@@ -1057,7 +1060,7 @@ class QFragile extends Item {
         {
           key: "5",
           role: "option",
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.5"],
             ["en", "TODO"],
             ["nl", "Ja, een hospice"],
@@ -1071,7 +1074,7 @@ class QFragile extends Item {
           key: "other",
           role: "input",
           style: [{ key: "maxLength", value: "160" }],
-          content: new Map([
+          content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.other.input.6"],
             ["en", "Other: "],
             ["nl", "Anders: "],
