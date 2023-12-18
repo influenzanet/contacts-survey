@@ -16,7 +16,7 @@ import { ComponentGenerators } from "case-editor-tools/surveys/utils/componentGe
 
 import { Language, LanguageMap, LanguageHelpers } from "../languages/languageHelpers";
 
-const dropdownOptions = [
+const dropdownOptions = () => [
   {
     key: "0",
     label: new LanguageMap([
@@ -798,7 +798,7 @@ class ContactMatrix extends Item {
           ["en", "Select an option"],
           ["nl", "Selecteer een optie"],
         ]),
-        options: dropdownOptions,
+        options: dropdownOptions(),
       },
       customValidations: this.validationRules(),
     });
