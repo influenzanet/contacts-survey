@@ -14,7 +14,11 @@ import {
 } from "survey-engine/data_types";
 import { ComponentGenerators } from "case-editor-tools/surveys/utils/componentGenerators";
 
-import { Language, LanguageMap, LanguageHelpers } from "../languages/languageHelpers";
+import {
+  Language,
+  LanguageMap,
+  LanguageHelpers,
+} from "../languages/languageHelpers";
 
 const dropdownOptions = () => [
   {
@@ -25,7 +29,6 @@ const dropdownOptions = () => [
         "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.0",
       ],
       ["en", "0"],
-      ["nl", "0"],
     ]),
   },
   {
@@ -36,7 +39,6 @@ const dropdownOptions = () => [
         "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.1",
       ],
       ["en", "1"],
-      ["nl", "1"],
     ]),
   },
   {
@@ -47,7 +49,6 @@ const dropdownOptions = () => [
         "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.2",
       ],
       ["en", "2"],
-      ["nl", "2"],
     ]),
   },
   {
@@ -58,7 +59,6 @@ const dropdownOptions = () => [
         "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.3",
       ],
       ["en", "3"],
-      ["nl", "3"],
     ]),
   },
   {
@@ -69,7 +69,6 @@ const dropdownOptions = () => [
         "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.4",
       ],
       ["en", "4"],
-      ["nl", "4"],
     ]),
   },
   {
@@ -80,7 +79,6 @@ const dropdownOptions = () => [
         "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.5",
       ],
       ["en", "5"],
-      ["nl", "5"],
     ]),
   },
   {
@@ -91,7 +89,6 @@ const dropdownOptions = () => [
         "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.6",
       ],
       ["en", "6"],
-      ["nl", "6"],
     ]),
   },
   {
@@ -102,7 +99,6 @@ const dropdownOptions = () => [
         "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.7",
       ],
       ["en", "7-9"],
-      ["nl", "7-9"],
     ]),
   },
   {
@@ -113,7 +109,6 @@ const dropdownOptions = () => [
         "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.8",
       ],
       ["en", "10-14"],
-      ["nl", "10-14"],
     ]),
   },
   {
@@ -124,7 +119,6 @@ const dropdownOptions = () => [
         "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.9",
       ],
       ["en", "15-19"],
-      ["nl", "15-19"],
     ]),
   },
   {
@@ -135,7 +129,6 @@ const dropdownOptions = () => [
         "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.10",
       ],
       ["en", "20-30"],
-      ["nl", "20-30"],
     ]),
   },
   {
@@ -146,7 +139,6 @@ const dropdownOptions = () => [
         "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.11",
       ],
       ["en", "31-49"],
-      ["nl", "31-49"],
     ]),
   },
   {
@@ -157,7 +149,6 @@ const dropdownOptions = () => [
         "Contacts.ContactsAll.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12",
       ],
       ["en", "50+"],
-      ["nl", "50+"],
     ]),
   },
 ];
@@ -174,14 +165,13 @@ export class ContactsDef extends SurveyDefinition {
   QFragile: QFragile;
 
   constructor(languages: Language[]) {
-
     /*
      * NOTE: in this suboptimal implementation, languages have to be initialized
      * inside the survey constructor, before the first reference to LanguageMap.
      */
     LanguageHelpers.languages = new Map();
     for (const language of languages)
-            LanguageHelpers.addLanguage(language.languageId, language.translations);
+      LanguageHelpers.addLanguage(language.languageId, language.translations);
 
     super({
       surveyKey: surveyKeys.Contacts,
@@ -227,10 +217,6 @@ export class ContactsDef extends SurveyDefinition {
           "en",
           "Indicate the number of contacts at home (per age category and gender)",
         ],
-        [
-          "nl",
-          "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren THUIS hebt gesproken, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Thuis = je woning (bijv. gezinsleden, bezoekers)",
-        ],
       ]),
       conditionForHome,
       isRequired
@@ -249,10 +235,6 @@ export class ContactsDef extends SurveyDefinition {
         [
           "en",
           "Indicate the number of contacts at work (per age category and gender)",
-        ],
-        [
-          "nl",
-          "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren op je WERK hebt gesproken, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Werk = je werk (bijv. klanten, collegas)",
         ],
       ]),
       conditionForWork,
@@ -273,10 +255,6 @@ export class ContactsDef extends SurveyDefinition {
           "en",
           "Indicate the number of contacts at school (per age category and gender)",
         ],
-        [
-          "nl",
-          "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren op SCHOOL hebt gesproken, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). School = onderwijsinstellingen (bijv. docenten, klasgenoten)",
-        ],
       ]),
       conditionForSchool,
       isRequired
@@ -296,10 +274,6 @@ export class ContactsDef extends SurveyDefinition {
           "en",
           "Indicate the number of contacts during leisure (per age category and gender)",
         ],
-        [
-          "nl",
-          "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren tijdens VRIJE TIJD hebt gesproken en/of aangeraakt, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Vrije tijd = geplande activiteiten met anderen (bijv. mensen die je ontmoet in een café, sportschool of bij iemand anders thuis).",
-        ],
       ]),
       conditionForLeisure,
       isRequired
@@ -318,10 +292,6 @@ export class ContactsDef extends SurveyDefinition {
         [
           "en",
           "Indicate the number of contacts during other activities (per age category and gender)",
-        ],
-        [
-          "nl",
-          "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren tijdens OVERIGE ACTIVITEITEN hebt gesproken en/of aangeraakt, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Overige activiteiten = alle locaties die niet worden genoemd in de andere groepen (bijv. mensen die u ontmoet in het openbaar vervoer).",
         ],
       ]),
       conditionForOther,
@@ -452,7 +422,6 @@ export class ContactsDef extends SurveyDefinition {
   }
 
   buildSurvey() {
-
     // Define order of the questions here:
     this.addItem(this.Infos.get());
     this.addItem(this.Q1.get());
@@ -563,7 +532,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.rows.r1.responsiveMatrix.rows.row.0",
         ],
         ["en", "0 - 3"],
-        ["nl", "0-3 jaar"],
       ]),
     },
     {
@@ -574,7 +542,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.rows.r2.responsiveMatrix.rows.row.1",
         ],
         ["en", "3 - 6"],
-        ["nl", "4-6 jaar"],
       ]),
     },
     {
@@ -585,7 +552,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.rows.r3.responsiveMatrix.rows.row.2",
         ],
         ["en", "7 - 12"],
-        ["nl", "7-12 jaar"],
       ]),
     },
     {
@@ -596,7 +562,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.rows.r4.responsiveMatrix.rows.row.3",
         ],
         ["en", "13 - 18"],
-        ["nl", "13-18 jaar"],
       ]),
     },
     {
@@ -607,7 +572,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.rows.r5.responsiveMatrix.rows.row.4",
         ],
         ["en", "19 - 29"],
-        ["nl", "19-29 jaar"],
       ]),
     },
     {
@@ -618,7 +582,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.rows.r6.responsiveMatrix.rows.row.5",
         ],
         ["en", "30 - 39"],
-        ["nl", "30-39 jaar"],
       ]),
     },
     {
@@ -629,7 +592,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.rows.r7.responsiveMatrix.rows.row.6",
         ],
         ["en", "40 - 49"],
-        ["nl", "40-49 jaar"],
       ]),
     },
     {
@@ -640,7 +602,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.rows.r8.responsiveMatrix.rows.row.7",
         ],
         ["en", "50 - 59"],
-        ["nl", "50-59 jaar"],
       ]),
     },
     {
@@ -651,7 +612,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.rows.r9.responsiveMatrix.rows.row.8",
         ],
         ["en", "60 - 69"],
-        ["nl", "60-69 jaar"],
       ]),
     },
     {
@@ -662,7 +622,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.rows.r10.responsiveMatrix.rows.row.9",
         ],
         ["en", "70 - 79"],
-        ["nl", "70-79 jaar"],
       ]),
     },
     {
@@ -673,7 +632,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.rows.r11.responsiveMatrix.rows.row.10",
         ],
         ["en", "80 - 89"],
-        ["nl", "80-89 jaar"],
       ]),
     },
     {
@@ -684,7 +642,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.rows.r12.responsiveMatrix.rows.row.11",
         ],
         ["en", "90+"],
-        ["nl", "90+ jaar"],
       ]),
     },
   ];
@@ -698,7 +655,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.cols.f.responsiveMatrix.columns.category.0",
         ],
         ["en", "Female"],
-        ["nl", "Vrouw"],
       ]),
     },
     {
@@ -709,7 +665,6 @@ class ContactMatrix extends Item {
           "Contacts.ContactsAll.rg.rm.cols.m.responsiveMatrix.columns.category.1",
         ],
         ["en", "Male"],
-        ["nl", "Man"],
       ]),
     },
   ];
@@ -798,7 +753,6 @@ class ContactMatrix extends Item {
             "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.1",
           ],
           ["en", "Select an option"],
-          ["nl", "Selecteer een optie"],
         ]),
         options: dropdownOptions(),
       },
@@ -831,10 +785,6 @@ class Q1 extends Item {
           "en",
           "Did you have any social contact between yesterday 5am and 5 am today?",
         ],
-        [
-          "nl",
-          "Heb je gisteren met tenminste één ander persoon gesproken en/of aangeraakt, of ben je dichtbij een ander geweest in dezelfde kamer (binnen 3 meter)?",
-        ],
       ]),
       responseOptions: [
         {
@@ -843,10 +793,6 @@ class Q1 extends Item {
           content: new LanguageMap([
             ["id", "Contacts.Q1.rg.scg.option.0"],
             ["en", "Yes"],
-            [
-              "nl",
-              "Ja, ik heb met tenminste één ander persoon gesproken en/of aangeraakt, of ben dichtbij een ander geweest in dezelfde kamer (binnen 3 meter).",
-            ],
           ]),
         },
         {
@@ -855,10 +801,6 @@ class Q1 extends Item {
           content: new LanguageMap([
             ["id", "Contacts.Q1.rg.scg.option.1"],
             ["en", "No"],
-            [
-              "nl",
-              "Nee, ik heb met niemand gesproken en/of aangeraakt, en ik ben NIET dichtbij iemand anders geweest in dezelfde kamer (binnen 3 meter).",
-            ],
           ]),
         },
         {
@@ -867,7 +809,6 @@ class Q1 extends Item {
           content: new LanguageMap([
             ["id", "Contacts.Q1.rg.scg.option.2"],
             ["en", "I don't want to say"],
-            ["nl", "Dat wil ik liever niet zeggen"],
           ]),
         },
       ],
@@ -899,10 +840,6 @@ class Q2 extends Item {
       questionText: new LanguageMap([
         ["id", "Contacts.Q2.title.0"],
         ["en", "Please select all the settings that apply"],
-        [
-          "nl",
-          "Selecteer alsjeblieft alle plekken waar je tenminste met één persoon hebt gesproken en/of aangeraakt, of dichtbij bent geweest in dezelfde kamer (binnen 3 meter)?",
-        ],
       ]),
       responseOptions: [
         {
@@ -911,7 +848,6 @@ class Q2 extends Item {
           content: new LanguageMap([
             ["id", "Contacts.Q2.rg.mcg.option.0"],
             ["en", "Home"],
-            ["nl", "Thuis: je woning (bijv. gezinsleden, bezoekers)."],
           ]),
         },
         {
@@ -920,7 +856,6 @@ class Q2 extends Item {
           content: new LanguageMap([
             ["id", "Contacts.Q2.rg.mcg.option.1"],
             ["en", "Work"],
-            ["nl", "Werk: je werk (bijv. klanten, collega's)"],
           ]),
         },
         {
@@ -929,10 +864,6 @@ class Q2 extends Item {
           content: new LanguageMap([
             ["id", "Contacts.Q2.rg.mcg.option.2"],
             ["en", "School"],
-            [
-              "nl",
-              "School: onderwijsinstellingen (bijv. docenten, klasgenoten)",
-            ],
           ]),
         },
         {
@@ -941,10 +872,6 @@ class Q2 extends Item {
           content: new LanguageMap([
             ["id", "Contacts.Q2.rg.mcg.option.3"],
             ["en", "Leisure"],
-            [
-              "nl",
-              "Vrije tijd: geplande activiteiten met anderen (bijv. mensen die je ontmoet in een café, wandeling, sport(school) of bij iemand anders thuis).",
-            ],
           ]),
         },
         {
@@ -953,10 +880,6 @@ class Q2 extends Item {
           content: new LanguageMap([
             ["id", "Contacts.Q2.rg.mcg.option.4"],
             ["en", "Other"],
-            [
-              "nl",
-              "Overige activiteiten: alle locaties die hierboven niet worden genoemd (bijv. mensen die je ontmoet in het openbaar vervoer of winkel).",
-            ],
           ]),
         },
       ],
@@ -987,10 +910,6 @@ class QFragile extends Item {
           "en",
           "Did you visit an institute with (many) fragile people between yesterday 5am and 5 am today?",
         ],
-        [
-          "nl",
-          "Heb je gisteren een instelling met (veel) kwetsbare mensen bezocht? (kwetsbare mensen zijn mensen met een extra hoog risico voor ernstige klachten bij een besmetting)",
-        ],
       ]),
       responseOptions: [
         {
@@ -999,7 +918,6 @@ class QFragile extends Item {
           content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.0"],
             ["en", "No"],
-            ["nl", "Nee"],
           ]),
           disabled: SurveyEngine.multipleChoice.any(
             this.key,
@@ -1017,7 +935,6 @@ class QFragile extends Item {
           content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.1"],
             ["en", "Yes, a care home"],
-            ["nl", "Ja, een verpleeg- of verzorgingstehuis"],
           ]),
           disabled: SurveyEngine.multipleChoice.any(
             this.key,
@@ -1030,7 +947,6 @@ class QFragile extends Item {
           content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.2"],
             ["en", "TODO"],
-            ["nl", "Ja, een instelling voor begeleid wonen"],
           ]),
           disabled: SurveyEngine.multipleChoice.any(
             this.key,
@@ -1043,7 +959,6 @@ class QFragile extends Item {
           content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.3"],
             ["en", "Yes, a hospital"],
-            ["nl", "Ja, een ziekenhuis"],
           ]),
           disabled: SurveyEngine.multipleChoice.any(
             this.key,
@@ -1056,10 +971,6 @@ class QFragile extends Item {
           content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.4"],
             ["en", "TODO"],
-            [
-              "nl",
-              "Ja, een zorginstelling anders dan een ziekenhuis (bijvoorbeeld huisarts, fysiotherapeut, vaccinatiekliniek)",
-            ],
           ]),
           disabled: SurveyEngine.multipleChoice.any(
             this.key,
@@ -1072,7 +983,6 @@ class QFragile extends Item {
           content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.5"],
             ["en", "TODO"],
-            ["nl", "Ja, een hospice"],
           ]),
           disabled: SurveyEngine.multipleChoice.any(
             this.key,
@@ -1086,7 +996,6 @@ class QFragile extends Item {
           content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.other.input.6"],
             ["en", "Other: "],
-            ["nl", "Anders: "],
           ]),
           disabled: SurveyEngine.multipleChoice.any(
             this.key,
