@@ -172,9 +172,17 @@ export class ContactsDef extends SurveyDefinition {
   ContactMatrixForLeisure: ContactMatrix;
   ContactMatrixForOther: ContactMatrix;
   QFragile: QFragile;
-  languages: Language[];
 
   constructor(languages: Language[]) {
+
+    /*
+     * NOTE: in this suboptimal implementation, languages have to be initialized
+     * inside the survey constructor, before the first reference to LanguageMap.
+     */
+    LanguageHelpers.languages = new Map();
+    for (const language of languages)
+            LanguageHelpers.addLanguage(language.languageId, language.translations);
+
     super({
       surveyKey: surveyKeys.Contacts,
       name: new LanguageMap([
@@ -190,8 +198,6 @@ export class ContactsDef extends SurveyDefinition {
         ["en", "1 minute"],
       ]),
     });
-
-    this.languages = languages;
 
     this.editor.setAvailableFor("public");
     this.editor.setRequireLoginBeforeSubmission(false);
@@ -446,10 +452,6 @@ export class ContactsDef extends SurveyDefinition {
   }
 
   buildSurvey() {
-
-    LanguageHelpers.languages = new Map();
-    for (const language of this.languages)
-            LanguageHelpers.addLanguage(language.languageId, language.translations);
 
     // Define order of the questions here:
     this.addItem(this.Infos.get());
