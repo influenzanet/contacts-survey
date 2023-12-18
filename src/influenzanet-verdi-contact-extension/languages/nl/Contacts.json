@@ -1,0 +1,222 @@
+{
+  "Contacts.name.0": {
+    "en": "Survey about your everyday social contacts",
+    "nl": "TODO"
+  },
+  "Contacts.description.0": {
+    "en": "",
+    "nl": "TODO"
+  },
+  "Contacts.typicalDuration.0": {
+    "en": "1 minute",
+    "nl": "TODO"
+  },
+  "Contacts.Info.x46.markdown.0": {
+    "en": "\nThe onward transmission of respiratory infections depends on with whom\nyou talked, could have talked or whom you touched, actions we refer to\nas a *contact*.\n\n### What is a contact?\n\nA contact is defined as the co-presence and interaction with another\nindividual at a distance of less than three metres. Examples could be\npeople you have talked to or people that you had a physical contact\nwith, even without exchanging words (for example shaking hands, etc). We\nare not interested in contacts by phone or over the internet.\n\n### Why is this important?\n\nBecause a lot of transmission happens when the symptoms are very mild,\nthe contact you have every day (thus also when you are healthy) are very\ninformative in predicting whom you might infect when you have\ninfluenza-like illness. For this reason, we ask you to answer a few\nquestions about whom you contacted between yesterday (since when you\nwoke up) and until the same hour the next day.\n\nWe also ask about the (possible) age-range of your contacts, the setting\n(household, work, school etc.) and the gender of the people you were in\ncontact with.\n\n### How is the setting of a contact defined?\n\nTo help the analysis we also categorised contacts according categories/\nlocations:\n\n-   Home: your house (example of contact: your household members, people\n    visiting **your** house,...).\n\n-   Work: your working location (example of contact: customer,\n    co-workers, ...). If you have multiple jobs, please include them\n    all.\n\n-   School: your school or university or higher education location\n    (example of contacts: teacher, ...\n\n-   Leisure: Every activity you planned to do with other people (example\n    of contacts: person met at a bar or at the gym or in a house\n    **different from yours**).\n\n-   Other: everything not listed before (example of contacts: person met\n    during commuting,...).\n\nHousehold members are defined as all people you live with on a daily\nbasis with whom you sleep under the same roof (for example also\nco-residents).",
+    "nl": "TODO"
+  },
+  "Contacts.Q1.title.0": {
+    "en": "Did you have any social contact between yesterday 5am and 5 am today?",
+    "nl": "Heb je gisteren met tenminste één ander persoon gesproken en/of aangeraakt, of ben je dichtbij een ander geweest in dezelfde kamer (binnen 3 meter)?"
+  },
+  "Contacts.Q1.rg.scg.option.0": {
+    "en": "Yes",
+    "nl": "Ja, ik heb met tenminste één ander persoon gesproken en/of aangeraakt, of ben dichtbij een ander geweest in dezelfde kamer (binnen 3 meter)."
+  },
+  "Contacts.Q1.rg.scg.option.1": {
+    "en": "No",
+    "nl": "Nee, ik heb met niemand gesproken en/of aangeraakt, en ik ben NIET dichtbij iemand anders geweest in dezelfde kamer (binnen 3 meter)."
+  },
+  "Contacts.Q1.rg.scg.option.2": {
+    "en": "I don't want to say",
+    "nl": "Dat wil ik liever niet zeggen"
+  },
+  "Contacts.Q2.title.0": {
+    "en": "Please select all the settings that apply",
+    "nl": "Selecteer alsjeblieft alle plekken waar je tenminste met één persoon hebt gesproken en/of aangeraakt, of dichtbij bent geweest in dezelfde kamer (binnen 3 meter)?"
+  },
+  "Contacts.Q2.rg.mcg.option.0": {
+    "en": "Home",
+    "nl": "Thuis: je woning (bijv. gezinsleden, bezoekers)."
+  },
+  "Contacts.Q2.rg.mcg.option.1": {
+    "en": "Work",
+    "nl": "Werk: je werk (bijv. klanten, collega's)"
+  },
+  "Contacts.Q2.rg.mcg.option.2": {
+    "en": "School",
+    "nl": "School: onderwijsinstellingen (bijv. docenten, klasgenoten)"
+  },
+  "Contacts.Q2.rg.mcg.option.3": {
+    "en": "Leisure",
+    "nl": "Vrije tijd: geplande activiteiten met anderen (bijv. mensen die je ontmoet in een café, wandeling, sport(school) of bij iemand anders thuis)."
+  },
+  "Contacts.Q2.rg.mcg.option.4": {
+    "en": "Other",
+    "nl": "Overige activiteiten: alle locaties die hierboven niet worden genoemd (bijv. mensen die je ontmoet in het openbaar vervoer of winkel)."
+  },
+  "Contacts.ContactsHome.title.0": {
+    "en": "Indicate the number of contacts at home (per age category and gender)",
+    "nl": "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren THUIS hebt gesproken, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Thuis = je woning (bijv. gezinsleden, bezoekers)"
+  },
+  "Contacts.ContactsAll.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
+    "en": "Female",
+    "nl": "Vrouw"
+  },
+  "Contacts.ContactsAll.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
+    "en": "Male",
+    "nl": "Man"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
+    "en": "Select an option",
+    "nl": "Selecteer een optie"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
+    "en": "0",
+    "nl": "0"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
+    "en": "1",
+    "nl": "1"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
+    "en": "2",
+    "nl": "2"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
+    "en": "3",
+    "nl": "3"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
+    "en": "4",
+    "nl": "4"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
+    "en": "5",
+    "nl": "5"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
+    "en": "6",
+    "nl": "6"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
+    "en": "7-9",
+    "nl": "7-9"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
+    "en": "10-14",
+    "nl": "10-14"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
+    "en": "15-19",
+    "nl": "15-19"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
+    "en": "20-30",
+    "nl": "20-30"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
+    "en": "31-49",
+    "nl": "31-49"
+  },
+  "Contacts.ContactsAll.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
+    "en": "50+",
+    "nl": "50+"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
+    "en": "0 - 3",
+    "nl": "0-3 jaar"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
+    "en": "3 - 6",
+    "nl": "4-6 jaar"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
+    "en": "7 - 12",
+    "nl": "7-12 jaar"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
+    "en": "13 - 18",
+    "nl": "13-18 jaar"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
+    "en": "19 - 29",
+    "nl": "19-29 jaar"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
+    "en": "30 - 39",
+    "nl": "30-39 jaar"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
+    "en": "40 - 49",
+    "nl": "40-49 jaar"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
+    "en": "50 - 59",
+    "nl": "50-59 jaar"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
+    "en": "60 - 69",
+    "nl": "60-69 jaar"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
+    "en": "70 - 79",
+    "nl": "70-79 jaar"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
+    "en": "80 - 89",
+    "nl": "80-89 jaar"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
+    "en": "90+",
+    "nl": "90+ jaar"
+  },
+  "Contacts.ContactsWork.title.0": {
+    "en": "Indicate the number of contacts at work (per age category and gender)",
+    "nl": "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren op je WERK hebt gesproken, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Werk = je werk (bijv. klanten, collegas)"
+  },
+  "Contacts.ContactsSchool.title.0": {
+    "en": "Indicate the number of contacts at school (per age category and gender)",
+    "nl": "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren op SCHOOL hebt gesproken, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). School = onderwijsinstellingen (bijv. docenten, klasgenoten)"
+  },
+  "Contacts.ContactsLeisure.title.0": {
+    "en": "Indicate the number of contacts during leisure (per age category and gender)",
+    "nl": "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren tijdens VRIJE TIJD hebt gesproken en/of aangeraakt, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Vrije tijd = geplande activiteiten met anderen (bijv. mensen die je ontmoet in een café, sportschool of bij iemand anders thuis)."
+  },
+  "Contacts.ContactsOther.title.0": {
+    "en": "Indicate the number of contacts during other activities (per age category and gender)",
+    "nl": "Geef alsjeblieft het aantal personen aan (per leeftijdscategorie en geslacht) waarmee je gisteren tijdens OVERIGE ACTIVITEITEN hebt gesproken en/of aangeraakt, of waarbij dichtbij bent geweest in dezelfde kamer (binnen 3 meter). Overige activiteiten = alle locaties die niet worden genoemd in de andere groepen (bijv. mensen die u ontmoet in het openbaar vervoer)."
+  },
+  "Contacts.QFragile.title.0": {
+    "en": "Did you visit an institute with (many) fragile people between yesterday 5am and 5 am today?",
+    "nl": "Heb je gisteren een instelling met (veel) kwetsbare mensen bezocht? (kwetsbare mensen zijn mensen met een extra hoog risico voor ernstige klachten bij een besmetting)"
+  },
+  "Contacts.QFragile.rg.mcg.option.0": {
+    "en": "No",
+    "nl": "Nee"
+  },
+  "Contacts.QFragile.rg.mcg.option.1": {
+    "en": "Yes, a care home",
+    "nl": "Ja, een verpleeg- of verzorgingstehuis"
+  },
+  "Contacts.QFragile.rg.mcg.option.2": {
+    "en": "TODO",
+    "nl": "Ja, een instelling voor begeleid wonen"
+  },
+  "Contacts.QFragile.rg.mcg.option.3": {
+    "en": "Yes, a hospital",
+    "nl": "Ja, een ziekenhuis"
+  },
+  "Contacts.QFragile.rg.mcg.option.4": {
+    "en": "TODO",
+    "nl": "Ja, een zorginstelling anders dan een ziekenhuis (bijvoorbeeld huisarts, fysiotherapeut, vaccinatiekliniek)"
+  },
+  "Contacts.QFragile.rg.mcg.option.5": {
+    "en": "TODO",
+    "nl": "Ja, een hospice"
+  },
+  "Contacts.QFragile.rg.mcg.other.input.6": {
+    "en": "Other: ",
+    "nl": "Anders: "
+  }
+}
