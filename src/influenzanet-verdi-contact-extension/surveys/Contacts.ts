@@ -22,7 +22,7 @@ const dropdownOptions = () => [
     label: new LanguageMap([
       [
         "id",
-        "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.0",
+        "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.0",
       ],
       ["en", "0"],
       ["nl", "0"],
@@ -33,7 +33,7 @@ const dropdownOptions = () => [
     label: new LanguageMap([
       [
         "id",
-        "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.1",
+        "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.1",
       ],
       ["en", "1"],
       ["nl", "1"],
@@ -44,7 +44,7 @@ const dropdownOptions = () => [
     label: new LanguageMap([
       [
         "id",
-        "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.2",
+        "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.2",
       ],
       ["en", "2"],
       ["nl", "2"],
@@ -55,7 +55,7 @@ const dropdownOptions = () => [
     label: new LanguageMap([
       [
         "id",
-        "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.3",
+        "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.3",
       ],
       ["en", "3"],
       ["nl", "3"],
@@ -66,7 +66,7 @@ const dropdownOptions = () => [
     label: new LanguageMap([
       [
         "id",
-        "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.4",
+        "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.4",
       ],
       ["en", "4"],
       ["nl", "4"],
@@ -77,7 +77,7 @@ const dropdownOptions = () => [
     label: new LanguageMap([
       [
         "id",
-        "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.5",
+        "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.5",
       ],
       ["en", "5"],
       ["nl", "5"],
@@ -88,7 +88,7 @@ const dropdownOptions = () => [
     label: new LanguageMap([
       [
         "id",
-        "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.6",
+        "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.6",
       ],
       ["en", "6"],
       ["nl", "6"],
@@ -99,7 +99,7 @@ const dropdownOptions = () => [
     label: new LanguageMap([
       [
         "id",
-        "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.7",
+        "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.7",
       ],
       ["en", "7-9"],
       ["nl", "7-9"],
@@ -110,7 +110,7 @@ const dropdownOptions = () => [
     label: new LanguageMap([
       [
         "id",
-        "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.8",
+        "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.8",
       ],
       ["en", "10-14"],
       ["nl", "10-14"],
@@ -121,7 +121,7 @@ const dropdownOptions = () => [
     label: new LanguageMap([
       [
         "id",
-        "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.9",
+        "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.9",
       ],
       ["en", "15-19"],
       ["nl", "15-19"],
@@ -132,7 +132,7 @@ const dropdownOptions = () => [
     label: new LanguageMap([
       [
         "id",
-        "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.10",
+        "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.10",
       ],
       ["en", "20-30"],
       ["nl", "20-30"],
@@ -143,7 +143,7 @@ const dropdownOptions = () => [
     label: new LanguageMap([
       [
         "id",
-        "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.11",
+        "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.11",
       ],
       ["en", "31-49"],
       ["nl", "31-49"],
@@ -154,7 +154,7 @@ const dropdownOptions = () => [
     label: new LanguageMap([
       [
         "id",
-        "Contacts.ContactsHome.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12",
+        "Contacts.ContactsAll.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12",
       ],
       ["en", "50+"],
       ["nl", "50+"],
@@ -558,7 +558,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.rows.r1.responsiveMatrix.rows.row.0",
+          "Contacts.ContactsAll.rg.rm.rows.r1.responsiveMatrix.rows.row.0",
         ],
         ["en", "0 - 3"],
         ["nl", "0-3 jaar"],
@@ -569,7 +569,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.rows.r2.responsiveMatrix.rows.row.1",
+          "Contacts.ContactsAll.rg.rm.rows.r2.responsiveMatrix.rows.row.1",
         ],
         ["en", "3 - 6"],
         ["nl", "4-6 jaar"],
@@ -580,7 +580,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.rows.r3.responsiveMatrix.rows.row.2",
+          "Contacts.ContactsAll.rg.rm.rows.r3.responsiveMatrix.rows.row.2",
         ],
         ["en", "7 - 12"],
         ["nl", "7-12 jaar"],
@@ -591,7 +591,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.rows.r4.responsiveMatrix.rows.row.3",
+          "Contacts.ContactsAll.rg.rm.rows.r4.responsiveMatrix.rows.row.3",
         ],
         ["en", "13 - 18"],
         ["nl", "13-18 jaar"],
@@ -602,7 +602,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.rows.r5.responsiveMatrix.rows.row.4",
+          "Contacts.ContactsAll.rg.rm.rows.r5.responsiveMatrix.rows.row.4",
         ],
         ["en", "19 - 29"],
         ["nl", "19-29 jaar"],
@@ -613,7 +613,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.rows.r6.responsiveMatrix.rows.row.5",
+          "Contacts.ContactsAll.rg.rm.rows.r6.responsiveMatrix.rows.row.5",
         ],
         ["en", "30 - 39"],
         ["nl", "30-39 jaar"],
@@ -624,7 +624,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.rows.r7.responsiveMatrix.rows.row.6",
+          "Contacts.ContactsAll.rg.rm.rows.r7.responsiveMatrix.rows.row.6",
         ],
         ["en", "40 - 49"],
         ["nl", "40-49 jaar"],
@@ -635,7 +635,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.rows.r8.responsiveMatrix.rows.row.7",
+          "Contacts.ContactsAll.rg.rm.rows.r8.responsiveMatrix.rows.row.7",
         ],
         ["en", "50 - 59"],
         ["nl", "50-59 jaar"],
@@ -646,7 +646,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.rows.r9.responsiveMatrix.rows.row.8",
+          "Contacts.ContactsAll.rg.rm.rows.r9.responsiveMatrix.rows.row.8",
         ],
         ["en", "60 - 69"],
         ["nl", "60-69 jaar"],
@@ -657,7 +657,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.rows.r10.responsiveMatrix.rows.row.9",
+          "Contacts.ContactsAll.rg.rm.rows.r10.responsiveMatrix.rows.row.9",
         ],
         ["en", "70 - 79"],
         ["nl", "70-79 jaar"],
@@ -668,7 +668,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.rows.r11.responsiveMatrix.rows.row.10",
+          "Contacts.ContactsAll.rg.rm.rows.r11.responsiveMatrix.rows.row.10",
         ],
         ["en", "80 - 89"],
         ["nl", "80-89 jaar"],
@@ -679,7 +679,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.rows.r12.responsiveMatrix.rows.row.11",
+          "Contacts.ContactsAll.rg.rm.rows.r12.responsiveMatrix.rows.row.11",
         ],
         ["en", "90+"],
         ["nl", "90+ jaar"],
@@ -693,7 +693,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.cols.f.responsiveMatrix.columns.category.0",
+          "Contacts.ContactsAll.rg.rm.cols.f.responsiveMatrix.columns.category.0",
         ],
         ["en", "Female"],
         ["nl", "Vrouw"],
@@ -704,7 +704,7 @@ class ContactMatrix extends Item {
       label: new LanguageMap([
         [
           "id",
-          "Contacts.ContactsHome.rg.rm.cols.m.responsiveMatrix.columns.category.1",
+          "Contacts.ContactsAll.rg.rm.cols.m.responsiveMatrix.columns.category.1",
         ],
         ["en", "Male"],
         ["nl", "Man"],
@@ -793,7 +793,7 @@ class ContactMatrix extends Item {
         unselectedLabeL: new LanguageMap([
           [
             "id",
-            "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.1",
+            "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.1",
           ],
           ["en", "Select an option"],
           ["nl", "Selecteer een optie"],

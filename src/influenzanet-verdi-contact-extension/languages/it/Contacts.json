@@ -74,142 +74,142 @@
     "it": "TODO",
     "en": "Indicate the number of contacts at home (per age category and gender)"
   },
-  "Contacts.ContactsHome.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
+  "Contacts.ContactsAll.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
     "nl": "Female",
     "it": "TODO",
     "en": "Female"
   },
-  "Contacts.ContactsHome.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
+  "Contacts.ContactsAll.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
     "nl": "Male",
     "it": "TODO",
     "en": "Male"
   },
-  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
     "nl": "Select an option",
     "it": "TODO",
     "en": "Select an option"
   },
-  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
     "nl": "0",
     "it": "TODO",
     "en": "0"
   },
-  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
     "nl": "1",
     "it": "TODO",
     "en": "1"
   },
-  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
     "nl": "2",
     "it": "TODO",
     "en": "2"
   },
-  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
     "nl": "3",
     "it": "TODO",
     "en": "3"
   },
-  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
     "nl": "4",
     "it": "TODO",
     "en": "4"
   },
-  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
     "nl": "5",
     "it": "TODO",
     "en": "5"
   },
-  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
     "nl": "6",
     "it": "TODO",
     "en": "6"
   },
-  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
     "nl": "7-9",
     "it": "TODO",
     "en": "7-9"
   },
-  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
     "nl": "10-14",
     "it": "TODO",
     "en": "10-14"
   },
-  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
     "nl": "15-19",
     "it": "TODO",
     "en": "15-19"
   },
-  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
     "nl": "20-30",
     "it": "TODO",
     "en": "20-30"
   },
-  "Contacts.ContactsHome.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
     "nl": "31-49",
     "it": "TODO",
     "en": "31-49"
   },
-  "Contacts.ContactsHome.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
+  "Contacts.ContactsAll.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
     "nl": "50+",
     "it": "TODO",
     "en": "50+"
   },
-  "Contacts.ContactsHome.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
+  "Contacts.ContactsAll.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
     "nl": "0-3 years",
     "it": "TODO",
     "en": "0 - 3"
   },
-  "Contacts.ContactsHome.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
+  "Contacts.ContactsAll.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
     "nl": "4-6 years",
     "it": "TODO",
     "en": "3 - 6"
   },
-  "Contacts.ContactsHome.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
+  "Contacts.ContactsAll.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
     "nl": "7-12 years",
     "it": "TODO",
     "en": "7 - 12"
   },
-  "Contacts.ContactsHome.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
+  "Contacts.ContactsAll.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
     "nl": "13-18 years",
     "it": "TODO",
     "en": "13 - 18"
   },
-  "Contacts.ContactsHome.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
+  "Contacts.ContactsAll.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
     "nl": "19-29 years",
     "it": "TODO",
     "en": "19 - 29"
   },
-  "Contacts.ContactsHome.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
+  "Contacts.ContactsAll.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
     "nl": "30-39 years",
     "it": "TODO",
     "en": "30 - 39"
   },
-  "Contacts.ContactsHome.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
+  "Contacts.ContactsAll.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
     "nl": "40-49 years",
     "it": "TODO",
     "en": "40 - 49"
   },
-  "Contacts.ContactsHome.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
+  "Contacts.ContactsAll.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
     "nl": "50-59 years",
     "it": "TODO",
     "en": "50 - 59"
   },
-  "Contacts.ContactsHome.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
+  "Contacts.ContactsAll.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
     "nl": "60-69 years",
     "it": "TODO",
     "en": "60 - 69"
   },
-  "Contacts.ContactsHome.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
+  "Contacts.ContactsAll.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
     "nl": "70-79 years",
     "it": "TODO",
     "en": "70 - 79"
   },
-  "Contacts.ContactsHome.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
+  "Contacts.ContactsAll.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
     "nl": "80-89 years",
     "it": "TODO",
     "en": "80 - 89"
   },
-  "Contacts.ContactsHome.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
+  "Contacts.ContactsAll.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
     "nl": "90+ years",
     "it": "TODO",
     "en": "90+"
@@ -219,580 +219,20 @@
     "it": "TODO",
     "en": "Indicate the number of contacts at work (per age category and gender)"
   },
-  "Contacts.ContactsWork.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
-    "nl": "Female",
-    "it": "TODO",
-    "en": "Female"
-  },
-  "Contacts.ContactsWork.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
-    "nl": "Male",
-    "it": "TODO",
-    "en": "Male"
-  },
-  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
-    "nl": "Select an option",
-    "it": "TODO",
-    "en": "Select an option"
-  },
-  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
-    "nl": "0",
-    "it": "TODO",
-    "en": "0"
-  },
-  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
-    "nl": "1",
-    "it": "TODO",
-    "en": "1"
-  },
-  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
-    "nl": "2",
-    "it": "TODO",
-    "en": "2"
-  },
-  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
-    "nl": "3",
-    "it": "TODO",
-    "en": "3"
-  },
-  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
-    "nl": "4",
-    "it": "TODO",
-    "en": "4"
-  },
-  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
-    "nl": "5",
-    "it": "TODO",
-    "en": "5"
-  },
-  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
-    "nl": "6",
-    "it": "TODO",
-    "en": "6"
-  },
-  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
-    "nl": "7-9",
-    "it": "TODO",
-    "en": "7-9"
-  },
-  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
-    "nl": "10-14",
-    "it": "TODO",
-    "en": "10-14"
-  },
-  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
-    "nl": "15-19",
-    "it": "TODO",
-    "en": "15-19"
-  },
-  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
-    "nl": "20-30",
-    "it": "TODO",
-    "en": "20-30"
-  },
-  "Contacts.ContactsWork.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
-    "nl": "31-49",
-    "it": "TODO",
-    "en": "31-49"
-  },
-  "Contacts.ContactsWork.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
-    "nl": "50+",
-    "it": "TODO",
-    "en": "50+"
-  },
-  "Contacts.ContactsWork.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
-    "nl": "0-3 years",
-    "it": "TODO",
-    "en": "0 - 3"
-  },
-  "Contacts.ContactsWork.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
-    "nl": "4-6 years",
-    "it": "TODO",
-    "en": "3 - 6"
-  },
-  "Contacts.ContactsWork.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
-    "nl": "7-12 years",
-    "it": "TODO",
-    "en": "7 - 12"
-  },
-  "Contacts.ContactsWork.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
-    "nl": "13-18 years",
-    "it": "TODO",
-    "en": "13 - 18"
-  },
-  "Contacts.ContactsWork.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
-    "nl": "19-29 years",
-    "it": "TODO",
-    "en": "19 - 29"
-  },
-  "Contacts.ContactsWork.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
-    "nl": "30-39 years",
-    "it": "TODO",
-    "en": "30 - 39"
-  },
-  "Contacts.ContactsWork.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
-    "nl": "40-49 years",
-    "it": "TODO",
-    "en": "40 - 49"
-  },
-  "Contacts.ContactsWork.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
-    "nl": "50-59 years",
-    "it": "TODO",
-    "en": "50 - 59"
-  },
-  "Contacts.ContactsWork.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
-    "nl": "60-69 years",
-    "it": "TODO",
-    "en": "60 - 69"
-  },
-  "Contacts.ContactsWork.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
-    "nl": "70-79 years",
-    "it": "TODO",
-    "en": "70 - 79"
-  },
-  "Contacts.ContactsWork.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
-    "nl": "80-89 years",
-    "it": "TODO",
-    "en": "80 - 89"
-  },
-  "Contacts.ContactsWork.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
-    "nl": "90+ years",
-    "it": "TODO",
-    "en": "90+"
-  },
   "Contacts.ContactsSchool.title.0": {
     "nl": "Please specify the number of people (per age category and gender) you spoke with or were near in the same room (within 3 meters) YESTERDAY at SCHOOL. School = education institutions (e.g., teachers, classmates)",
     "it": "TODO",
     "en": "Indicate the number of contacts at school (per age category and gender)"
-  },
-  "Contacts.ContactsSchool.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
-    "nl": "Female",
-    "it": "TODO",
-    "en": "Female"
-  },
-  "Contacts.ContactsSchool.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
-    "nl": "Male",
-    "it": "TODO",
-    "en": "Male"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
-    "nl": "Select an option",
-    "it": "TODO",
-    "en": "Select an option"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
-    "nl": "0",
-    "it": "TODO",
-    "en": "0"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
-    "nl": "1",
-    "it": "TODO",
-    "en": "1"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
-    "nl": "2",
-    "it": "TODO",
-    "en": "2"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
-    "nl": "3",
-    "it": "TODO",
-    "en": "3"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
-    "nl": "4",
-    "it": "TODO",
-    "en": "4"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
-    "nl": "5",
-    "it": "TODO",
-    "en": "5"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
-    "nl": "6",
-    "it": "TODO",
-    "en": "6"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
-    "nl": "7-9",
-    "it": "TODO",
-    "en": "7-9"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
-    "nl": "10-14",
-    "it": "TODO",
-    "en": "10-14"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
-    "nl": "15-19",
-    "it": "TODO",
-    "en": "15-19"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
-    "nl": "20-30",
-    "it": "TODO",
-    "en": "20-30"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
-    "nl": "31-49",
-    "it": "TODO",
-    "en": "31-49"
-  },
-  "Contacts.ContactsSchool.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
-    "nl": "50+",
-    "it": "TODO",
-    "en": "50+"
-  },
-  "Contacts.ContactsSchool.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
-    "nl": "0-3 years",
-    "it": "TODO",
-    "en": "0 - 3"
-  },
-  "Contacts.ContactsSchool.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
-    "nl": "4-6 years",
-    "it": "TODO",
-    "en": "3 - 6"
-  },
-  "Contacts.ContactsSchool.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
-    "nl": "7-12 years",
-    "it": "TODO",
-    "en": "7 - 12"
-  },
-  "Contacts.ContactsSchool.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
-    "nl": "13-18 years",
-    "it": "TODO",
-    "en": "13 - 18"
-  },
-  "Contacts.ContactsSchool.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
-    "nl": "19-29 years",
-    "it": "TODO",
-    "en": "19 - 29"
-  },
-  "Contacts.ContactsSchool.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
-    "nl": "30-39 years",
-    "it": "TODO",
-    "en": "30 - 39"
-  },
-  "Contacts.ContactsSchool.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
-    "nl": "40-49 years",
-    "it": "TODO",
-    "en": "40 - 49"
-  },
-  "Contacts.ContactsSchool.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
-    "nl": "50-59 years",
-    "it": "TODO",
-    "en": "50 - 59"
-  },
-  "Contacts.ContactsSchool.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
-    "nl": "60-69 years",
-    "it": "TODO",
-    "en": "60 - 69"
-  },
-  "Contacts.ContactsSchool.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
-    "nl": "70-79 years",
-    "it": "TODO",
-    "en": "70 - 79"
-  },
-  "Contacts.ContactsSchool.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
-    "nl": "80-89 years",
-    "it": "TODO",
-    "en": "80 - 89"
-  },
-  "Contacts.ContactsSchool.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
-    "nl": "90+ years",
-    "it": "TODO",
-    "en": "90+"
   },
   "Contacts.ContactsLeisure.title.0": {
     "nl": "Please specify the number of people (per age category and gender) you spoke with and/or touched, or were near in the same room (within 3 meters) YESTERDAY during LEISURE TIME. Leisure time = planned activities with others (e.g., people you meet at a café, gym or at someone else's home).",
     "it": "TODO",
     "en": "Indicate the number of contacts during leisure (per age category and gender)"
   },
-  "Contacts.ContactsLeisure.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
-    "nl": "Female",
-    "it": "TODO",
-    "en": "Female"
-  },
-  "Contacts.ContactsLeisure.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
-    "nl": "Male",
-    "it": "TODO",
-    "en": "Male"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
-    "nl": "Select an option",
-    "it": "TODO",
-    "en": "Select an option"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
-    "nl": "0",
-    "it": "TODO",
-    "en": "0"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
-    "nl": "1",
-    "it": "TODO",
-    "en": "1"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
-    "nl": "2",
-    "it": "TODO",
-    "en": "2"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
-    "nl": "3",
-    "it": "TODO",
-    "en": "3"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
-    "nl": "4",
-    "it": "TODO",
-    "en": "4"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
-    "nl": "5",
-    "it": "TODO",
-    "en": "5"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
-    "nl": "6",
-    "it": "TODO",
-    "en": "6"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
-    "nl": "7-9",
-    "it": "TODO",
-    "en": "7-9"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
-    "nl": "10-14",
-    "it": "TODO",
-    "en": "10-14"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
-    "nl": "15-19",
-    "it": "TODO",
-    "en": "15-19"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
-    "nl": "20-30",
-    "it": "TODO",
-    "en": "20-30"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
-    "nl": "31-49",
-    "it": "TODO",
-    "en": "31-49"
-  },
-  "Contacts.ContactsLeisure.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
-    "nl": "50+",
-    "it": "TODO",
-    "en": "50+"
-  },
-  "Contacts.ContactsLeisure.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
-    "nl": "0-3 years",
-    "it": "TODO",
-    "en": "0 - 3"
-  },
-  "Contacts.ContactsLeisure.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
-    "nl": "4-6 years",
-    "it": "TODO",
-    "en": "3 - 6"
-  },
-  "Contacts.ContactsLeisure.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
-    "nl": "7-12 years",
-    "it": "TODO",
-    "en": "7 - 12"
-  },
-  "Contacts.ContactsLeisure.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
-    "nl": "13-18 years",
-    "it": "TODO",
-    "en": "13 - 18"
-  },
-  "Contacts.ContactsLeisure.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
-    "nl": "19-29 years",
-    "it": "TODO",
-    "en": "19 - 29"
-  },
-  "Contacts.ContactsLeisure.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
-    "nl": "30-39 years",
-    "it": "TODO",
-    "en": "30 - 39"
-  },
-  "Contacts.ContactsLeisure.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
-    "nl": "40-49 years",
-    "it": "TODO",
-    "en": "40 - 49"
-  },
-  "Contacts.ContactsLeisure.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
-    "nl": "50-59 years",
-    "it": "TODO",
-    "en": "50 - 59"
-  },
-  "Contacts.ContactsLeisure.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
-    "nl": "60-69 years",
-    "it": "TODO",
-    "en": "60 - 69"
-  },
-  "Contacts.ContactsLeisure.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
-    "nl": "70-79 years",
-    "it": "TODO",
-    "en": "70 - 79"
-  },
-  "Contacts.ContactsLeisure.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
-    "nl": "80-89 years",
-    "it": "TODO",
-    "en": "80 - 89"
-  },
-  "Contacts.ContactsLeisure.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
-    "nl": "90+ years",
-    "it": "TODO",
-    "en": "90+"
-  },
   "Contacts.ContactsOther.title.0": {
     "nl": "Please specify the number of people (per age category and gender) you spoke with and/or touched, or were near in the same room (within 3 meters) YESTERDAY during OTHER ACTIVITIES. Other activities = all locations not named in the other groups (e.g., people you meet in public transportation).",
     "it": "TODO",
     "en": "Indicate the number of contacts during other activities (per age category and gender)"
-  },
-  "Contacts.ContactsOther.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
-    "nl": "Female",
-    "it": "TODO",
-    "en": "Female"
-  },
-  "Contacts.ContactsOther.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
-    "nl": "Male",
-    "it": "TODO",
-    "en": "Male"
-  },
-  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
-    "nl": "Select an option",
-    "it": "TODO",
-    "en": "Select an option"
-  },
-  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
-    "nl": "0",
-    "it": "TODO",
-    "en": "0"
-  },
-  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
-    "nl": "1",
-    "it": "TODO",
-    "en": "1"
-  },
-  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
-    "nl": "2",
-    "it": "TODO",
-    "en": "2"
-  },
-  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
-    "nl": "3",
-    "it": "TODO",
-    "en": "3"
-  },
-  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
-    "nl": "4",
-    "it": "TODO",
-    "en": "4"
-  },
-  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
-    "nl": "5",
-    "it": "TODO",
-    "en": "5"
-  },
-  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
-    "nl": "6",
-    "it": "TODO",
-    "en": "6"
-  },
-  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
-    "nl": "7-9",
-    "it": "TODO",
-    "en": "7-9"
-  },
-  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
-    "nl": "10-14",
-    "it": "TODO",
-    "en": "10-14"
-  },
-  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
-    "nl": "15-19",
-    "it": "TODO",
-    "en": "15-19"
-  },
-  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
-    "nl": "20-30",
-    "it": "TODO",
-    "en": "20-30"
-  },
-  "Contacts.ContactsOther.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
-    "nl": "31-49",
-    "it": "TODO",
-    "en": "31-49"
-  },
-  "Contacts.ContactsOther.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
-    "nl": "50+",
-    "it": "TODO",
-    "en": "50+"
-  },
-  "Contacts.ContactsOther.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
-    "nl": "0-3 years",
-    "it": "TODO",
-    "en": "0 - 3"
-  },
-  "Contacts.ContactsOther.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
-    "nl": "4-6 years",
-    "it": "TODO",
-    "en": "3 - 6"
-  },
-  "Contacts.ContactsOther.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
-    "nl": "7-12 years",
-    "it": "TODO",
-    "en": "7 - 12"
-  },
-  "Contacts.ContactsOther.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
-    "nl": "13-18 years",
-    "it": "TODO",
-    "en": "13 - 18"
-  },
-  "Contacts.ContactsOther.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
-    "nl": "19-29 years",
-    "it": "TODO",
-    "en": "19 - 29"
-  },
-  "Contacts.ContactsOther.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
-    "nl": "30-39 years",
-    "it": "TODO",
-    "en": "30 - 39"
-  },
-  "Contacts.ContactsOther.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
-    "nl": "40-49 years",
-    "it": "TODO",
-    "en": "40 - 49"
-  },
-  "Contacts.ContactsOther.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
-    "nl": "50-59 years",
-    "it": "TODO",
-    "en": "50 - 59"
-  },
-  "Contacts.ContactsOther.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
-    "nl": "60-69 years",
-    "it": "TODO",
-    "en": "60 - 69"
-  },
-  "Contacts.ContactsOther.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
-    "nl": "70-79 years",
-    "it": "TODO",
-    "en": "70 - 79"
-  },
-  "Contacts.ContactsOther.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
-    "nl": "80-89 years",
-    "it": "TODO",
-    "en": "80 - 89"
-  },
-  "Contacts.ContactsOther.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
-    "nl": "90+ years",
-    "it": "TODO",
-    "en": "90+"
   },
   "Contacts.QFragile.title.0": {
     "nl": "Did you visit an institution with (many) vulnerable people yesterday? (vulnerable people are those with an extra high risk of severe symptoms if infected)",
