@@ -13,9 +13,8 @@ import {
   Validation,
 } from "survey-engine/data_types";
 import { ComponentGenerators } from "case-editor-tools/surveys/utils/componentGenerators";
-import { LanguageMap } from "../languages/languageHelpers";
 
-import "../languages/it"
+import { Language, LanguageMap, LanguageHelpers } from "../languages/languageHelpers";
 
 const dropdownOptions = [
   {
@@ -163,7 +162,7 @@ const dropdownOptions = [
   },
 ];
 
-class ContactsDef extends SurveyDefinition {
+export class ContactsDef extends SurveyDefinition {
   Infos: Infos;
   Q1: Q1;
   Q2: Q2;
@@ -173,8 +172,9 @@ class ContactsDef extends SurveyDefinition {
   ContactMatrixForLeisure: ContactMatrix;
   ContactMatrixForOther: ContactMatrix;
   QFragile: QFragile;
+  languages: Language[];
 
-  constructor() {
+  constructor(languages: Language[]) {
     super({
       surveyKey: surveyKeys.Contacts,
       name: new LanguageMap([
@@ -190,6 +190,8 @@ class ContactsDef extends SurveyDefinition {
         ["en", "1 minute"],
       ]),
     });
+
+    this.languages = languages;
 
     this.editor.setAvailableFor("public");
     this.editor.setRequireLoginBeforeSubmission(false);
@@ -444,6 +446,11 @@ class ContactsDef extends SurveyDefinition {
   }
 
   buildSurvey() {
+
+    LanguageHelpers.languages = new Map();
+    for (const language of this.languages)
+            LanguageHelpers.addLanguage(language.languageId, language.translations);
+
     // Define order of the questions here:
     this.addItem(this.Infos.get());
     this.addItem(this.Q1.get());
@@ -1088,5 +1095,3 @@ class QFragile extends Item {
     });
   }
 }
-
-export const Contacts = new ContactsDef();

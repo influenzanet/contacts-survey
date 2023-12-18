@@ -1,7 +1,6 @@
-import { LanguageHelpers } from "../languageHelpers";
-
 import Contacts from "./Contacts.json";
 
-const languageId = "it";
-
-LanguageHelpers.addLanguage(languageId, Contacts);
+export const it_IT = {
+  languageId: "it",
+  translations: Contacts,
+};
