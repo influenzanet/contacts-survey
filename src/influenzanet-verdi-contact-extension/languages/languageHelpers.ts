@@ -40,9 +40,13 @@ export class LanguageMap extends Map<string, string> {
         if (textMap.get(anyKey) === undefined) {
             const alt = textMap.get(altKey);
             const t = LanguageHelpers.findTranslations(key, reference, alt);
-            text.push(...t);
+            t.map((i) => i && textMap.set(...i))
         }
-        super(text);
+
+        textMap.delete(idKey);
+        textMap.delete(altKey);
+
+        super(textMap.entries());
     }
 }
 
