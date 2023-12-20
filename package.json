@@ -1,6 +1,6 @@
 {
-  "name": "example-studies-and-surveys",
-  "version": "1.0.0",
+  "name": "contacts-survey",
+  "version": "2.0.0",
   "main": "index.js",
   "repository": "git@github.com:influenzanet/example-studies-and-surveys.git",
   "author": "coneno",
