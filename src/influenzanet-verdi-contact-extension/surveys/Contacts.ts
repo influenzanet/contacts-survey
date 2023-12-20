@@ -177,11 +177,10 @@ export class ContactGroup extends Group {
   ) {
     /*
      * NOTE: in this suboptimal implementation, languages have to be initialized
-     * inside the survey constructor, before the first reference to LanguageMap.
+     * inside the survey or group constructor, before the first reference to
+     * LanguageMap.
      */
-    LanguageHelpers.languages = new Map();
-    for (const language of languages)
-      LanguageHelpers.addLanguage(language.languageId, language.translations);
+    LanguageHelpers.initLanguages(languages);
 
     super(parentKey, groupKeys.Contacts);
     this.groupEditor.setCondition(groupCondition);
@@ -963,7 +962,10 @@ class QFragile extends Item {
           role: "option",
           content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.4"],
-            ["en", "Yes, a healthcare institution other than a hospital (e.g., general practitioner, physiotherapist, vaccination clinic)"],
+            [
+              "en",
+              "Yes, a healthcare institution other than a hospital (e.g., general practitioner, physiotherapist, vaccination clinic)",
+            ],
           ]),
           disabled: SurveyEngine.multipleChoice.any(
             this.key,
@@ -1003,10 +1005,18 @@ class QFragile extends Item {
 export class ContactsDef extends SurveyDefinition {
   ContactGroup: ContactGroup;
 
-  constructor(languages?: Language[]) {
-    // FIXME: you don't really have languages initialized here, anyway this
-    // internationalization implementation is suboptimal and a bit of a mess but
-    // that's what we have right now
+  constructor(languages: Language[] = []) {
+    /*
+     * NOTE: in this suboptimal implementation, languages have to be initialized
+     * inside the survey or group constructor, before the first reference to
+     * LanguageMap.
+     *
+     * This unfortunately means that they will be initialized twice, inside the
+     * survey and inside the group but the initialization *should* be
+     * idempotent.
+     */
+    LanguageHelpers.initLanguages(languages);
+
     super({
       surveyKey: surveyKeys.Contacts,
       name: new LanguageMap([

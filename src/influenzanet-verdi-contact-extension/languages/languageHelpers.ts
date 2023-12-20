@@ -140,6 +140,12 @@ export class LanguageHelpers {
         return text;
     }
 
+    static initLanguages(languages: Language[]) {
+        LanguageHelpers.languages = new Map();
+        for (const language of languages) {
+            LanguageHelpers.addLanguage(language.languageId, language.translations);
+        }
+    }
 }
 
 /**
