@@ -1,12 +1,12 @@
 import {
   DateDisplayComponentProp,
+  Group,
   Item,
   StyledTextComponentProp,
   SurveyDefinition,
 } from "case-editor-tools/surveys/types";
 import { SurveyEngine, SurveyItems } from "case-editor-tools/surveys";
 import { StudyEngine } from "case-editor-tools/expression-utils/studyEngineExpressions";
-import { surveyKeys } from "../constants";
 import {
   Expression,
   SurveySingleItem,
@@ -19,6 +19,11 @@ import {
   LanguageMap,
   LanguageHelpers,
 } from "../languages/languageHelpers";
+
+import { nl_NL } from "../languages/nl";
+import { it_IT } from "../languages/it";
+
+import { groupKeys, surveyKeys } from "../constants";
 
 const dropdownOptions = () => [
   {
@@ -153,7 +158,7 @@ const dropdownOptions = () => [
   },
 ];
 
-export class ContactsDef extends SurveyDefinition {
+export class ContactGroup extends Group {
   Infos: Infos;
   Q1: Q1;
   Q2: Q2;
@@ -164,7 +169,12 @@ export class ContactsDef extends SurveyDefinition {
   ContactMatrixForOther: ContactMatrix;
   QFragile: QFragile;
 
-  constructor(languages: Language[]) {
+  constructor(
+    parentKey: string,
+    isRequired: boolean,
+    groupCondition?: Expression,
+    languages: Language[] = [nl_NL, it_IT]
+  ) {
     /*
      * NOTE: in this suboptimal implementation, languages have to be initialized
      * inside the survey constructor, before the first reference to LanguageMap.
@@ -173,26 +183,8 @@ export class ContactsDef extends SurveyDefinition {
     for (const language of languages)
       LanguageHelpers.addLanguage(language.languageId, language.translations);
 
-    super({
-      surveyKey: surveyKeys.Contacts,
-      name: new LanguageMap([
-        ["id", "Contacts.name.0"],
-        ["en", "Survey about your everyday social contacts"],
-      ]),
-      description: new LanguageMap([
-        ["id", "Contacts.description.0"],
-        ["en", ""],
-      ]),
-      durationText: new LanguageMap([
-        ["id", "Contacts.typicalDuration.0"],
-        ["en", "1 minute"],
-      ]),
-    });
-
-    this.editor.setAvailableFor("public");
-    this.editor.setRequireLoginBeforeSubmission(false);
-
-    const isRequired = false;
+    super(parentKey, groupKeys.Contacts);
+    this.groupEditor.setCondition(groupCondition);
 
     // Initialize/Configure questions here:
     this.Infos = new Infos(this.key);
@@ -299,10 +291,11 @@ export class ContactsDef extends SurveyDefinition {
     );
 
     this.QFragile = new QFragile(this.key, isRequired);
+  }
 
-    /// Prefill rules:
-
-    this.editor.setPrefillRules([
+  /// Prefill rules:
+  getPrefillRules(): Expression[] {
+    return [
       /// HOME:
       ...this.ContactMatrixForHome.rowInfos
         .map((rowInfo) => {
@@ -418,10 +411,10 @@ export class ContactsDef extends SurveyDefinition {
             "0"
           )
         ),
-    ]);
+    ];
   }
 
-  buildSurvey() {
+  buildGroup() {
     // Define order of the questions here:
     this.addItem(this.Infos.get());
     this.addItem(this.Q1.get());
@@ -1004,5 +997,38 @@ class QFragile extends Item {
         },
       ],
     });
+  }
+}
+
+export class ContactsDef extends SurveyDefinition {
+  ContactGroup: ContactGroup;
+
+  constructor(languages?: Language[]) {
+    // FIXME: you don't really have languages initialized here, anyway this
+    // internationalization implementation is suboptimal and a bit of a mess but
+    // that's what we have right now
+    super({
+      surveyKey: surveyKeys.Contacts,
+      name: new LanguageMap([
+        ["id", "Contacts.name.0"],
+        ["en", "Survey about your everyday social contacts"],
+      ]),
+      description: new LanguageMap([
+        ["id", "Contacts.description.0"],
+        ["en", ""],
+      ]),
+      durationText: new LanguageMap([
+        ["id", "Contacts.typicalDuration.0"],
+        ["en", "1 minute"],
+      ]),
+    });
+
+    this.ContactGroup = new ContactGroup(this.key, true, undefined, languages);
+
+    this.editor.setPrefillRules([...this.ContactGroup.getPrefillRules()]);
+  }
+
+  buildSurvey() {
+    this.addItem(this.ContactGroup.get());
   }
 }

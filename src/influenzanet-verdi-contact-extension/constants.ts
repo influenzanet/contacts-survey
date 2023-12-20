@@ -1,4 +1,7 @@
+export const groupKeys = {
+  Contacts: 'Contact',
+}
 
 export const surveyKeys = {
-  Contacts: 'Contacts',
+  Contacts: 'ContactsSurvey',
 }
