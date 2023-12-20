@@ -200,7 +200,7 @@
     "nl": "Ja, een verpleeg- of verzorgingstehuis"
   },
   "Contacts.QFragile.rg.mcg.option.2": {
-    "en": "TODO",
+    "en": "Yes, a facility for assisted living",
     "nl": "Ja, een instelling voor begeleid wonen"
   },
   "Contacts.QFragile.rg.mcg.option.3": {
@@ -208,11 +208,11 @@
     "nl": "Ja, een ziekenhuis"
   },
   "Contacts.QFragile.rg.mcg.option.4": {
-    "en": "TODO",
+    "en": "Yes, a healthcare institution other than a hospital (e.g., general practitioner, physiotherapist, vaccination clinic)",
     "nl": "Ja, een zorginstelling anders dan een ziekenhuis (bijvoorbeeld huisarts, fysiotherapeut, vaccinatiekliniek)"
   },
   "Contacts.QFragile.rg.mcg.option.5": {
-    "en": "TODO",
+    "en": "Yes, a hospice",
     "nl": "Ja, een hospice"
   },
   "Contacts.QFragile.rg.mcg.other.input.6": {

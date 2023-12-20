@@ -252,7 +252,7 @@
   "Contacts.QFragile.rg.mcg.option.2": {
     "nl": "Yes, a facility for assisted living",
     "it": "TODO",
-    "en": "TODO"
+    "en": "Yes, a facility for assisted living"
   },
   "Contacts.QFragile.rg.mcg.option.3": {
     "nl": "Yes, a hospital",
@@ -262,12 +262,12 @@
   "Contacts.QFragile.rg.mcg.option.4": {
     "nl": "Yes, a healthcare institution other than a hospital (e.g., general practitioner, physiotherapist, vaccination clinic)",
     "it": "TODO",
-    "en": "TODO"
+    "en": "Yes, a healthcare institution other than a hospital (e.g., general practitioner, physiotherapist, vaccination clinic)"
   },
   "Contacts.QFragile.rg.mcg.option.5": {
     "nl": "Yes, a hospice",
     "it": "TODO",
-    "en": "TODO"
+    "en": "Yes, a hospice"
   },
   "Contacts.QFragile.rg.mcg.other.input.6": {
     "nl": "Other: ",

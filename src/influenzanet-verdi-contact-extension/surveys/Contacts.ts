@@ -946,7 +946,7 @@ class QFragile extends Item {
           role: "option",
           content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.2"],
-            ["en", "TODO"],
+            ["en", "Yes, a facility for assisted living"],
           ]),
           disabled: SurveyEngine.multipleChoice.any(
             this.key,
@@ -970,7 +970,7 @@ class QFragile extends Item {
           role: "option",
           content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.4"],
-            ["en", "TODO"],
+            ["en", "Yes, a healthcare institution other than a hospital (e.g., general practitioner, physiotherapist, vaccination clinic)"],
           ]),
           disabled: SurveyEngine.multipleChoice.any(
             this.key,
@@ -982,7 +982,7 @@ class QFragile extends Item {
           role: "option",
           content: new LanguageMap([
             ["id", "Contacts.QFragile.rg.mcg.option.5"],
-            ["en", "TODO"],
+            ["en", "Yes, a hospice"],
           ]),
           disabled: SurveyEngine.multipleChoice.any(
             this.key,
