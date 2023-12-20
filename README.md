@@ -1,11 +1,11 @@
-# example-studies-and-surveys
+# Contacts survey
 
-Simple code examples of study rules and surveys for various purposes
+Source code for the contacts survey, part of the Verdi project.
 
 ## Usage
 
 ```
-yarn start study=<studyName>
+yarn start study=verdi
 ```
 
-Generated surveys can be previewed, e.g., by using the "CASE Survey Viewer" extension for Visual Studio Code.
+The generated survey can be previewed, e.g., by using the "CASE Survey Viewer" extension for Visual Studio Code.
