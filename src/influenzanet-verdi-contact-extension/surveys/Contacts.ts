@@ -21,7 +21,6 @@ import {
 } from "../languages/languageHelpers";
 
 import { nl_NL } from "../languages/nl";
-import { it_IT } from "../languages/it";
 
 import { groupKeys, surveyKeys } from "../constants";
 
@@ -162,6 +161,7 @@ export class ContactGroup extends Group {
   Infos: Infos;
   Q1: Q1;
   Q2: Q2;
+  Instruct_contact: Instruct_contact;
   ContactMatrixForHome: ContactMatrix;
   ContactMatrixForWork: ContactMatrix;
   ContactMatrixForSchool: ContactMatrix;
@@ -173,7 +173,7 @@ export class ContactGroup extends Group {
     parentKey: string,
     isRequired: boolean,
     groupCondition?: Expression,
-    languages: Language[] = [nl_NL, it_IT]
+    languages: Language[] = [nl_NL]
   ) {
     /*
      * NOTE: in this suboptimal implementation, languages have to be initialized
@@ -193,6 +193,16 @@ export class ContactGroup extends Group {
       this.key,
       SurveyEngine.singleChoice.any(this.Q1.key, this.Q1.optionKeys.yes),
       isRequired
+    );
+
+    const conditionForInstruct = SurveyEngine.compare.gt(
+      SurveyEngine.multipleChoice.selectionCount(this.Q2.key),
+      1
+    );
+
+    this.Instruct_contact = new Instruct_contact(
+      this.key,
+      conditionForInstruct
     );
 
     const conditionForHome = SurveyEngine.multipleChoice.any(
@@ -419,6 +429,8 @@ export class ContactGroup extends Group {
     this.addItem(this.Q1.get());
     this.addItem(this.Q2.get());
     this.addPageBreak();
+    this.addItem(this.Instruct_contact.get());
+    this.addPageBreak();
     this.addItem(this.ContactMatrixForHome.get());
     this.addPageBreak();
     this.addItem(this.ContactMatrixForWork.get());
@@ -430,6 +442,32 @@ export class ContactGroup extends Group {
     this.addItem(this.ContactMatrixForOther.get());
     this.addPageBreak();
     this.addItem(this.QFragile.get());
+  }
+}
+
+class Instruct_contact extends Item {
+  constructor(parentKey: string, condition?: Expression) {
+    super(parentKey, "Instruct_contact");
+    this.condition = condition;
+  }
+
+  markdownContent = `
+## Instructie
+Per plek vragen we nu naar het aantal personen per geslacht en leeftijdscategorie.
+Als er personen zijn die je op meerdere plekken in wilt vullen, vul deze alleen in op de plek met het langst durende contact. Bijvoorbeeld gezinsleden of huisgenoten die je thuis maar ook op een andere plek hebt gesproken vallen dan (waarschijnlijk) alleen onder thuis.
+`;
+  buildItem(): SurveySingleItem {
+    return SurveyItems.display({
+      parentKey: this.parentKey,
+      itemKey: this.itemKey,
+      condition: this.condition,
+      content: [
+        ComponentGenerators.markdown({
+          content: new Map([["nl", this.markdownContent]]),
+          className: "",
+        }),
+      ],
+    });
   }
 }
 

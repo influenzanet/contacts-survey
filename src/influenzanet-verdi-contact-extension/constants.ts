@@ -3,5 +3,5 @@ export const groupKeys = {
 }
 
 export const surveyKeys = {
-  Contacts: 'ContactsSurvey',
+  Contacts: 'interval',
 }
