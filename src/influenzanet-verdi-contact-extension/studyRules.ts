@@ -203,7 +203,7 @@ export const assignIntervalSurveyForQ4 = () =>
  * HANDLERS
  */
 
-const entryRules: Expression[] = [
+export const entryRules: Expression[] = [
   StudyEngine.if(
     isCurrentISOWeekSmallerThan(14, quarterSwithOffset),
     assignIntervalSurveyForQ2(),
@@ -222,7 +222,7 @@ const entryRules: Expression[] = [
   ),
 ];
 
-const handleIntervalQuestionnaireSubmission = StudyEngine.ifThen(
+export const handleIntervalQuestionnaireSubmission = StudyEngine.ifThen(
   StudyEngine.checkSurveyResponseKey(surveyKeys.Contacts),
   // THEN:
   reassignIntervalSurvey()
