@@ -435,7 +435,7 @@ export class ContactGroup extends Group {
 
 class Infos extends Item {
   constructor(parentKey: string, condition?: Expression) {
-    super(parentKey, "Info");
+    super(parentKey, "Infos");
     this.condition = condition;
   }
 
