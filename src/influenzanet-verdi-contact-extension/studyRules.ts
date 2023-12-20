@@ -38,9 +38,9 @@ export const isSurveyExpired = (surveyKey: string) =>
   );
 
 /**
- * Interval survey methods:
+ * Contacts survey methods:
  */
-const addIntervalSurveyWithOffset = (
+const addContactsSurveyWithOffset = (
   reference: Expression,
   offsetWeeks: number
 ) =>
@@ -51,7 +51,7 @@ const addIntervalSurveyWithOffset = (
     StudyEngine.timestampWithOffset({ days: (offsetWeeks + 4) * 7 }, reference)
   );
 
-const isIntervalFlagEq = (value: number) =>
+const isContactsFlagEq = (value: number) =>
   StudyEngine.eq(
     StudyEngine.participantState.getParticipantFlagValueAsNum(
       ParticipantFlags.intervalGroup.key
@@ -59,7 +59,7 @@ const isIntervalFlagEq = (value: number) =>
     value
   );
 
-const ensureIntervalSurveyGroup = () =>
+const ensureContactsSurveyGroup = () =>
   StudyEngine.ifThen(
     StudyEngine.not(
       StudyEngine.participantState.hasParticipantFlagKey(
@@ -72,46 +72,46 @@ const ensureIntervalSurveyGroup = () =>
     )
   );
 
-export const assignIntervalSurvey = (reference: Expression) =>
+export const assignContactsSurvey = (reference: Expression) =>
   StudyEngine.do(
-    ensureIntervalSurveyGroup(),
+    ensureContactsSurveyGroup(),
     StudyEngine.if(
-      isIntervalFlagEq(1),
-      addIntervalSurveyWithOffset(reference, 0),
+      isContactsFlagEq(1),
+      addContactsSurveyWithOffset(reference, 0),
       StudyEngine.if(
-        isIntervalFlagEq(2),
-        addIntervalSurveyWithOffset(reference, 1),
+        isContactsFlagEq(2),
+        addContactsSurveyWithOffset(reference, 1),
         StudyEngine.if(
-          isIntervalFlagEq(3),
-          addIntervalSurveyWithOffset(reference, 2),
+          isContactsFlagEq(3),
+          addContactsSurveyWithOffset(reference, 2),
           StudyEngine.if(
-            isIntervalFlagEq(4),
-            addIntervalSurveyWithOffset(reference, 3),
+            isContactsFlagEq(4),
+            addContactsSurveyWithOffset(reference, 3),
             StudyEngine.if(
-              isIntervalFlagEq(5),
-              addIntervalSurveyWithOffset(reference, 4),
+              isContactsFlagEq(5),
+              addContactsSurveyWithOffset(reference, 4),
               StudyEngine.if(
-                isIntervalFlagEq(6),
-                addIntervalSurveyWithOffset(reference, 5),
+                isContactsFlagEq(6),
+                addContactsSurveyWithOffset(reference, 5),
                 StudyEngine.if(
-                  isIntervalFlagEq(7),
-                  addIntervalSurveyWithOffset(reference, 6),
+                  isContactsFlagEq(7),
+                  addContactsSurveyWithOffset(reference, 6),
                   StudyEngine.if(
-                    isIntervalFlagEq(8),
-                    addIntervalSurveyWithOffset(reference, 7),
+                    isContactsFlagEq(8),
+                    addContactsSurveyWithOffset(reference, 7),
                     StudyEngine.if(
-                      isIntervalFlagEq(9),
-                      addIntervalSurveyWithOffset(reference, 8),
+                      isContactsFlagEq(9),
+                      addContactsSurveyWithOffset(reference, 8),
                       StudyEngine.if(
-                        isIntervalFlagEq(10),
-                        addIntervalSurveyWithOffset(reference, 9),
+                        isContactsFlagEq(10),
+                        addContactsSurveyWithOffset(reference, 9),
                         StudyEngine.if(
-                          isIntervalFlagEq(11),
-                          addIntervalSurveyWithOffset(reference, 10),
+                          isContactsFlagEq(11),
+                          addContactsSurveyWithOffset(reference, 10),
                           StudyEngine.if(
-                            isIntervalFlagEq(12),
-                            addIntervalSurveyWithOffset(reference, 11),
-                            addIntervalSurveyWithOffset(reference, 12)
+                            isContactsFlagEq(12),
+                            addContactsSurveyWithOffset(reference, 11),
+                            addContactsSurveyWithOffset(reference, 12)
                           )
                         )
                       )
@@ -138,7 +138,7 @@ export const isCurrentISOWeekSmallerThan = (
   );
 };
 
-const isCurrentIntervalStartISOWeekSmallerThan = (week: number) => {
+const isCurrentContactsStartISOWeekSmallerThan = (week: number) => {
   return StudyEngine.lt(
     StudyEngine.getISOWeekForTs(
       StudyEngine.participantState.getSurveyKeyAssignedFrom(surveyKeys.Contacts)
@@ -147,27 +147,27 @@ const isCurrentIntervalStartISOWeekSmallerThan = (week: number) => {
   );
 };
 
-export const reassignIntervalSurvey = () =>
+export const reassignContactsSurvey = () =>
   StudyEngine.do(
     StudyEngine.if(
-      isCurrentIntervalStartISOWeekSmallerThan(14),
-      assignIntervalSurveyForQ2(),
+      isCurrentContactsStartISOWeekSmallerThan(14),
+      assignContactsSurveyForQ2(),
       // else:
       StudyEngine.if(
-        isCurrentIntervalStartISOWeekSmallerThan(27),
-        assignIntervalSurveyForQ3(),
+        isCurrentContactsStartISOWeekSmallerThan(27),
+        assignContactsSurveyForQ3(),
         // else:
         StudyEngine.if(
-          isCurrentIntervalStartISOWeekSmallerThan(40),
-          assignIntervalSurveyForQ4(),
+          isCurrentContactsStartISOWeekSmallerThan(40),
+          assignContactsSurveyForQ4(),
           // else:
-          assignIntervalSurveyForQ1()
+          assignContactsSurveyForQ1()
         )
       )
     )
   );
 
-export const assignIntervalSurveyForQ1 = () =>
+export const assignContactsSurveyForQ1 = () =>
   StudyEngine.do(
     // remove old instances of interval survey:
     StudyEngine.participantActions.assignedSurveys.remove(
@@ -175,10 +175,10 @@ export const assignIntervalSurveyForQ1 = () =>
       "all"
     ),
 
-    assignIntervalSurvey(StudyEngine.getTsForNextISOWeek(1))
+    assignContactsSurvey(StudyEngine.getTsForNextISOWeek(1))
   );
 
-export const assignIntervalSurveyForQ2 = () =>
+export const assignContactsSurveyForQ2 = () =>
   StudyEngine.do(
     // remove old instances of interval survey:
     StudyEngine.participantActions.assignedSurveys.remove(
@@ -186,10 +186,10 @@ export const assignIntervalSurveyForQ2 = () =>
       "all"
     ),
 
-    assignIntervalSurvey(StudyEngine.getTsForNextISOWeek(14))
+    assignContactsSurvey(StudyEngine.getTsForNextISOWeek(14))
   );
 
-export const assignIntervalSurveyForQ3 = () =>
+export const assignContactsSurveyForQ3 = () =>
   StudyEngine.do(
     // remove old instances of interval survey:
     StudyEngine.participantActions.assignedSurveys.remove(
@@ -197,10 +197,10 @@ export const assignIntervalSurveyForQ3 = () =>
       "all"
     ),
 
-    assignIntervalSurvey(StudyEngine.getTsForNextISOWeek(27))
+    assignContactsSurvey(StudyEngine.getTsForNextISOWeek(27))
   );
 
-export const assignIntervalSurveyForQ4 = () =>
+export const assignContactsSurveyForQ4 = () =>
   StudyEngine.do(
     // remove old instances of interval survey:
     StudyEngine.participantActions.assignedSurveys.remove(
@@ -208,7 +208,7 @@ export const assignIntervalSurveyForQ4 = () =>
       "all"
     ),
 
-    assignIntervalSurvey(StudyEngine.getTsForNextISOWeek(40))
+    assignContactsSurvey(StudyEngine.getTsForNextISOWeek(40))
   );
 
 /*
@@ -218,38 +218,38 @@ export const assignIntervalSurveyForQ4 = () =>
 export const entryRules: Expression[] = [
   StudyEngine.if(
     isCurrentISOWeekSmallerThan(14, quarterSwithOffset),
-    assignIntervalSurveyForQ2(),
+    assignContactsSurveyForQ2(),
     // else:
     StudyEngine.if(
       isCurrentISOWeekSmallerThan(27, quarterSwithOffset),
-      assignIntervalSurveyForQ3(),
+      assignContactsSurveyForQ3(),
       // else:
       StudyEngine.if(
         isCurrentISOWeekSmallerThan(40, quarterSwithOffset),
-        assignIntervalSurveyForQ4(),
+        assignContactsSurveyForQ4(),
         // else:
-        assignIntervalSurveyForQ1()
+        assignContactsSurveyForQ1()
       )
     )
   ),
 ];
 
-export const handleIntervalQuestionnaireSubmission = StudyEngine.ifThen(
+export const handleContactsQuestionnaireSubmission = StudyEngine.ifThen(
   StudyEngine.checkSurveyResponseKey(surveyKeys.Contacts),
   // THEN:
-  reassignIntervalSurvey()
+  reassignContactsSurvey()
 );
 
-const submitRules: Expression[] = [handleIntervalQuestionnaireSubmission];
+const submitRules: Expression[] = [handleContactsQuestionnaireSubmission];
 
-export const handleIntervalQuestionnaireExpired = () =>
+export const handleContactsQuestionnaireExpired = () =>
   StudyEngine.ifThen(
     isSurveyExpired(surveyKeys.Contacts),
     // Then:
-    reassignIntervalSurvey()
+    reassignContactsSurvey()
   );
 
-const timerRules: Expression[] = [handleIntervalQuestionnaireExpired()];
+const timerRules: Expression[] = [handleContactsQuestionnaireExpired()];
 
 /**
  * STUDY RULES
