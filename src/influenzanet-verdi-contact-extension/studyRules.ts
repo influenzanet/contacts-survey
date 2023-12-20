@@ -170,7 +170,10 @@ export const reassignIntervalSurvey = () =>
 export const assignIntervalSurveyForQ1 = () =>
   StudyEngine.do(
     // remove old instances of interval survey:
-    StudyEngine.participantActions.assignedSurveys.remove(surveyKeys.Contacts, "all"),
+    StudyEngine.participantActions.assignedSurveys.remove(
+      surveyKeys.Contacts,
+      "all"
+    ),
 
     assignIntervalSurvey(StudyEngine.getTsForNextISOWeek(1))
   );
@@ -178,7 +181,10 @@ export const assignIntervalSurveyForQ1 = () =>
 export const assignIntervalSurveyForQ2 = () =>
   StudyEngine.do(
     // remove old instances of interval survey:
-    StudyEngine.participantActions.assignedSurveys.remove(surveyKeys.Contacts, "all"),
+    StudyEngine.participantActions.assignedSurveys.remove(
+      surveyKeys.Contacts,
+      "all"
+    ),
 
     assignIntervalSurvey(StudyEngine.getTsForNextISOWeek(14))
   );
@@ -186,7 +192,10 @@ export const assignIntervalSurveyForQ2 = () =>
 export const assignIntervalSurveyForQ3 = () =>
   StudyEngine.do(
     // remove old instances of interval survey:
-    StudyEngine.participantActions.assignedSurveys.remove(surveyKeys.Contacts, "all"),
+    StudyEngine.participantActions.assignedSurveys.remove(
+      surveyKeys.Contacts,
+      "all"
+    ),
 
     assignIntervalSurvey(StudyEngine.getTsForNextISOWeek(27))
   );
@@ -194,7 +203,10 @@ export const assignIntervalSurveyForQ3 = () =>
 export const assignIntervalSurveyForQ4 = () =>
   StudyEngine.do(
     // remove old instances of interval survey:
-    StudyEngine.participantActions.assignedSurveys.remove(surveyKeys.Contacts, "all"),
+    StudyEngine.participantActions.assignedSurveys.remove(
+      surveyKeys.Contacts,
+      "all"
+    ),
 
     assignIntervalSurvey(StudyEngine.getTsForNextISOWeek(40))
   );
