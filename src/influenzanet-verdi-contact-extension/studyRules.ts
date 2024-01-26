@@ -215,7 +215,7 @@ export const assignContactsSurveyForQ4 = () =>
  * HANDLERS
  */
 
-export const entryRules: Expression[] = [
+export const entryRules = (): Expression[] => [
   StudyEngine.if(
     isCurrentISOWeekSmallerThan(14, quarterSwithOffset),
     assignContactsSurveyForQ2(),
@@ -254,4 +254,4 @@ const timerRules: Expression[] = [handleContactsQuestionnaireExpired()];
 /**
  * STUDY RULES
  */
-export const studyRules = new StudyRules(entryRules, submitRules, timerRules);
+export const studyRules = new StudyRules(entryRules(), submitRules, timerRules);
