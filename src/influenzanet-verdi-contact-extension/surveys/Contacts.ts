@@ -1025,7 +1025,7 @@ export class ContactsDef extends SurveyDefinition {
       ]),
       description: new LanguageMap([
         ["id", "Contacts.description.0"],
-        ["en", ""],
+        ["en", "This questionnaire is useful for understanding the transmission routes of viruses through social contacts."],
       ]),
       durationText: new LanguageMap([
         ["id", "Contacts.typicalDuration.0"],
