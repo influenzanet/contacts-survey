@@ -167,48 +167,57 @@ export const reassignContactsSurvey = () =>
     )
   );
 
+const temporaryFlagKeyForContactsSurveyStart = 'lastContactsSurveyStart';
+
+const saveLastContactsSurveyStartAsFlag = () => StudyEngine.if(
+  StudyEngine.participantState.hasSurveyKeyAssigned(surveyKeys.Contacts),
+  StudyEngine.participantActions.updateFlag(
+    temporaryFlagKeyForContactsSurveyStart,
+    StudyEngine.participantState.getSurveyKeyAssignedFrom(surveyKeys.Contacts),
+  ),
+  // handle if interval survey is not assigned yet
+  // Assume it was 4 weeks ago:
+  StudyEngine.participantActions.updateFlag(
+    temporaryFlagKeyForContactsSurveyStart,
+    StudyEngine.timestampWithOffset({ days: -28 }),
+  )
+)
+
+const getLastContactsSurveyStartFromFlags = () => StudyEngine.participantState.getParticipantFlagValueAsNum(temporaryFlagKeyForContactsSurveyStart)
+
+const deleteLastContactsSurveyStartFlag = () => StudyEngine.participantActions.removeFlag(temporaryFlagKeyForContactsSurveyStart)
+
+const reassignContactsSurveyFromWeek = (week: number) => StudyEngine.do(
+  saveLastContactsSurveyStartAsFlag(),
+
+  // remove old instances of interval survey:
+  StudyEngine.participantActions.assignedSurveys.remove(surveyKeys.Contacts, 'all'),
+
+  assignContactsSurvey(
+    StudyEngine.getTsForNextISOWeek(week, getLastContactsSurveyStartFromFlags())
+  ),
+
+  deleteLastContactsSurveyStartFlag()
+)
+
 export const assignContactsSurveyForQ1 = () =>
   StudyEngine.do(
-    // remove old instances of interval survey:
-    StudyEngine.participantActions.assignedSurveys.remove(
-      surveyKeys.Contacts,
-      "all"
-    ),
-
-    assignContactsSurvey(StudyEngine.getTsForNextISOWeek(1))
+    reassignContactsSurveyFromWeek(1),
   );
 
 export const assignContactsSurveyForQ2 = () =>
   StudyEngine.do(
-    // remove old instances of interval survey:
-    StudyEngine.participantActions.assignedSurveys.remove(
-      surveyKeys.Contacts,
-      "all"
-    ),
-
-    assignContactsSurvey(StudyEngine.getTsForNextISOWeek(14))
+    reassignContactsSurveyFromWeek(14),
   );
 
 export const assignContactsSurveyForQ3 = () =>
   StudyEngine.do(
-    // remove old instances of interval survey:
-    StudyEngine.participantActions.assignedSurveys.remove(
-      surveyKeys.Contacts,
-      "all"
-    ),
-
-    assignContactsSurvey(StudyEngine.getTsForNextISOWeek(27))
+    reassignContactsSurveyFromWeek(27),
   );
 
 export const assignContactsSurveyForQ4 = () =>
   StudyEngine.do(
-    // remove old instances of interval survey:
-    StudyEngine.participantActions.assignedSurveys.remove(
-      surveyKeys.Contacts,
-      "all"
-    ),
-
-    assignContactsSurvey(StudyEngine.getTsForNextISOWeek(40))
+    reassignContactsSurveyFromWeek(40)
   );
 
 /*
