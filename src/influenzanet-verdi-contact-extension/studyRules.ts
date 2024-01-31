@@ -179,7 +179,7 @@ const saveLastContactsSurveyStartAsFlag = () => StudyEngine.if(
   // Assume it was 4 weeks ago:
   StudyEngine.participantActions.updateFlag(
     temporaryFlagKeyForContactsSurveyStart,
-    StudyEngine.timestampWithOffset({ days: -28 }),
+    StudyEngine.timestampWithOffset({ days: 0 }),
   )
 )
 
