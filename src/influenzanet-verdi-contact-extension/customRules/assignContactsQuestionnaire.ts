@@ -1,6 +1,14 @@
 import { StudyEngine } from "case-editor-tools/expression-utils/studyEngineExpressions";
+import moment from "moment";
 import { surveyKeys } from "../constants";
 import { assignContactsSurvey } from "../studyRules";
+
+/*
+ * NOTE: always take the start of the quarter as reference, surveys assigned in
+ * the past will be shifted one quarter in the future by the timer rule
+ */
+const quarter = moment(new Date()).quarter()
+const launchDate = moment().quarter(quarter).startOf('quarter').toDate();
 
 export const assignContactsQuestionnaire_rules = {
   name: "assignContactsQuestionnaire",
@@ -9,18 +17,25 @@ export const assignContactsQuestionnaire_rules = {
       StudyEngine.and(
         StudyEngine.participantState.hasStudyStatus("active"),
         StudyEngine.not(
-          StudyEngine.participantState.hasSurveyKeyAssigned(surveyKeys.Contacts)
-        )
+          StudyEngine.participantState.hasSurveyKeyAssigned(
+            surveyKeys.Contacts,
+          ),
+        ),
       ),
       StudyEngine.do(
         // remove old instances of interval survey:
         StudyEngine.participantActions.assignedSurveys.remove(
           surveyKeys.Contacts,
-          "all"
+          "all",
         ),
-
-        assignContactsSurvey(StudyEngine.getTsForNextISOWeek(40, 1693559081))
-      )
+        // this effectively takes the first Monday of the quarter as reference
+        assignContactsSurvey(
+          StudyEngine.getTsForNextISOWeek(
+            moment(launchDate).week(),
+            Math.floor(launchDate.getTime() / 1000) - 1,
+          ),
+        ),
+      ),
     ),
   ],
 };
