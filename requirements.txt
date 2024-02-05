@@ -1,0 +1,5 @@
+tqdm==4.66.1
+jupyter==1.0.0
+pandas==2.1.0
+matplotlib==3.8.2
+influenzanet.api==1.1.3

@@ -14,6 +14,15 @@ export const ParticipantFlags = {
   intervalGroup: {
     key: "intervalGroup",
   },
+  intervalTestDate: {
+    key: "intervalTestDate",
+  },
+  intervalTestEndDate: {
+    key: "intervalTestEndDate",
+  },
+  intervalTestStartDate: {
+    key: "intervalTestStartDate",
+  },
 };
 
 /*
@@ -23,18 +32,18 @@ export const ParticipantFlags = {
 const hasSurveyKeyValidUntilSoonerThan = (
   surveyKey: string,
   delta: Duration,
-  reference?: number | Expression
+  reference?: number | Expression,
 ) => {
   return StudyEngine.gt(
     StudyEngine.timestampWithOffset(delta, reference),
-    StudyEngine.participantState.getSurveyKeyAssignedUntil(surveyKey)
+    StudyEngine.participantState.getSurveyKeyAssignedUntil(surveyKey),
   );
 };
 
 export const isSurveyExpired = (surveyKey: string) =>
   StudyEngine.and(
     StudyEngine.participantState.hasSurveyKeyAssigned(surveyKey),
-    hasSurveyKeyValidUntilSoonerThan(surveyKey, { seconds: 0 })
+    hasSurveyKeyValidUntilSoonerThan(surveyKey, { seconds: 0 }),
   );
 
 /**
@@ -42,34 +51,34 @@ export const isSurveyExpired = (surveyKey: string) =>
  */
 const addContactsSurveyWithOffset = (
   reference: Expression,
-  offsetWeeks: number
+  offsetWeeks: number,
 ) =>
   StudyEngine.participantActions.assignedSurveys.add(
     surveyKeys.Contacts,
     "normal",
     StudyEngine.timestampWithOffset({ days: offsetWeeks * 7 }, reference),
-    StudyEngine.timestampWithOffset({ days: (offsetWeeks + 4) * 7 }, reference)
+    StudyEngine.timestampWithOffset({ days: (offsetWeeks + 4) * 7 }, reference),
   );
 
 const isContactsFlagEq = (value: number) =>
   StudyEngine.eq(
     StudyEngine.participantState.getParticipantFlagValueAsNum(
-      ParticipantFlags.intervalGroup.key
+      ParticipantFlags.intervalGroup.key,
     ),
-    value
+    value,
   );
 
 const ensureContactsSurveyGroup = () =>
   StudyEngine.ifThen(
     StudyEngine.not(
       StudyEngine.participantState.hasParticipantFlagKey(
-        ParticipantFlags.intervalGroup.key
-      )
+        ParticipantFlags.intervalGroup.key,
+      ),
     ),
     StudyEngine.participantActions.updateFlag(
       ParticipantFlags.intervalGroup.key,
-      StudyEngine.generateRandomNumber(1, 13)
-    )
+      StudyEngine.generateRandomNumber(1, 13),
+    ),
   );
 
 export const assignContactsSurvey = (reference: Expression) =>
@@ -111,39 +120,41 @@ export const assignContactsSurvey = (reference: Expression) =>
                           StudyEngine.if(
                             isContactsFlagEq(12),
                             addContactsSurveyWithOffset(reference, 11),
-                            addContactsSurveyWithOffset(reference, 12)
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-        )
-      )
-    )
+                            addContactsSurveyWithOffset(reference, 12),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
   );
 
 export const isCurrentISOWeekSmallerThan = (
   week: number,
-  offsetWeeks: number
+  offsetWeeks: number,
 ) => {
   return StudyEngine.lt(
     StudyEngine.getISOWeekForTs(
-      StudyEngine.timestampWithOffset({ days: offsetWeeks * 7 })
+      StudyEngine.timestampWithOffset({ days: offsetWeeks * 7 }),
     ),
-    week
+    week,
   );
 };
 
 const isCurrentContactsStartISOWeekSmallerThan = (week: number) => {
   return StudyEngine.lt(
     StudyEngine.getISOWeekForTs(
-      StudyEngine.participantState.getSurveyKeyAssignedFrom(surveyKeys.Contacts)
+      StudyEngine.participantState.getSurveyKeyAssignedFrom(
+        surveyKeys.Contacts,
+      ),
     ),
-    week
+    week,
   );
 };
 
@@ -161,64 +172,72 @@ export const reassignContactsSurvey = () =>
           isCurrentContactsStartISOWeekSmallerThan(40),
           assignContactsSurveyForQ4(),
           // else:
-          assignContactsSurveyForQ1()
-        )
-      )
-    )
+          assignContactsSurveyForQ1(),
+        ),
+      ),
+    ),
   );
 
-const temporaryFlagKeyForContactsSurveyStart = 'lastContactsSurveyStart';
+const temporaryFlagKeyForContactsSurveyStart = "lastContactsSurveyStart";
 
-const saveLastContactsSurveyStartAsFlag = () => StudyEngine.if(
-  StudyEngine.participantState.hasSurveyKeyAssigned(surveyKeys.Contacts),
-  StudyEngine.participantActions.updateFlag(
+const saveLastContactsSurveyStartAsFlag = () =>
+  StudyEngine.if(
+    StudyEngine.participantState.hasSurveyKeyAssigned(surveyKeys.Contacts),
+    StudyEngine.participantActions.updateFlag(
+      temporaryFlagKeyForContactsSurveyStart,
+      StudyEngine.participantState.getSurveyKeyAssignedFrom(
+        surveyKeys.Contacts,
+      ),
+    ),
+    // handle if interval survey is not assigned yet
+    // Assume it was 4 weeks ago:
+    StudyEngine.participantActions.updateFlag(
+      temporaryFlagKeyForContactsSurveyStart,
+      StudyEngine.timestampWithOffset({ days: 0 }),
+    ),
+  );
+
+const getLastContactsSurveyStartFromFlags = () =>
+  StudyEngine.participantState.getParticipantFlagValueAsNum(
     temporaryFlagKeyForContactsSurveyStart,
-    StudyEngine.participantState.getSurveyKeyAssignedFrom(surveyKeys.Contacts),
-  ),
-  // handle if interval survey is not assigned yet
-  // Assume it was 4 weeks ago:
-  StudyEngine.participantActions.updateFlag(
+  );
+
+const deleteLastContactsSurveyStartFlag = () =>
+  StudyEngine.participantActions.removeFlag(
     temporaryFlagKeyForContactsSurveyStart,
-    StudyEngine.timestampWithOffset({ days: 0 }),
-  )
-)
+  );
 
-const getLastContactsSurveyStartFromFlags = () => StudyEngine.participantState.getParticipantFlagValueAsNum(temporaryFlagKeyForContactsSurveyStart)
+const reassignContactsSurveyFromWeek = (week: number) =>
+  StudyEngine.do(
+    saveLastContactsSurveyStartAsFlag(),
 
-const deleteLastContactsSurveyStartFlag = () => StudyEngine.participantActions.removeFlag(temporaryFlagKeyForContactsSurveyStart)
+    // remove old instances of interval survey:
+    StudyEngine.participantActions.assignedSurveys.remove(
+      surveyKeys.Contacts,
+      "all",
+    ),
 
-const reassignContactsSurveyFromWeek = (week: number) => StudyEngine.do(
-  saveLastContactsSurveyStartAsFlag(),
+    assignContactsSurvey(
+      StudyEngine.getTsForNextISOWeek(
+        week,
+        getLastContactsSurveyStartFromFlags(),
+      ),
+    ),
 
-  // remove old instances of interval survey:
-  StudyEngine.participantActions.assignedSurveys.remove(surveyKeys.Contacts, 'all'),
-
-  assignContactsSurvey(
-    StudyEngine.getTsForNextISOWeek(week, getLastContactsSurveyStartFromFlags())
-  ),
-
-  deleteLastContactsSurveyStartFlag()
-)
+    deleteLastContactsSurveyStartFlag(),
+  );
 
 export const assignContactsSurveyForQ1 = () =>
-  StudyEngine.do(
-    reassignContactsSurveyFromWeek(1),
-  );
+  StudyEngine.do(reassignContactsSurveyFromWeek(1));
 
 export const assignContactsSurveyForQ2 = () =>
-  StudyEngine.do(
-    reassignContactsSurveyFromWeek(14),
-  );
+  StudyEngine.do(reassignContactsSurveyFromWeek(14));
 
 export const assignContactsSurveyForQ3 = () =>
-  StudyEngine.do(
-    reassignContactsSurveyFromWeek(27),
-  );
+  StudyEngine.do(reassignContactsSurveyFromWeek(27));
 
 export const assignContactsSurveyForQ4 = () =>
-  StudyEngine.do(
-    reassignContactsSurveyFromWeek(40)
-  );
+  StudyEngine.do(reassignContactsSurveyFromWeek(40));
 
 /*
  * HANDLERS
@@ -237,16 +256,16 @@ export const entryRules = (): Expression[] => [
         isCurrentISOWeekSmallerThan(40, quarterSwithOffset),
         assignContactsSurveyForQ4(),
         // else:
-        assignContactsSurveyForQ1()
-      )
-    )
+        assignContactsSurveyForQ1(),
+      ),
+    ),
   ),
 ];
 
 export const handleContactsQuestionnaireSubmission = StudyEngine.ifThen(
   StudyEngine.checkSurveyResponseKey(surveyKeys.Contacts),
   // THEN:
-  reassignContactsSurvey()
+  reassignContactsSurvey(),
 );
 
 const submitRules: Expression[] = [handleContactsQuestionnaireSubmission];
@@ -255,7 +274,7 @@ export const handleContactsQuestionnaireExpired = () =>
   StudyEngine.ifThen(
     isSurveyExpired(surveyKeys.Contacts),
     // Then:
-    reassignContactsSurvey()
+    reassignContactsSurvey(),
   );
 
 const timerRules: Expression[] = [handleContactsQuestionnaireExpired()];
