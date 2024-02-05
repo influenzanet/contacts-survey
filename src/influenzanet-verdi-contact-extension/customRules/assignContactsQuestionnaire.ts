@@ -2,16 +2,17 @@ import { StudyEngine } from "case-editor-tools/expression-utils/studyEngineExpre
 import moment from "moment";
 import { surveyKeys } from "../constants";
 import { assignContactsSurvey } from "../studyRules";
-import { generateExpression } from "case-editor-tools/expression-utils/expressionGen"
+import { generateExpression } from "case-editor-tools/expression-utils/expressionGen";
 
 /*
  * NOTE: always take the start of the quarter as reference, surveys assigned in
  * the past will be shifted one quarter in the future by the timer rule
  */
-const quarter = moment(new Date()).quarter()
-const launchDate = moment().quarter(quarter).startOf('quarter').toDate();
+const quarter = moment(new Date()).quarter();
+const launchDate = moment().quarter(quarter).startOf("quarter").toDate();
 
-const hasStudyStatus = (status: string) => generateExpression('hasStudyStatus', undefined, status);
+const hasStudyStatus = (status: string) =>
+  generateExpression("hasStudyStatus", undefined, status);
 
 export const assignContactsQuestionnaire_rules = {
   name: "assignContactsQuestionnaire",

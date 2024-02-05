@@ -9,3 +9,7 @@ yarn start study=verdi
 ```
 
 The generated survey can be previewed, e.g., by using the "CASE Survey Viewer" extension for Visual Studio Code.
+
+## Testing
+
+Run the jupyter notebook [test.ipynb](notebooks/tests.ipynb)
