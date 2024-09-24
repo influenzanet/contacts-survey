@@ -109,6 +109,9 @@ export class LanguageHelpers {
       // Find a translation in the current set
       const get_trans = (key: string): [string, string] | undefined => {
         if (!(key in translations)) {
+          // use the reference text if languageId == referenceKey
+          if (languageId === referenceKey && reference !== undefined)
+              return [languageId, reference]
           return undefined;
         }
 
@@ -121,7 +124,7 @@ export class LanguageHelpers {
           );
         }
 
-        let trans = translations[key][languageId];
+        const trans = translations[key][languageId];
         return [languageId, trans];
       };
 

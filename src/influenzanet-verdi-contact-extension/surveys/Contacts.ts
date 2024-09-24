@@ -482,7 +482,7 @@ To help the analysis we also categorised contacts according categories/
 locations:
 
 -   Home: your house (example of contact: your household members, people
-    visiting **your** house,\...).
+    visiting **your** house, ...).
 
 -   Work: your working location (example of contact: customer,
     co-workers, ...). If you have multiple jobs, please include them
@@ -496,7 +496,7 @@ locations:
     **different from yours**).
 
 -   Other: everything not listed before (example of contacts: person met
-    during commuting,\...).
+    during commuting, ...).
 
 Household members are defined as all people you live with on a daily
 basis with whom you sleep under the same roof (for example also

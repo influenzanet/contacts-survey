@@ -1,0 +1,222 @@
+{
+  "Contacts.name.0": {
+    "fr-be": "Questionnaire relatif à vos contacts sociaux journaliers",
+    "en": "Survey about your everyday social contacts"
+  },
+  "Contacts.description.0": {
+    "fr-be": "Ce questionnaire est utile pour comprendre les voies de transmission des virus à travers les contacts sociaux.",
+    "en": "This questionnaire is useful for understanding the transmission routes of viruses through social contacts."
+  },
+  "Contacts.typicalDuration.0": {
+    "fr-be": "1 Minute",
+    "en": "1 minute"
+  },
+  "Contacts.Info.x46.markdown.0": {
+    "fr-be": "La transmission des infections respiratoires dépend de la personne avec laquelle vous avez parlé, vous auriez pu parler ou que vous avez touchée, ce que nous appelons un contact.\n\n### Qu’est-ce qu’un contact?\n\nUn contact est défini comme la coprésence et l'interaction avec un autre individu à une distance inférieure à trois mètres. Il peut s'agir, par exemple, de personnes avec lesquelles vous avez parlé ou avec lesquelles vous avez eu un contact physique, même sans échanger de mots (par exemple : en vous serrant la main, etc.). Dans le cadre de cette étude, nous ne nous intéressons pas aux contacts par téléphone ou par l’entremise d’Internet.\n\n### Pourquoi est-ce important ?\n\nCompte tenu du fait que de nombreuses transmissions ont lieu lorsque les symptômes sont très légers, les contacts que vous avez au quotidien (donc également lorsque vous êtes en bonne santé) sont très utiles afin de prévoir quelles sont les personnes que vous pourriez infecter lorsque vous souffrez d'un syndrome grippal. C'est la raison pour laquelle nous vous demandons de répondre à quelques questions concernant les personnes avec lesquelles vous êtes entré(e) en contact entre hier (depuis votre réveil) et le lendemain à la même heure.\n\nPar ailleurs, nous vous demandons également de préciser la tranche d'âge (possible) de vos contacts, le cadre (à la maison, au travail, à l’école, etc.), ainsi que le sexe des personnes avec lesquelles vous avez été en contact.\n\n### Comment est défini le paramétrage d'un contact ?\n\nEn vue de faciliter l'analyse, nous avons également classé les contacts par catégories/lieux :\n\n- À la maison : votre maison (exemple de contact : les membres de votre foyer, les personnes qui entrent dans votre maison, etc.).\n\n- Au travail : votre lieu de travail (exemple de contact : un client, les collègues, etc.). Si vous exercez plusieurs emplois, veuillez tous les mentionner.\n\n- À l’école : votre établissement scolaire, votre université ou votre établissement d'enseignement supérieur (exemple de contacts : un professeur, etc.).\n\n- Les loisirs : chaque activité que vous avez prévu de faire en compagnie d'autres personnes (exemple de contacts : une personne rencontrée dans un bar ou à la salle de sport, ou dans une maison différente de la vôtre).\n\n- Autre : tout ce qui n'a pas été cité précédemment (exemple de contacts : une personne rencontrée lors des trajets entre le domicile et le lieu de travail, etc.).\n\nLes membres du ménage sont définis comme toutes les personnes avec lesquelles vous vivez au quotidien, et avec lesquelles vous dormez sous le même toit (par exemple : également les co-résidents).",
+    "en": "\nThe onward transmission of respiratory infections depends on with whom\nyou talked, could have talked or whom you touched, actions we refer to\nas a *contact*.\n\n### What is a contact?\n\nA contact is defined as the co-presence and interaction with another\nindividual at a distance of less than three metres. Examples could be\npeople you have talked to or people that you had a physical contact\nwith, even without exchanging words (for example shaking hands, etc). We\nare not interested in contacts by phone or over the internet.\n\n### Why is this important?\n\nBecause a lot of transmission happens when the symptoms are very mild,\nthe contact you have every day (thus also when you are healthy) are very\ninformative in predicting whom you might infect when you have\ninfluenza-like illness. For this reason, we ask you to answer a few\nquestions about whom you contacted between yesterday (since when you\nwoke up) and until the same hour the next day.\n\nWe also ask about the (possible) age-range of your contacts, the setting\n(household, work, school etc.) and the gender of the people you were in\ncontact with.\n\n### How is the setting of a contact defined?\n\nTo help the analysis we also categorised contacts according categories/\nlocations:\n\n-   Home: your house (example of contact: your household members, people\n    visiting **your** house,...).\n\n-   Work: your working location (example of contact: customer,\n    co-workers, ...). If you have multiple jobs, please include them\n    all.\n\n-   School: your school or university or higher education location\n    (example of contacts: teacher, ...\n\n-   Leisure: Every activity you planned to do with other people (example\n    of contacts: person met at a bar or at the gym or in a house\n    **different from yours**).\n\n-   Other: everything not listed before (example of contacts: person met\n    during commuting,...).\n\nHousehold members are defined as all people you live with on a daily\nbasis with whom you sleep under the same roof (for example also\nco-residents)."
+  },
+  "Contacts.Q1.title.0": {
+    "fr-be": "Avez-vous eu des contacts sociaux entre hier 05h00 et aujourd'hui 05h00 ?",
+    "en": "Did you have any social contact between yesterday 5am and 5 am today?"
+  },
+  "Contacts.Q1.rg.scg.option.0": {
+    "fr-be": "Oui",
+    "en": "Yes"
+  },
+  "Contacts.Q1.rg.scg.option.1": {
+    "fr-be": "Non",
+    "en": "No"
+  },
+  "Contacts.Q1.rg.scg.option.2": {
+    "fr-be": "Je souhaite ne pas répondre",
+    "en": "I don't want to say"
+  },
+  "Contacts.Q2.title.0": {
+    "fr-be": "Veuillez sélectionner tous les éléments pertinents",
+    "en": "Please select all the settings that apply"
+  },
+  "Contacts.Q2.rg.mcg.option.0": {
+    "fr-be": "À la maison",
+    "en": "Home"
+  },
+  "Contacts.Q2.rg.mcg.option.1": {
+    "fr-be": "Au travail",
+    "en": "Work"
+  },
+  "Contacts.Q2.rg.mcg.option.2": {
+    "fr-be": "À l’école",
+    "en": "School"
+  },
+  "Contacts.Q2.rg.mcg.option.3": {
+    "fr-be": "Les loisirs",
+    "en": "Leisure"
+  },
+  "Contacts.Q2.rg.mcg.option.4": {
+    "fr-be": "Autre",
+    "en": "Other"
+  },
+  "Contacts.ContactsHome.title.0": {
+    "fr-be": "Indiquez le nombre de contacts à la maison (par catégorie d’âge et par sexe)",
+    "en": "Indicate the number of contacts at home (per age category and gender)"
+  },
+  "Contacts.ContactsAll.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
+    "fr-be": "Femme",
+    "en": "Female"
+  },
+  "Contacts.ContactsAll.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
+    "fr-be": "Homme",
+    "en": "Male"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
+    "fr-be": "Sélectionnez une option",
+    "en": "Select an option"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
+    "fr-be": "0",
+    "en": "0"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
+    "fr-be": "1",
+    "en": "1"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
+    "fr-be": "2",
+    "en": "2"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
+    "fr-be": "3",
+    "en": "3"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
+    "fr-be": "4",
+    "en": "4"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
+    "fr-be": "5",
+    "en": "5"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
+    "fr-be": "6",
+    "en": "6"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
+    "fr-be": "7-9",
+    "en": "7-9"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
+    "fr-be": "10-14",
+    "en": "10-14"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
+    "fr-be": "15-19",
+    "en": "15-19"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
+    "fr-be": "20-30",
+    "en": "20-30"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
+    "fr-be": "31-49",
+    "en": "31-49"
+  },
+  "Contacts.ContactsAll.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
+    "fr-be": "50+",
+    "en": "50+"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
+    "fr-be": "0 - 3",
+    "en": "0 - 3"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
+    "fr-be": "3 - 6",
+    "en": "3 - 6"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
+    "fr-be": "7 - 12",
+    "en": "7 - 12"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
+    "fr-be": "13 - 18",
+    "en": "13 - 18"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
+    "fr-be": "19 - 29",
+    "en": "19 - 29"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
+    "fr-be": "30 - 39",
+    "en": "30 - 39"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
+    "fr-be": "40 - 49",
+    "en": "40 - 49"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
+    "fr-be": "50 - 59",
+    "en": "50 - 59"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
+    "fr-be": "60 - 69",
+    "en": "60 - 69"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
+    "fr-be": "70 - 79",
+    "en": "70 - 79"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
+    "fr-be": "80 - 89",
+    "en": "80 - 89"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
+    "fr-be": "90+",
+    "en": "90+"
+  },
+  "Contacts.ContactsWork.title.0": {
+    "fr-be": "Indiquez le nombre de contacts au travail (par catégorie d’âge et par sexe)",
+    "en": "Indicate the number of contacts at work (per age category and gender)"
+  },
+  "Contacts.ContactsSchool.title.0": {
+    "fr-be": "Indiquez le nombre de contacts à l’école (par catégorie d’âge et par sexe)",
+    "en": "Indicate the number of contacts at school (per age category and gender)"
+  },
+  "Contacts.ContactsLeisure.title.0": {
+    "fr-be": "Indiquez le nombre de contacts durant les loisirs (par catégorie d’âge et par sexe)",
+    "en": "Indicate the number of contacts during leisure (per age category and gender)"
+  },
+  "Contacts.ContactsOther.title.0": {
+    "fr-be": "Indiquez le nombre de contacts durant d’autres activités (par catégorie d’âge et par sexe)",
+    "en": "Indicate the number of contacts during other activities (per age category and gender)"
+  },
+  "Contacts.QFragile.title.0": {
+    "fr-be": "Entre hier 05h00 et aujourd’hui 05h00, vous êtes-vous rendu(e) dans un établissement au sein duquel résident des personnes fragiles?",
+    "en": "Did you visit an institute with (many) fragile people between yesterday 5am and 5 am today?"
+  },
+  "Contacts.QFragile.rg.mcg.option.0": {
+    "fr-be": "Non",
+    "en": "No"
+  },
+  "Contacts.QFragile.rg.mcg.option.1": {
+    "fr-be": "Oui, une maison de repos",
+    "en": "Yes, a care home"
+  },
+  "Contacts.QFragile.rg.mcg.option.2": {
+    "fr-be": "Oui, une résidence services",
+    "en": "Yes, a facility for assisted living"
+  },
+  "Contacts.QFragile.rg.mcg.option.3": {
+    "fr-be": "Oui, un hôpital",
+    "en": "Yes, a hospital"
+  },
+  "Contacts.QFragile.rg.mcg.option.4": {
+    "fr-be": "Oui, un établissement de santé autre qu'un hôpital (par exemple, médecin généraliste, kinésithérapeute, clinique de vaccination)",
+    "en": "Yes, a healthcare institution other than a hospital (e.g., general practitioner, physiotherapist, vaccination clinic)"
+  },
+  "Contacts.QFragile.rg.mcg.option.5": {
+    "fr-be": "Oui, un établissement de soins palliatifs",
+    "en": "Yes, a hospice"
+  },
+  "Contacts.QFragile.rg.mcg.other.input.6": {
+    "fr-be": "Autre: ",
+    "en": "Other: "
+  }
+}

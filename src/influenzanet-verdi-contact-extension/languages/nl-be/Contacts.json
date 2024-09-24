@@ -1,0 +1,222 @@
+{
+  "Contacts.name.0": {
+    "nl-be": "Vragenlijst over uw dagelijkse sociale contacten",
+    "en": "Survey about your everyday social contacts"
+  },
+  "Contacts.description.0": {
+    "nl-be": "Deze vragenlijst is nuttig om de transmissieroutes van virussen via sociale contacten te begrijpen.",
+    "en": "This questionnaire is useful for understanding the transmission routes of viruses through social contacts."
+  },
+  "Contacts.typicalDuration.0": {
+    "nl-be": "1 minuut",
+    "en": "1 minute"
+  },
+  "Contacts.Info.x46.markdown.0": {
+    "nl-be": "Het oplopen van een besmetting met een luchtweginfectie is afhankelijk van met wie u heeft gesproken, wie u heeft aangeraakt of bij wie u dicht in de buurt kwam, acties die wij een ‘contact’ noemen. \n\n### Wie is een contactpersoon?\n\nEen contact verstaan we als de nabijheid en interactie met een ander individu op een afstand van minder dan drie meter. Voorbeelden hiervan zijn personen waarmee u heeft gesproken of met wie u een fysiek contact heeft gehad, zelfs zonder woorden te wisselen (bijvoorbeeld handen schudden, enz.). Hieronder vallen geen contacten via de telefoon of het internet. \n\n### Waarom is dit belangrijk?\n\nEen besmetting met een infectieziekte vindt meestal plaats bij de aanwezigheid van milde symptomen. De contacten die u dagelijks heeft (ook als u gezond bent) zijn zeer informatief, aangezien u deze personen zou kunnen besmetten indien u symptomen heeft. Om deze reden vragen wij u enkele vragen te beantwoorden over met wie u tussen gisteren (sinds het ontwaken) en vandaag (hetzelfde uur) contact heeft gehad. \nWe vragen ook naar de (mogelijke) leeftijdscategorie en het geslacht van uw contacten, en de setting waar het contact plaatsvond (uw eigen huishouden, werk, school enz.).\n\n### Hoe bepalen we de locatie van uw contact?\n\nWe hebben de verschillende mogelijke locaties opgedeeld in de volgende categorieën:\n\n- Thuis: uw eigen huis (voorbeeld van een contact: uw huisgenoten, mensen die u thuis bezoeken, enz.)\n\n- Werk: uw werklocatie(s) (voorbeeld van een contact: een klant, een collega, enz.)\n\n- School: uw school, universiteit of andere locatie waar u zelf onderwijs volgt (voorbeeld van een contact: leraar, medestudent, enz.)\n\n- Vrije tijd: elke andere activiteit in gezelschap van andere personen (voorbeeld van een contact: een persoon die u ontmoet in een ander huis dan het uwe, tijdens een sportactiviteit, tijdens een bezoek aan horeca enz.)\n\n- Overige: alle contacten die hierboven niet vermeld zijn (voorbeeld van een contact: een persoon die u ontmoet tijdens woon-werkverkeer, enz.)\n\nHuisgenoten zijn alle mensen met wie u dagelijks samenwoont en met wie u onder hetzelfde dak woont en slaapt (ook medebewoners).",
+    "en": "\nThe onward transmission of respiratory infections depends on with whom\nyou talked, could have talked or whom you touched, actions we refer to\nas a *contact*.\n\n### What is a contact?\n\nA contact is defined as the co-presence and interaction with another\nindividual at a distance of less than three metres. Examples could be\npeople you have talked to or people that you had a physical contact\nwith, even without exchanging words (for example shaking hands, etc). We\nare not interested in contacts by phone or over the internet.\n\n### Why is this important?\n\nBecause a lot of transmission happens when the symptoms are very mild,\nthe contact you have every day (thus also when you are healthy) are very\ninformative in predicting whom you might infect when you have\ninfluenza-like illness. For this reason, we ask you to answer a few\nquestions about whom you contacted between yesterday (since when you\nwoke up) and until the same hour the next day.\n\nWe also ask about the (possible) age-range of your contacts, the setting\n(household, work, school etc.) and the gender of the people you were in\ncontact with.\n\n### How is the setting of a contact defined?\n\nTo help the analysis we also categorised contacts according categories/\nlocations:\n\n-   Home: your house (example of contact: your household members, people\n    visiting **your** house,...).\n\n-   Work: your working location (example of contact: customer,\n    co-workers, ...). If you have multiple jobs, please include them\n    all.\n\n-   School: your school or university or higher education location\n    (example of contacts: teacher, ...\n\n-   Leisure: Every activity you planned to do with other people (example\n    of contacts: person met at a bar or at the gym or in a house\n    **different from yours**).\n\n-   Other: everything not listed before (example of contacts: person met\n    during commuting,...).\n\nHousehold members are defined as all people you live with on a daily\nbasis with whom you sleep under the same roof (for example also\nco-residents)."
+  },
+  "Contacts.Q1.title.0": {
+    "nl-be": "Heeft u tussen gisteren 05.00 uur en vandaag 05.00 uur sociale contacten gehad?",
+    "en": "Did you have any social contact between yesterday 5am and 5 am today?"
+  },
+  "Contacts.Q1.rg.scg.option.0": {
+    "nl-be": "Ja",
+    "en": "Yes"
+  },
+  "Contacts.Q1.rg.scg.option.1": {
+    "nl-be": "Nee",
+    "en": "No"
+  },
+  "Contacts.Q1.rg.scg.option.2": {
+    "nl-be": "Ik wil het liever niet zeggen",
+    "en": "I don't want to say"
+  },
+  "Contacts.Q2.title.0": {
+    "nl-be": "Selecteer alle locaties die van toepassing zijn",
+    "en": "Please select all the settings that apply"
+  },
+  "Contacts.Q2.rg.mcg.option.0": {
+    "nl-be": "Thuis",
+    "en": "Home"
+  },
+  "Contacts.Q2.rg.mcg.option.1": {
+    "nl-be": "Werk",
+    "en": "Work"
+  },
+  "Contacts.Q2.rg.mcg.option.2": {
+    "nl-be": "School",
+    "en": "School"
+  },
+  "Contacts.Q2.rg.mcg.option.3": {
+    "nl-be": "Vrije tijd",
+    "en": "Leisure"
+  },
+  "Contacts.Q2.rg.mcg.option.4": {
+    "nl-be": "Overige",
+    "en": "Other"
+  },
+  "Contacts.ContactsHome.title.0": {
+    "nl-be": "Selecteer het aantal contacten thuis (per leeftijdscategorie en geslacht)",
+    "en": "Indicate the number of contacts at home (per age category and gender)"
+  },
+  "Contacts.ContactsAll.rg.rm.cols.f.responsiveMatrix.columns.category.0": {
+    "nl-be": "Vrouw",
+    "en": "Female"
+  },
+  "Contacts.ContactsAll.rg.rm.cols.m.responsiveMatrix.columns.category.1": {
+    "nl-be": "Man",
+    "en": "Male"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.1": {
+    "nl-be": "Duid aan",
+    "en": "Select an option"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.0": {
+    "nl-be": "0",
+    "en": "0"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.1": {
+    "nl-be": "1",
+    "en": "1"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.2": {
+    "nl-be": "2",
+    "en": "2"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.3": {
+    "nl-be": "3",
+    "en": "3"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.4": {
+    "nl-be": "4",
+    "en": "4"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.5": {
+    "nl-be": "5",
+    "en": "5"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.6": {
+    "nl-be": "6",
+    "en": "6"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.7": {
+    "nl-be": "7-9",
+    "en": "7-9"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.8": {
+    "nl-be": "10-14",
+    "en": "10-14"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.9": {
+    "nl-be": "15-19",
+    "en": "15-19"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.10": {
+    "nl-be": "20-30",
+    "en": "20-30"
+  },
+  "Contacts.ContactsAll.rg.rm.do.responsiveMatrix.dropdownOptions.option.11": {
+    "nl-be": "31-49",
+    "en": "31-49"
+  },
+  "Contacts.ContactsAll.rg.rm.do.50+.responsiveMatrix.dropdownOptions.option.12": {
+    "nl-be": "50+",
+    "en": "50+"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r1.responsiveMatrix.rows.row.0": {
+    "nl-be": "0 - 3",
+    "en": "0 - 3"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r2.responsiveMatrix.rows.row.1": {
+    "nl-be": "3 - 6",
+    "en": "3 - 6"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r3.responsiveMatrix.rows.row.2": {
+    "nl-be": "7 - 12",
+    "en": "7 - 12"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r4.responsiveMatrix.rows.row.3": {
+    "nl-be": "13 - 18",
+    "en": "13 - 18"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r5.responsiveMatrix.rows.row.4": {
+    "nl-be": "19 - 29",
+    "en": "19 - 29"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r6.responsiveMatrix.rows.row.5": {
+    "nl-be": "30 - 39",
+    "en": "30 - 39"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r7.responsiveMatrix.rows.row.6": {
+    "nl-be": "40 - 49",
+    "en": "40 - 49"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r8.responsiveMatrix.rows.row.7": {
+    "nl-be": "50 - 59",
+    "en": "50 - 59"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r9.responsiveMatrix.rows.row.8": {
+    "nl-be": "60 - 69",
+    "en": "60 - 69"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r10.responsiveMatrix.rows.row.9": {
+    "nl-be": "70 - 79",
+    "en": "70 - 79"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r11.responsiveMatrix.rows.row.10": {
+    "nl-be": "80 - 89",
+    "en": "80 - 89"
+  },
+  "Contacts.ContactsAll.rg.rm.rows.r12.responsiveMatrix.rows.row.11": {
+    "nl-be": "90+",
+    "en": "90+"
+  },
+  "Contacts.ContactsWork.title.0": {
+    "nl-be": "Selecteer het aantal contacten op het werk  (per leeftijdscategorie en geslacht)",
+    "en": "Indicate the number of contacts at work (per age category and gender)"
+  },
+  "Contacts.ContactsSchool.title.0": {
+    "nl-be": "Selecteer het aantal contacten op school (per leeftijdscategorie en geslacht)",
+    "en": "Indicate the number of contacts at school (per age category and gender)"
+  },
+  "Contacts.ContactsLeisure.title.0": {
+    "nl-be": "Selecteer het aantal contacten tijdens uw vrije tijd (per leeftijdscategorie en geslacht)",
+    "en": "Indicate the number of contacts during leisure (per age category and gender)"
+  },
+  "Contacts.ContactsOther.title.0": {
+    "nl-be": "Selecteer het aantal contacten tijdens overige activiteiten (per leeftijdscategorie en geslacht)",
+    "en": "Indicate the number of contacts during other activities (per age category and gender)"
+  },
+  "Contacts.QFragile.title.0": {
+    "nl-be": "Heeft u tussen gisteren 05.00 uur en vandaag 05.00 uur een instituut bezocht met (veel) kwetsbare personen?",
+    "en": "Did you visit an institute with (many) fragile people between yesterday 5am and 5 am today?"
+  },
+  "Contacts.QFragile.rg.mcg.option.0": {
+    "nl-be": "Nee",
+    "en": "No"
+  },
+  "Contacts.QFragile.rg.mcg.option.1": {
+    "nl-be": "Ja, woonzorgcentrum",
+    "en": "Yes, a care home"
+  },
+  "Contacts.QFragile.rg.mcg.option.2": {
+    "nl-be": "Ja, een assistentenwoning (bv. een serviceflat)",
+    "en": "Yes, a facility for assisted living"
+  },
+  "Contacts.QFragile.rg.mcg.option.3": {
+    "nl-be": "Ja, een ziekenhuis",
+    "en": "Yes, a hospital"
+  },
+  "Contacts.QFragile.rg.mcg.option.4": {
+    "nl-be": "Ja, een zorginstelling anders dan een ziekenhuis (bv. huisarts, kinesist, vaccinatiekliniek)",
+    "en": "Yes, a healthcare institution other than a hospital (e.g., general practitioner, physiotherapist, vaccination clinic)"
+  },
+  "Contacts.QFragile.rg.mcg.option.5": {
+    "nl-be": "Ja, de palliatieve afdeling van een ziekenhuis",
+    "en": "Yes, a hospice"
+  },
+  "Contacts.QFragile.rg.mcg.other.input.6": {
+    "nl-be": "Andere: ",
+    "en": "Other: "
+  }
+}
